@@ -1,0 +1,11 @@
+case_id,variant,fid,epoch,ema,guidance,source_sha256
+bottleneck_image,Image prediction,9.13,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97
+bottleneck_noise,Noise prediction,412.11,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97
+bottleneck_velocity,Velocity prediction,177.2,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97
+bottleneck_additive,Noise + additive shortcut,181.09,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97
+bottleneck_exact,Noise + exact preconditioning,9.15,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97
+bottleneck_learned_exact,Learned 1,9.56,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97
+bottleneck_learned_noise,Learned 2,14.99,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97
+bottleneck_learned_additive,Learned 3,15.13,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97
+edm_jit_input,EDM: JiT,52.28,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97
+edm_reflow_input,EDM: ReFlow,52.28,200,EMA1,2.9,a2e7cf47da2e46eecdd0a172e420d986e0891d33a3365de8c0334cbbbf1c7c97

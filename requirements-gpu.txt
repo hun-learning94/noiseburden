@@ -1,0 +1,9 @@
+# Install a CUDA-compatible torch/torchvision pair for your machine first.
+-r requirements.txt
+timm==0.9.12
+scipy
+pillow
+einops
+tensorboard
+opencv-python
+blobfile

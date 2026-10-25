@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/kilonova801/jit",
+  "commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad",
+  "note": "Training base pinned from the earlier anonymous release; each snapshot overlays the exact run-specific model sources."
+}

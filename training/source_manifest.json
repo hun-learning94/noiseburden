@@ -1,0 +1,192 @@
+{
+  "fcfcb90b5861acdf": {
+    "source_directory": "training/snapshots/fcfcb90b5861acdf",
+    "run_source_sha256": {
+      "accum_train.py": "2bd6fdf8b7729de87c0c2818f6a94afed7b552e9bbda166ac2d5179e13ce21b3",
+      "continue_width.py": "2928d41f566594978dae403993e2767b840e7cc749dddfb7a74d008e6b6fa156",
+      "main_jit.py": "fdeea0c2ce8e52232cf9c993158b6c18a949bac5cf643d8401016096e4ac0694",
+      "models128.py": "450f3f5a12da2b85a9d9873076e4a155175500763748df3ff16accfc1b2233c5",
+      "denoiser.py": "6768c4b86a97a87e42a39e1f2379dc6923bbe9d0417fceaa8164af75c3d31358",
+      "model_jit.py": "83b20fbf44d40ca2be2f2231d1db2c43604c7b2fca47447fc3522359ebcef634",
+      "engine_jit.py": "3d205148be7d103fba80a852d0dd11c9b97d9e5be36859826d4ba8cec37da827",
+      "util/crop.py": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "util/misc.py": "387da299eb28fee0f4f49831f51a8e25aebed42845707a85fbff8acd6aff8942",
+      "util/model_util.py": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "util/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "util/lr_sched.py": "47765fbc75affedb8c8c062d8b784fd00a6ee4527c8a82edb8cf514235d7e048"
+    },
+    "base_commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+  },
+  "7e983cfe7572c546": {
+    "source_directory": "training/snapshots/7e983cfe7572c546",
+    "run_source_sha256": {
+      "accum_train.py": "2bd6fdf8b7729de87c0c2818f6a94afed7b552e9bbda166ac2d5179e13ce21b3",
+      "continue_width.py": "e41fffdb4f9b10e5282564a4b0145e19e6642bb9947da7a5b58af86fe3ca2793",
+      "main_jit.py": "993943fdf8601fe8769a93bc9627cd589ca46b5d73e6c6bf7e61cd15e2467a29",
+      "models128.py": "450f3f5a12da2b85a9d9873076e4a155175500763748df3ff16accfc1b2233c5",
+      "denoiser.py": "6768c4b86a97a87e42a39e1f2379dc6923bbe9d0417fceaa8164af75c3d31358",
+      "model_jit.py": "83b20fbf44d40ca2be2f2231d1db2c43604c7b2fca47447fc3522359ebcef634",
+      "engine_jit.py": "b75fe778b6195b4585e2dfe0c7d96e197f19c57662c7100d5d3f264ff721ed89",
+      "single_gpu_loader.py": "586d26ecb3415d1e9b15b8ccbc501776355a35a87062e52c3a88f65ad00a296f",
+      "h100_smoke.py": "9660b34ac6b98c466c1897396007cfb72910a320bbdc09fe71550f0e50b7aa0a",
+      "prepare_single_gpu.py": "3e843fa3ef8e854ee9340740178d2e5388fa3ce99068645419fa40e6cb5788f1",
+      "util/crop.py": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "util/misc.py": "387da299eb28fee0f4f49831f51a8e25aebed42845707a85fbff8acd6aff8942",
+      "util/model_util.py": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "util/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "util/lr_sched.py": "47765fbc75affedb8c8c062d8b784fd00a6ee4527c8a82edb8cf514235d7e048"
+    },
+    "base_commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+  },
+  "b02a7d2252657cd1": {
+    "source_directory": "training/snapshots/b02a7d2252657cd1",
+    "run_source_sha256": {
+      "b200_smoke.py": "db7ed064d95f27ef3ed4fcbc5cb2d396e1d1a9fbcbfc73e18fad1668bd736072",
+      "accum_train.py": "2bd6fdf8b7729de87c0c2818f6a94afed7b552e9bbda166ac2d5179e13ce21b3",
+      "continue_width.py": "e41fffdb4f9b10e5282564a4b0145e19e6642bb9947da7a5b58af86fe3ca2793",
+      "main_jit.py": "993943fdf8601fe8769a93bc9627cd589ca46b5d73e6c6bf7e61cd15e2467a29",
+      "models128.py": "450f3f5a12da2b85a9d9873076e4a155175500763748df3ff16accfc1b2233c5",
+      "denoiser.py": "6768c4b86a97a87e42a39e1f2379dc6923bbe9d0417fceaa8164af75c3d31358",
+      "model_jit.py": "83b20fbf44d40ca2be2f2231d1db2c43604c7b2fca47447fc3522359ebcef634",
+      "engine_jit.py": "b75fe778b6195b4585e2dfe0c7d96e197f19c57662c7100d5d3f264ff721ed89",
+      "single_gpu_loader.py": "586d26ecb3415d1e9b15b8ccbc501776355a35a87062e52c3a88f65ad00a296f",
+      "prepare_single_gpu.py": "3e843fa3ef8e854ee9340740178d2e5388fa3ce99068645419fa40e6cb5788f1",
+      "util/crop.py": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "util/misc.py": "387da299eb28fee0f4f49831f51a8e25aebed42845707a85fbff8acd6aff8942",
+      "util/model_util.py": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "util/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "util/lr_sched.py": "47765fbc75affedb8c8c062d8b784fd00a6ee4527c8a82edb8cf514235d7e048"
+    },
+    "base_commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+  },
+  "bf3757b3d62a9666": {
+    "source_directory": "training/snapshots/bf3757b3d62a9666",
+    "run_source_sha256": {
+      "accum_train.py": "2bd6fdf8b7729de87c0c2818f6a94afed7b552e9bbda166ac2d5179e13ce21b3",
+      "continue_width.py": "910de100a50312878ff87840894a66df489fc94f6b92b86b489ece2a07162e57",
+      "main_jit.py": "4d565a191b33b4ee885e577ac14628a3846c5d49d23b7e69d082ffbe66c272fb",
+      "models128.py": "450f3f5a12da2b85a9d9873076e4a155175500763748df3ff16accfc1b2233c5",
+      "denoiser.py": "6768c4b86a97a87e42a39e1f2379dc6923bbe9d0417fceaa8164af75c3d31358",
+      "model_jit.py": "83b20fbf44d40ca2be2f2231d1db2c43604c7b2fca47447fc3522359ebcef634",
+      "engine_jit.py": "3d205148be7d103fba80a852d0dd11c9b97d9e5be36859826d4ba8cec37da827",
+      "util/crop.py": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "util/misc.py": "387da299eb28fee0f4f49831f51a8e25aebed42845707a85fbff8acd6aff8942",
+      "util/model_util.py": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "util/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "util/lr_sched.py": "47765fbc75affedb8c8c062d8b784fd00a6ee4527c8a82edb8cf514235d7e048"
+    },
+    "base_commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+  },
+  "4ed6194f4663eec8": {
+    "source_directory": "training/snapshots/4ed6194f4663eec8",
+    "run_source_sha256": {
+      "accum_train.py": "2bd6fdf8b7729de87c0c2818f6a94afed7b552e9bbda166ac2d5179e13ce21b3",
+      "continue_width.py": "910de100a50312878ff87840894a66df489fc94f6b92b86b489ece2a07162e57",
+      "main_jit.py": "760838e5de7ab1bc299212c1c39d7c2176727521db4001ecf7068a32839d2961",
+      "models128.py": "450f3f5a12da2b85a9d9873076e4a155175500763748df3ff16accfc1b2233c5",
+      "denoiser.py": "d92c147c2ec19fe20938060612ee64e492637eea7e6981fed17e0880027f7fd8",
+      "model_jit.py": "3720fb5bca996ab42a8cb12f9b4523511d127c9ea0d3329a48bfc45f5cab4373",
+      "engine_jit.py": "3d205148be7d103fba80a852d0dd11c9b97d9e5be36859826d4ba8cec37da827",
+      "util/crop.py": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "util/misc.py": "387da299eb28fee0f4f49831f51a8e25aebed42845707a85fbff8acd6aff8942",
+      "util/model_util.py": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "util/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "util/lr_sched.py": "47765fbc75affedb8c8c062d8b784fd00a6ee4527c8a82edb8cf514235d7e048"
+    },
+    "base_commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+  },
+  "cd6c6efdc23756c4": {
+    "source_directory": "training/snapshots/cd6c6efdc23756c4",
+    "run_source_sha256": {
+      "accum_train.py": "2bd6fdf8b7729de87c0c2818f6a94afed7b552e9bbda166ac2d5179e13ce21b3",
+      "continue_width.py": "910de100a50312878ff87840894a66df489fc94f6b92b86b489ece2a07162e57",
+      "main_jit.py": "a3844df3e2eb957dba6d11e1f111175b430c1f87e355de072bc244cd4f0228ac",
+      "models128.py": "450f3f5a12da2b85a9d9873076e4a155175500763748df3ff16accfc1b2233c5",
+      "denoiser.py": "231a6f16cf3660be1245e3f03f7ffc09320cfd8268c1b03b4bf38314d9ad677c",
+      "model_jit.py": "6b67d6f2538ec4c91beb8c7ae0fe50f0633aaab96027bdd68ebb8e62a458e5dd",
+      "engine_jit.py": "3d205148be7d103fba80a852d0dd11c9b97d9e5be36859826d4ba8cec37da827",
+      "runtime_optim.py": "dd502f305dc1b69d7c3bc00c6707394272cadd8a6d1e436353b8dc8aca0a04e8",
+      "util/crop.py": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "util/misc.py": "387da299eb28fee0f4f49831f51a8e25aebed42845707a85fbff8acd6aff8942",
+      "util/model_util.py": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "util/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "util/lr_sched.py": "47765fbc75affedb8c8c062d8b784fd00a6ee4527c8a82edb8cf514235d7e048"
+    },
+    "base_commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+  },
+  "cdd7e8bfe6efa6e4": {
+    "source_directory": "training/snapshots/cdd7e8bfe6efa6e4",
+    "run_source_sha256": {
+      "denoiser.py": "fda9acd8e80a9bc39111fd1553822860469325389bdd85a177c4a37133b9e724",
+      "model_jit.py": "50eacd4d49e1595ccc749295db04d27dd8d0e59bf3d73c65042439efba27692c",
+      "util/crop.py": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "util/model_util.py": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "util/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "base_commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+  },
+  "1bf7cf3b97cd7acb": {
+    "source_directory": "training/snapshots/1bf7cf3b97cd7acb",
+    "run_source_sha256": {
+      "pipeline.py": "4f86e901dbddf9223a242a4d1c77274f3d26573389b242937b50ade39c057765",
+      "main_jit.py": "072e2ed907e26626c7693c1ae4f9769ca396a7f8c403b66e3f150a783875b07b",
+      "denoiser.py": "fda9acd8e80a9bc39111fd1553822860469325389bdd85a177c4a37133b9e724",
+      "edm.py": "fbfd25cf9bea70091473a1dbe989a2b343ace7ddbaa9c87b0fa1d9507d1148f2",
+      "model_jit.py": "50eacd4d49e1595ccc749295db04d27dd8d0e59bf3d73c65042439efba27692c",
+      "engine_jit.py": "f3ef5b5df80734a4033da7e613325f7be5ef187c582dba1ea59d169ce1fbb3ce",
+      "util/crop.py": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "util/misc.py": "7fbec8c02f58cd5cb168e64cfcdc02aa1af5eb772850fe0db4d1714aff4812d0",
+      "util/model_util.py": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "util/lr_sched.py": "47765fbc75affedb8c8c062d8b784fd00a6ee4527c8a82edb8cf514235d7e048",
+      "torch_fidelity/metric_ppl.py": "c3fac5f1fa8812e21b4404db463de680a59291e66cdb207e65e3ea8fb6ed62b9",
+      "torch_fidelity/feature_extractor_base.py": "0ac0ac8aa4459941889e70fb0ac6dee6ad2df48da16c8b800255e0c25e6b66cd",
+      "torch_fidelity/feature_extractor_dinov2.py": "0dd35e1b099a70da9b139fa1b84470fb79277cc690aee54f1c4fdc4290516e14",
+      "torch_fidelity/metric_fid.py": "8caf90f0969932cabc66588b919f0519a68c411c52554272840218275a1bfbb8",
+      "torch_fidelity/generative_model_onnx.py": "ea62debc044c2031ca6a60fb370ff28d6a04e4f796b1c2b385852a1ba63494cb",
+      "torch_fidelity/utils_torch.py": "9d76f03d2c3e0f25105d391a415ab233c7b41e02b85001e7cc4bb9fff4f23973",
+      "torch_fidelity/datasets.py": "092a29a0bc56d58bcc2a418aad730d1349059baea21d043d561eb396d9b89aa5",
+      "torch_fidelity/utils_torchvision.py": "603593c683f03a37766d62fbd20c58b1d7dfffa0dd8873de5e11ca1f9f888e10",
+      "torch_fidelity/helpers.py": "ed8683fbe790b4c48ce3c55e922cf1353f3286d7afcaa5082e09f6b956b80789",
+      "torch_fidelity/metric_kid.py": "304cc125efd0d0e7059c1ef7e0efbe4a5f0e0f5533ceaad9d444bb621463fb68",
+      "torch_fidelity/interpolate_compat_tensorflow.py": "e90a965f0c4f6e13b9d216308ba34f8162296bf4a440d82988f453a935ccee11",
+      "torch_fidelity/metrics.py": "d2cc846432bbaf4ddfcd5405687394481598809894c9d28eda76d26019209af7",
+      "torch_fidelity/feature_extractor_inceptionv3.py": "0aab0fe6cc121eb89b5e5b9730d186c8042622dc2923b31a633667a35b6dbe8e",
+      "torch_fidelity/deprecations.py": "79b720b01578d1951155810a4b7954b27f9806380bf56192ce67637a9f804fb3",
+      "torch_fidelity/registry.py": "83c75ebcfc29833192ed8bf002d6df8916369e15e99e5810d897b98de40ef062",
+      "torch_fidelity/generative_model_modulewrapper.py": "6e57d63a738588a2a6222b5efc1b4eb8a3a96cb14989b9c60aa821de65603a65",
+      "torch_fidelity/fidelity.py": "7286939bb4f03fc8989b2e1cc6844862c411d1e2e43f51b3a540d7423c878bbe",
+      "torch_fidelity/defaults.py": "515b62573a1545f6bbca971f0314410b79afc40bcc4c61338874062ded9f364d",
+      "torch_fidelity/feature_extractor_clip.py": "1a9b27e9fdaed714669b615b2f33b90745707579174390ed953650e22b027256",
+      "torch_fidelity/noise.py": "23cf6f1acd2518bca332908b975d3032cebbf4c583319f108091a2ab71eb520b",
+      "torch_fidelity/utils.py": "e659e05778e0aeb03eb2b7ddb4f2327dc7fa3a08903f126775daa774c7806b7f",
+      "torch_fidelity/version.py": "ea8d750518e2707f90385f3f198782fd22da8090025c4ac790bb2520271fb885",
+      "torch_fidelity/generative_model_base.py": "df1c48c4e3bc5cab676e6535a334b134b5b3f08e2e906ed86df5c3a1510cebd6",
+      "torch_fidelity/__init__.py": "e419bdf8c45ea1d0628af0470d8fe1ddca24d9c4484880648a8b33d953a7149c",
+      "torch_fidelity/metric_prc.py": "745dff77b2431bf22c36221ffc7df5f0d160e28e27c24bd013202c683e9673ab",
+      "torch_fidelity/feature_extractor_vgg16.py": "abcca6e6fc6efd5cd91af4fbfd26151e13bcee449a2b1c4a4aedb26e0c84b4d2",
+      "torch_fidelity/sample_similarity_lpips.py": "aeddb5debc764d1012b878b53a7a3fa0a5c9fd9b7ed177f5b529182193c042e3",
+      "torch_fidelity/sample_similarity_base.py": "ca21fa72f985b4aaa9011259c19580bf62f3d78ea3e2b9cea9586bff85893ff0",
+      "torch_fidelity/metric_isc.py": "f72986430dfa4fac5e9fb78ba057b79aa1de30ef79d98e0e080e98da21a1f097"
+    },
+    "base_commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+  },
+  "7b97cec378c02356": {
+    "source_directory": "training/snapshots/7b97cec378c02356",
+    "run_source_sha256": {
+      "guided_diffusion/logger.py": "615d9cb63dd2cfe017ac424bcc64340257c83eb9cb8e6b6913df4bd55831c1c0",
+      "guided_diffusion/nn.py": "d9547fb22b421a16dc079cb82a9d98630100b5e1b2a710d343f4d3f90b8661f3",
+      "guided_diffusion/script_util.py": "d47bb38ea450bf6e7c57c494a43947f6664f45b58a487f6315f5ec83365b80b8",
+      "guided_diffusion/train_util.py": "272e3b66baa081b2fdb2e4e6d792e575e713438bee9adf1e1fd8504c75925140",
+      "guided_diffusion/resample.py": "13a06f67e655dc145833896389576b0f8e68b2f677dc9eed60ed8839aa6a9c62",
+      "guided_diffusion/losses.py": "0b0f5a5532910fbc7f16d30f2b891d8f1e20aa88881589ce4eacc2cc6ce06026",
+      "guided_diffusion/gaussian_diffusion.py": "ece0176dc6f3a176774d4343c4887d5a44733925f8e47299c39ede3e7a9c797e",
+      "guided_diffusion/unet.py": "ab3ad40d70a551069f3e2d14698f7c6712e5738d0be1365def6cad78ca15eeda",
+      "guided_diffusion/respace.py": "b9a509b28c10a52ca3ee8cc48f40205b1d70aecfc95356b540dc88415368c2de",
+      "guided_diffusion/fp16_util.py": "31ce6b36be7a2a09606687a4935eca6b093f645c7ecd2111f43fca54aff3dc2a",
+      "guided_diffusion/__init__.py": "ec30483aa641d5c1b9cc8910554324949f2288eadd085310d4c312cdda294c73",
+      "guided_diffusion/image_datasets.py": "220d6699f1c201989209f1bd64f5a7d3beef41e84098607aa521ab21cf6700d5",
+      "guided_diffusion/dist_util.py": "6464852e108f7b3426c3a95ac77708f814801d5b8fb18fe70eadb4058d888532"
+    },
+    "base_commit": "22e0df8183507e13a7813f8d38d51b072ca1e67c"
+  }
+}

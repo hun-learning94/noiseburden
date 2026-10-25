@@ -1,0 +1,10 @@
+{
+  "grid_matches_saved_native_outputs": true,
+  "original_csv_sha256": "1bca78576f2032f75f5a43c23a516393dc04034928b1d355691a06769420d86b",
+  "original_provenance_sha256": "7a270a52b13e6e44b46bb197c431e7626e6e36ce957ffceb0737eae328fc4882",
+  "checkpoint_sha256": {
+    "bottleneck_learned_noise": "3006e075ea98cfe1b5f398823e8faa0cc5c4aa572d40ca38a72f607e07a5921f",
+    "bottleneck_learned_additive": "acb66b7c860481beb9894ea151e85a42f0d753aedad9b666f625b82085638659",
+    "bottleneck_learned_exact": "e80618010a1100b0fafda61bc24e0295c6cadf5b9db8793edf72976405dce7ac"
+  }
+}

@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\caption{ImageNet256: per-coordinate native clean-image MSE at epoch $200$ (EMA1, $2000$ validation images, no guidance; $\downarrow$). Patch dimension is $d_p=768$. Columns give $t$; the same images and corruptions are used for all widths.}
+\label{tab:width-loss-grid-256}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Prediction & $d_h$ & .05 & .1 & .2 & .5 & .8 & .9 & .95\\
+\midrule
+Noise & 768 & 0.54859 & 0.16399 & 0.062464 & 0.019595 & 0.0057381 & 0.0025318 & 0.0011617\\
+Noise & 896 & 0.1222 & 0.074817 & 0.043629 & 0.015972 & 0.0049459 & 0.0022827 & 0.0010471\\
+Noise & 1024 & 0.12351 & 0.07479 & 0.043377 & 0.015776 & 0.0048654 & 0.0022625 & 0.0010483\\
+Noise & 1152 & 0.12228 & 0.074653 & 0.043191 & 0.015557 & 0.0047105 & 0.0021868 & 0.0010165\\
+Noise & 1536 & 0.11825 & 0.073 & 0.042467 & 0.015237 & 0.004552 & 0.0020918 & 0.00099022\\
+Image & 128 & 0.11259 & 0.073589 & 0.044556 & 0.018345 & 0.0094614 & 0.0080807 & 0.0077457\\
+Image & 256 & 0.11145 & 0.07241 & 0.043287 & 0.016699 & 0.0069612 & 0.0051806 & 0.0046526\\
+Image & 384 & 0.11087 & 0.071777 & 0.042721 & 0.016122 & 0.006083 & 0.0041282 & 0.003496\\
+Image & 768 & 0.11021 & 0.070968 & 0.041957 & 0.015395 & 0.0050643 & 0.0028932 & 0.0021718\\
+\bottomrule
+\end{tabular}
+\end{table}

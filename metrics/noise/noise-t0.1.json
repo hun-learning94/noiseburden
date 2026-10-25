@@ -1,0 +1,118 @@
+{
+  "t": 0.1,
+  "layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "records": [
+    {
+      "layer": 0,
+      "noise_recovery_score": 0.16662431161519098,
+      "noise_mse": 0.8332465169119302,
+      "unit_variance_score": 0.1667534830880698
+    },
+    {
+      "layer": 1,
+      "noise_recovery_score": 0.16662350460619857,
+      "noise_mse": 0.8332473237958379,
+      "unit_variance_score": 0.16675267620416212
+    },
+    {
+      "layer": 2,
+      "noise_recovery_score": 0.16662358647798836,
+      "noise_mse": 0.833247241936738,
+      "unit_variance_score": 0.16675275806326195
+    },
+    {
+      "layer": 3,
+      "noise_recovery_score": 0.1666234669134341,
+      "noise_mse": 0.8332473614827601,
+      "unit_variance_score": 0.16675263851723987
+    },
+    {
+      "layer": 4,
+      "noise_recovery_score": 0.16662253773067004,
+      "noise_mse": 0.8332482905215027,
+      "unit_variance_score": 0.16675170947849727
+    },
+    {
+      "layer": 5,
+      "noise_recovery_score": 0.16662044830614497,
+      "noise_mse": 0.8332503796221714,
+      "unit_variance_score": 0.1667496203778286
+    },
+    {
+      "layer": 6,
+      "noise_recovery_score": 0.1666169165832604,
+      "noise_mse": 0.8332539107976464,
+      "unit_variance_score": 0.16674608920235356
+    },
+    {
+      "layer": 7,
+      "noise_recovery_score": 0.16661441114554199,
+      "noise_mse": 0.8332564158470273,
+      "unit_variance_score": 0.16674358415297275
+    },
+    {
+      "layer": 8,
+      "noise_recovery_score": 0.16660959075400872,
+      "noise_mse": 0.8332612354914101,
+      "unit_variance_score": 0.16673876450858993
+    },
+    {
+      "layer": 9,
+      "noise_recovery_score": 0.16660693936660398,
+      "noise_mse": 0.8332638864678553,
+      "unit_variance_score": 0.16673611353214468
+    },
+    {
+      "layer": 10,
+      "noise_recovery_score": 0.16659821011011355,
+      "noise_mse": 0.8332726143713294,
+      "unit_variance_score": 0.16672738562867062
+    },
+    {
+      "layer": 11,
+      "noise_recovery_score": 0.16655849842883752,
+      "noise_mse": 0.8333123198973786,
+      "unit_variance_score": 0.16668768010262136
+    },
+    {
+      "layer": 12,
+      "noise_recovery_score": 0.16651312222448278,
+      "noise_mse": 0.8333576890685175,
+      "unit_variance_score": 0.16664231093148252
+    }
+  ],
+  "checkpoint_sha256": "251ffec9942a96a493520a559ae14f522acbb249ca756d170bb137d4794a239a",
+  "source_hashes": {
+    "denoiser.py": "fda9acd8e80a9bc39111fd1553822860469325389bdd85a177c4a37133b9e724",
+    "model_jit.py": "50eacd4d49e1595ccc749295db04d27dd8d0e59bf3d73c65042439efba27692c",
+    "util/crop.py": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+    "util/model_util.py": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+    "util/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "worker_sha256": "a1c67982a6d4b3f7e1e81290c25ab265c237d272becae250994a8084fdd9f173",
+  "manifest_sha256": "b32e1fe9ac706c353e13a4fa2eeeeb422dfdff386caf32b0b14904879c88bee1",
+  "ema": "EMA1",
+  "completed_epochs": 200,
+  "fit_images": 8000,
+  "test_images": 2000,
+  "batch_size": 8,
+  "image_seed": 20261025,
+  "noise_seed_fit": 117,
+  "noise_seed_eval": 991,
+  "noise_variance": 0.9998450021104777,
+  "precision": "FP32 backbone; FP64 GPU affine statistics and solve; TF32 off"
+}

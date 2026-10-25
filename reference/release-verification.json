@@ -1,0 +1,38 @@
+{
+  "input_validation": {
+    "input_files": 122,
+    "native_cells": 182,
+    "noise_probe_cells": 78,
+    "input_probe_cases": 16,
+    "independent_adm_spectra": 14
+  },
+  "tables_match_manuscript": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true
+  },
+  "figure_pngs_match_manuscript": {
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true,
+    "9": true
+  },
+  "source_audit": {
+    "checkpoint_configurations": 28,
+    "source_file_checks": 343,
+    "training_base": {
+      "url": "https://github.com/kilonova801/jit",
+      "commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+    }
+  },
+  "gpu_training_or_evaluation_rerun": false,
+  "portable_runtime_smoke_passed": true,
+  "numerical_collection_roundtrip_passed": true
+}

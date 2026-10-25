@@ -1,0 +1,15 @@
+\begin{table}[!htbp]
+\centering
+\caption{Fixed noise-output coefficients and the resulting clean-image skip. The learned branch receives $AX_t$, so $c_{\mathrm{in}}=t$.}
+\label{tab:exp-coeff}
+\small
+\begin{tabular}{lccc}
+\toprule
+Variant & $c_{\mathrm{skip}}$ & $c_{\mathrm{out}}$ & $\tilde c_{\mathrm{skip}}$\\
+\midrule
+Noise & $0$ & $1$ & $1$\\
+Additive & $t$ & $1$ & $t$\\
+Exact & $1/\sigma_t$ & $-1/\sigma_t$ & $0$\\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,44 @@
+[
+  {
+    "number": 1,
+    "label": "tab:prediction-notation",
+    "prefix": "\\begin{table}[H]\n\\centering\n\\caption{Notation for direct target prediction at a fixed interior time.}\n\\label{tab:prediction-notation}\n\\begin{tabular}{llll}\n\\toprule\nPrediction target & Population optimal & Network output & Induced clean image\\\\\n\\midrule\n",
+    "body": "Image ($X_1$) & $f_{X_1,t}^{\\ast}(y)$ & $f_{X_1,t}(y)$ & $f_{X_1,t}(y)$\\\\\nNoise ($\\varepsilon$) & $f_{\\varepsilon,t}^{\\ast}(y)$ & $f_{\\varepsilon,t}(y)$ & $\\widehat X_1^{(\\varepsilon)}(y)$, \\eqref{eq:noise-induced-clean}\\\\\nGeneral ($T_t=\\alpha_tX_1+\\beta_t\\varepsilon$) & $f_{T,t}^{\\ast}(y)$ & $f_{T,t}(y)$ & $\\widehat X_1^{(T)}(y)$, \\eqref{eq:general-induced-clean}\\\\\n",
+    "suffix": "\\bottomrule\n\\end{tabular}\n\\end{table}"
+  },
+  {
+    "number": 2,
+    "label": "tab:exp-coeff",
+    "prefix": "\\begin{table}[!htbp]\n\\centering\n\\caption{Fixed noise-output coefficients and the resulting clean-image skip. The learned branch receives $AX_t$, so $c_{\\mathrm{in}}=t$.}\n\\label{tab:exp-coeff}\n\\small\n\\begin{tabular}{lccc}\n\\toprule\nVariant & $c_{\\mathrm{skip}}$ & $c_{\\mathrm{out}}$ & $\\tilde c_{\\mathrm{skip}}$\\\\\n\\midrule\n",
+    "body": "Noise & $0$ & $1$ & $1$\\\\\nAdditive & $t$ & $1$ & $t$\\\\\nExact & $1/\\sigma_t$ & $-1/\\sigma_t$ & $0$\\\\\n",
+    "suffix": "\\bottomrule\n\\end{tabular}\n\\end{table}"
+  },
+  {
+    "number": 3,
+    "label": "tab:exp-probe-200-predeps",
+    "prefix": "\\begin{table}[H]\n\\centering\n\\caption{Layerwise affine noise-recovery scores for the noise predictor at epoch $200$ (EMA1; $\\uparrow$), evaluated together on one H200. Scores use $2000$ validation test images and finite-test noise-variance normalization. Layer $0$ is the embedding; all values are below $1/6$.}\n\\label{tab:exp-probe-200-predeps}\n\\small\n\\begin{tabular}{rrrrrrr}\n\\toprule\nLayer & $t=0.1$ & $t=0.5$ & $t=0.7$ & $t=0.8$ & $t=0.9$ & $t=0.95$\\\\\n\\midrule\n",
+    "body": "0 & 0.16662 & 0.16611 & 0.16384 & 0.15873 & 0.13403 & 0.08302\\\\\n1 & 0.16662 & 0.16611 & 0.16383 & 0.15872 & 0.13381 & 0.08163\\\\\n2 & 0.16662 & 0.16610 & 0.16383 & 0.15871 & 0.13387 & 0.08206\\\\\n3 & 0.16662 & 0.16610 & 0.16383 & 0.15871 & 0.13389 & 0.08226\\\\\n4 & 0.16662 & 0.16610 & 0.16383 & 0.15872 & 0.13392 & 0.08225\\\\\n5 & 0.16662 & 0.16610 & 0.16383 & 0.15871 & 0.13390 & 0.08224\\\\\n6 & 0.16662 & 0.16610 & 0.16382 & 0.15871 & 0.13393 & 0.08247\\\\\n7 & 0.16661 & 0.16610 & 0.16382 & 0.15871 & 0.13393 & 0.08247\\\\\n8 & 0.16661 & 0.16609 & 0.16382 & 0.15871 & 0.13394 & 0.08250\\\\\n9 & 0.16661 & 0.16609 & 0.16382 & 0.15871 & 0.13394 & 0.08252\\\\\n10 & 0.16660 & 0.16608 & 0.16382 & 0.15871 & 0.13396 & 0.08259\\\\\n11 & 0.16656 & 0.16604 & 0.16378 & 0.15868 & 0.13397 & 0.08258\\\\\n12 & 0.16651 & 0.16597 & 0.16368 & 0.15868 & 0.13509 & 0.08334\\\\\n",
+    "suffix": "\\bottomrule\n\\end{tabular}\n\\end{table}"
+  },
+  {
+    "number": 4,
+    "label": "tab:width-loss-grid-256",
+    "prefix": "\\begin{table}[H]\n\\centering\n\\caption{ImageNet256: per-coordinate native clean-image MSE at epoch $200$ (EMA1, $2000$ validation images, no guidance; $\\downarrow$). Patch dimension is $d_p=768$. Columns give $t$; the same images and corruptions are used for all widths.}\n\\label{tab:width-loss-grid-256}\n\\small\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{lrrrrrrrr}\n\\toprule\nPrediction & $d_h$ & .05 & .1 & .2 & .5 & .8 & .9 & .95\\\\\n\\midrule\n",
+    "body": "Noise & 768 & 0.54859 & 0.16399 & 0.062464 & 0.019595 & 0.0057381 & 0.0025318 & 0.0011617\\\\\nNoise & 896 & 0.1222 & 0.074817 & 0.043629 & 0.015972 & 0.0049459 & 0.0022827 & 0.0010471\\\\\nNoise & 1024 & 0.12351 & 0.07479 & 0.043377 & 0.015776 & 0.0048654 & 0.0022625 & 0.0010483\\\\\nNoise & 1152 & 0.12228 & 0.074653 & 0.043191 & 0.015557 & 0.0047105 & 0.0021868 & 0.0010165\\\\\nNoise & 1536 & 0.11825 & 0.073 & 0.042467 & 0.015237 & 0.004552 & 0.0020918 & 0.00099022\\\\\nImage & 128 & 0.11259 & 0.073589 & 0.044556 & 0.018345 & 0.0094614 & 0.0080807 & 0.0077457\\\\\nImage & 256 & 0.11145 & 0.07241 & 0.043287 & 0.016699 & 0.0069612 & 0.0051806 & 0.0046526\\\\\nImage & 384 & 0.11087 & 0.071777 & 0.042721 & 0.016122 & 0.006083 & 0.0041282 & 0.003496\\\\\nImage & 768 & 0.11021 & 0.070968 & 0.041957 & 0.015395 & 0.0050643 & 0.0028932 & 0.0021718\\\\\n",
+    "suffix": "\\bottomrule\n\\end{tabular}\n\\end{table}"
+  },
+  {
+    "number": 5,
+    "label": "tab:width-loss-grid-128",
+    "prefix": "\\begin{table}[H]\n\\centering\n\\caption{ImageNet128: per-coordinate native clean-image MSE at epoch $200$ (EMA1, $2000$ validation images, no guidance; $\\downarrow$). Patch dimension is $d_p=192$. Columns give $t$; the same images and corruptions are used for all widths.}\n\\label{tab:width-loss-grid-128}\n\\small\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{lrrrrrrrr}\n\\toprule\nPrediction & $d_h$ & .05 & .1 & .2 & .5 & .8 & .9 & .95\\\\\n\\midrule\n",
+    "body": "Noise & 192 & 1.957 & 0.48142 & 0.12913 & 0.027037 & 0.0069793 & 0.0029279 & 0.0012212\\\\\nNoise & 256 & 0.15822 & 0.10029 & 0.058144 & 0.01944 & 0.0055573 & 0.0025714 & 0.0011851\\\\\nNoise & 320 & 0.15593 & 0.099435 & 0.057605 & 0.018981 & 0.0053131 & 0.0024401 & 0.0011328\\\\\nNoise & 384 & 0.15521 & 0.098938 & 0.05719 & 0.01875 & 0.0051801 & 0.0023641 & 0.001104\\\\\nImage & 64 & 0.14759 & 0.098758 & 0.058917 & 0.021162 & 0.0086825 & 0.0068084 & 0.0063907\\\\\nImage & 128 & 0.14647 & 0.097371 & 0.057447 & 0.019596 & 0.0065516 & 0.0042498 & 0.0035854\\\\\nImage & 192 & 0.14597 & 0.096735 & 0.056728 & 0.018996 & 0.0058493 & 0.0034035 & 0.0026305\\\\\n",
+    "suffix": "\\bottomrule\n\\end{tabular}\n\\end{table}"
+  },
+  {
+    "number": 6,
+    "label": "tab:adm-denoising-quality",
+    "prefix": "\\begin{table}[H]\n\\centering\n\\caption{Denoising quality of the resolution-matched ADM references: full-image per-coordinate clean-image MSE on $4000$ common validation images within each resolution, without guidance. Columns give $t$; bold marks the lowest measured MSE at each time. All rows use FP32 inference and conversion.}\n\\label{tab:adm-denoising-quality}\n\\small\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{lrrrrrrr}\n\\toprule\nDenoiser & .05 & .1 & .2 & .5 & .8 & .9 & .95\\\\\n\\midrule\n",
+    "body": "\\multicolumn{8}{l}{ImageNet256}\\\\\nJiT noise ($d_h=1536$) & 0.111033 & 0.071357 & 0.042082 & 0.015287 & 0.004591 & 0.002104 & 0.000993\\\\\nJiT image ($d_h=768$) & \\textbf{0.110087} & 0.070997 & 0.041916 & 0.015472 & 0.005118 & 0.002918 & 0.002197\\\\\nADM U-Net & 0.110465 & \\textbf{0.070728} & \\textbf{0.040943} & \\textbf{0.014005} & \\textbf{0.003711} & \\textbf{0.001485} & \\textbf{0.000594}\\\\\n\\midrule\n\\multicolumn{8}{l}{ImageNet128}\\\\\nJiT noise ($d_h=384$) & 0.145839 & 0.096349 & 0.056384 & 0.018685 & 0.005189 & 0.002365 & 0.001104\\\\\nJiT image ($d_h=192$) & 0.145676 & 0.096343 & 0.056408 & 0.018963 & 0.005866 & 0.003411 & 0.002636\\\\\nADM U-Net & \\textbf{0.145347} & \\textbf{0.095172} & \\textbf{0.054216} & \\textbf{0.016763} & \\textbf{0.004073} & \\textbf{0.001563} & \\textbf{0.000596}\\\\\n",
+    "suffix": "\\bottomrule\n\\end{tabular}\n\\end{table}"
+  }
+]

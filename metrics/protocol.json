@@ -1,0 +1,75 @@
+{
+  "manifest_sha256": "91539e46caceb7e352a18ade380bcf89a0cc809e92632e05d2c14014443a9b3f",
+  "complete": true,
+  "independent_cpu_adm_spectra": [
+    {
+      "resolution": 128,
+      "t": 0.05
+    },
+    {
+      "resolution": 128,
+      "t": 0.1
+    },
+    {
+      "resolution": 128,
+      "t": 0.2
+    },
+    {
+      "resolution": 128,
+      "t": 0.5
+    },
+    {
+      "resolution": 128,
+      "t": 0.8
+    },
+    {
+      "resolution": 128,
+      "t": 0.9
+    },
+    {
+      "resolution": 128,
+      "t": 0.95
+    },
+    {
+      "resolution": 256,
+      "t": 0.05
+    },
+    {
+      "resolution": 256,
+      "t": 0.1
+    },
+    {
+      "resolution": 256,
+      "t": 0.2
+    },
+    {
+      "resolution": 256,
+      "t": 0.5
+    },
+    {
+      "resolution": 256,
+      "t": 0.8
+    },
+    {
+      "resolution": 256,
+      "t": 0.9
+    },
+    {
+      "resolution": 256,
+      "t": 0.95
+    }
+  ],
+  "historical_spectral_manifest_sha256": {
+    "128": "886fe99b5f7ab9f95b625227b53ee7ca91604f9312564c56f395b534c76e8254",
+    "256": "6c9bf2706ceaf4b368d910ea96f8afdce9e5710de9cdfa031d1158c68feb3f9a"
+  },
+  "dataset_split": "Official ImageNet validation split",
+  "native_test_images": 2000,
+  "spectral_test_images": 4000,
+  "software": {
+    "python": "3.11.15",
+    "numpy": "2.4.3",
+    "matplotlib": "3.10.8",
+    "torch": "2.11.0+cu126"
+  }
+}

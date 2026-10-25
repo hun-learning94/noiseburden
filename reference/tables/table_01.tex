@@ -1,0 +1,14 @@
+\begin{table}[H]
+\centering
+\caption{Notation for direct target prediction at a fixed interior time.}
+\label{tab:prediction-notation}
+\begin{tabular}{llll}
+\toprule
+Prediction target & Population optimal & Network output & Induced clean image\\
+\midrule
+Image ($X_1$) & $f_{X_1,t}^{\ast}(y)$ & $f_{X_1,t}(y)$ & $f_{X_1,t}(y)$\\
+Noise ($\varepsilon$) & $f_{\varepsilon,t}^{\ast}(y)$ & $f_{\varepsilon,t}(y)$ & $\widehat X_1^{(\varepsilon)}(y)$, \eqref{eq:noise-induced-clean}\\
+General ($T_t=\alpha_tX_1+\beta_t\varepsilon$) & $f_{T,t}^{\ast}(y)$ & $f_{T,t}(y)$ & $\widehat X_1^{(T)}(y)$, \eqref{eq:general-induced-clean}\\
+\bottomrule
+\end{tabular}
+\end{table}

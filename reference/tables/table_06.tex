@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\caption{Denoising quality of the resolution-matched ADM references: full-image per-coordinate clean-image MSE on $4000$ common validation images within each resolution, without guidance. Columns give $t$; bold marks the lowest measured MSE at each time. All rows use FP32 inference and conversion.}
+\label{tab:adm-denoising-quality}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Denoiser & .05 & .1 & .2 & .5 & .8 & .9 & .95\\
+\midrule
+\multicolumn{8}{l}{ImageNet256}\\
+JiT noise ($d_h=1536$) & 0.111033 & 0.071357 & 0.042082 & 0.015287 & 0.004591 & 0.002104 & 0.000993\\
+JiT image ($d_h=768$) & \textbf{0.110087} & 0.070997 & 0.041916 & 0.015472 & 0.005118 & 0.002918 & 0.002197\\
+ADM U-Net & 0.110465 & \textbf{0.070728} & \textbf{0.040943} & \textbf{0.014005} & \textbf{0.003711} & \textbf{0.001485} & \textbf{0.000594}\\
+\midrule
+\multicolumn{8}{l}{ImageNet128}\\
+JiT noise ($d_h=384$) & 0.145839 & 0.096349 & 0.056384 & 0.018685 & 0.005189 & 0.002365 & 0.001104\\
+JiT image ($d_h=192$) & 0.145676 & 0.096343 & 0.056408 & 0.018963 & 0.005866 & 0.003411 & 0.002636\\
+ADM U-Net & \textbf{0.145347} & \textbf{0.095172} & \textbf{0.054216} & \textbf{0.016763} & \textbf{0.004073} & \textbf{0.001563} & \textbf{0.000596}\\
+\bottomrule
+\end{tabular}
+\end{table}
