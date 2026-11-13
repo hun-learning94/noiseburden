@@ -4,7 +4,7 @@ from model_jit import JiT_models
 
 
 class OutputTimeCoefficient(nn.Module):
-    """Pengxi's ZScale parameterization; only its first output is used."""
+    """The reference ZScale parameterization; only its first output is used."""
     def __init__(self, n_freq=8, hidden=64):
         super().__init__()
         self.n_freq = n_freq
@@ -55,7 +55,7 @@ class Denoiser(nn.Module):
         self.pred_space = getattr(args, 'pred_space', 'x')
         self.loss_space = getattr(args, 'loss_space', 'v')
         # Keep this clone's existing conversions by default. weighted_v matches
-        # the pl229 experiments, including their t_eps endpoint handling.
+        # the reference experiments, including their t_eps endpoint handling.
         self.loss_impl = getattr(args, 'loss_impl', 'direct')
         assert self.pred_space in ('x', 'eps', 'v')
         assert self.loss_space in ('x', 'eps', 'v')

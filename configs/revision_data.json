@@ -1,0 +1,18 @@
+{
+  "images256.npy": {
+    "sha256": "37caf0520ad90198111ad9688844348a9548671a61010fa469722d23fce9c717",
+    "bytes": 493879424
+  },
+  "labels.npy": {
+    "sha256": "2b87866b12b6f95884e549e5dd7ae687eb0076eae9bc36016998e28ddf333c43",
+    "bytes": 20224
+  },
+  "original_indices.npy": {
+    "sha256": "2b2e31dbe6101bd20d0db0d923443e2f5aa83e8c820870ba3d4aaaf178c5431f",
+    "bytes": 20224
+  },
+  "images128.npy": {
+    "sha256": "7ca2fab8bc1de167fd294cc6f40fb42ea636d3e25a8a461ae8ba4b0a93ee92e5",
+    "bytes": 123469952
+  }
+}

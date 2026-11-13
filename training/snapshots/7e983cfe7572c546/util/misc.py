@@ -208,7 +208,7 @@ def save_on_master(state, checkpoint_path):
         )
         try:
             with os.fdopen(fd, "wb") as handle:
-                # This handoff is shared within chenglab; mkstemp otherwise leaves checkpoints 0600.
+                # This handoff is shared within shared project; mkstemp otherwise leaves checkpoints 0600.
                 os.fchmod(handle.fileno(), 0o640)
                 torch.save(state, handle)
                 handle.flush()

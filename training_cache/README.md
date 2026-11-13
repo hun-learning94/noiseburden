@@ -6,9 +6,9 @@ uses its own frozen implementation of the same cache. Existing submitted Slurm
 scripts and existing frozen pipeline directories keep their recorded code;
 these bundle changes apply when a new pipeline snapshot is created.
 
-The cache normally lives at `/scratch/$USER/epredbad` on the assigned compute
-node, with `/tmp/$USER/epredbad` as a fallback when `/scratch` is absent. This
-is disposable node storage, separate from shared `/hpc/group` storage, CPU RAM,
+The cache normally lives at `external/noiseburden` on the assigned compute
+node, with `/tmp/$USER/noiseburden` as a fallback when `/scratch` is absent. This
+is disposable node storage, separate from persistent shared storage, CPU RAM,
 and GPU VRAM. A different node may require another cache build. Training
 checkpoints, logs, and results continue to use their persistent shared paths.
 
@@ -36,8 +36,8 @@ Environment overrides:
 Launcher use (also works as the script passed to torchrun):
 
 ```bash
-python /hpc/group/chenglab/gk149/epredbad/scripts/training_cache/launch.py \
-  --source /hpc/group/chenglab/datasets/imagenet \
+python -m training_cache.launch \
+  --source /data/imagenet \
   --crop-file /path/to/frozen/code/util/crop.py --size 128 \
   --report /shared/run/cache-report.json -- /path/to/train.py
 ```

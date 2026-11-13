@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering
+\caption{ImageNet128: per-coordinate native clean-image MSE at epoch $200$ (EMA1, $2000$ validation images, no guidance; $\downarrow$). Patch dimension is $d_p=192$. Columns give $t$; the same images and corruptions are used for all widths.}
+\label{tab:width-loss-grid-128}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Prediction & $d_h$ & .05 & .1 & .2 & .5 & .8 & .9 & .95\\
+\midrule
+Noise & 192 & 1.957 & 0.48142 & 0.12913 & 0.027037 & 0.0069793 & 0.0029279 & 0.0012212\\
+Noise & 256 & 0.15822 & 0.10029 & 0.058144 & 0.01944 & 0.0055573 & 0.0025714 & 0.0011851\\
+Noise & 320 & 0.15593 & 0.099435 & 0.057605 & 0.018981 & 0.0053131 & 0.0024401 & 0.0011328\\
+Noise & 384 & 0.15521 & 0.098938 & 0.05719 & 0.01875 & 0.0051801 & 0.0023641 & 0.001104\\
+Image & 64 & 0.14759 & 0.098758 & 0.058917 & 0.021162 & 0.0086825 & 0.0068084 & 0.0063907\\
+Image & 128 & 0.14647 & 0.097371 & 0.057447 & 0.019596 & 0.0065516 & 0.0042498 & 0.0035854\\
+Image & 192 & 0.14597 & 0.096735 & 0.056728 & 0.018996 & 0.0058493 & 0.0034035 & 0.0026305\\
+\bottomrule
+\end{tabular}
+\end{table}

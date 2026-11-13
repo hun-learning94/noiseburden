@@ -28,8 +28,8 @@
     "checkpoint_configurations": 28,
     "source_file_checks": 343,
     "training_base": {
-      "url": "https://github.com/kilonova801/jit",
-      "commit": "25667dd44e24e619f2e3300e4b16dbe4e91680ad"
+      "url": "bundled:training/base",
+      "release": "bundled-source-release"
     }
   },
   "gpu_training_or_evaluation_rerun": false,

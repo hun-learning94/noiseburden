@@ -1,7 +1,7 @@
 {
   "sha256": {
     "configs/checkpoints.example.json": "4ffa4551dbb2adacadaadc8d8abc7d2a235c1d2da750c4292c94b9cb9bfa0e0a",
-    "configs/experiments.json": "43818602d1a09a93876091b96a6d1ee35555b542ce2e48e949b341e8f7667f1f",
+    "configs/experiments.json": "a63892960006f0076650542d886458e903bf563d43bb2e4cc6080fe8a6ad8ff0",
     "configs/figures.json": "6fdf2893dc7ec19a8ccd8312e99a2ff61b176b2b4a17879641e83def843570fa",
     "configs/imagenet_classes.json": "2559911847dfd9ece3816eaf4f5fb4372dca5f9f61ffc9b09a4f4d96869959f7",
     "configs/plot_cases.json": "921d3c1bb81e07219f890001e670f4e41429ebe06b2235a0cdbaab8cb7a4d33c",
@@ -116,7 +116,7 @@
     "reference/figures/paper_width_performance_i128.png": "ebff13a0fb7591329509d40deba272f8a23238901670e5034fcfc02d85a56d9c",
     "reference/figures/paper_width_probe_panels.pdf": "b34d772a6aae74fc6a47ac8cf9e7105790658d606b197dfe80fb41da4d038aa2",
     "reference/figures/paper_width_probe_panels.png": "e674c7537424b36ea1e45cf430795de1d4c2b057185cb7aa5342ec0181e948cc",
-    "reference/release-verification.json": "0dc54332987ae945aad8a084c07c0fa12b48d1f88d3d46e2b13c3ad61bb8f70c",
+    "reference/release-verification.json": "26d95eebd7c95c767c03b7fd7fa15d44c0e90ab9ef20cb5d3756a8ed9fd68c8c",
     "reference/tables/table_01.tex": "60e1d0a4a16c87519689161d438a41b7e6002ca25c5a50a2c5035593d2c9d8c6",
     "reference/tables/table_02.tex": "fdd60d13330cab7f09d2910982c671a8a53c00efe1384c7824ef50349f00c905",
     "reference/tables/table_03.tex": "48c7a0b641c24480e619c71caa665ad923b11ca49ccd4ec67fe16fb07642d7a9",

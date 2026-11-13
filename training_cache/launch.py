@@ -85,7 +85,7 @@ def main():
     record = dict(enabled=enabled in ("1", "true", "on"), source=str(source), image_size=options.size)
     if record["enabled"]:
         local_disk = Path("/scratch") if Path("/scratch").is_dir() else Path("/tmp")
-        root = Path(os.environ.get("JIT_CACHE_ROOT", str(local_disk / getpass.getuser() / "epredbad")))
+        root = Path(os.environ.get("JIT_CACHE_ROOT", str(local_disk / getpass.getuser() / "noiseburden")))
         cache = cache_directory(root, source, options.size, options.crop_file)
         workers = int(os.environ.get("JIT_CACHE_WORKERS", "32"))
         ready = build(source, cache, workers, options.crop_file, options.size)

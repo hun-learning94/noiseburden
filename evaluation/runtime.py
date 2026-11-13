@@ -16,7 +16,9 @@ def save(path,value):
 def configure(workspace,cache,checkpoints,accept_new=False):
     workspace=Path(workspace).resolve();cache=Path(cache).resolve()
     mapping_path=Path(checkpoints).resolve();mapping=json.loads(mapping_path.read_text())
-    cases=copy.deepcopy(SPEC['cases'])
+    # The arXiv workers retain their original case set and corruption protocol.
+    # The revision's shared-intercept probes have a separate portable launcher.
+    cases=copy.deepcopy([c for c in SPEC['cases'] if c['kind']!='restricted'])
     for c in cases:
         c['source']=str(ROOT/c['source'])
         if 'loader' in c:c['loader']=str(ROOT/c['loader'])

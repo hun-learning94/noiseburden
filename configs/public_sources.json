@@ -1,0 +1,14 @@
+{
+  "uvit": [
+    "baofff/U-ViT",
+    "ce551708dc9cde9818d2af7d84dfadfeb7bd9034"
+  ],
+  "ldm": [
+    "CompVis/latent-diffusion",
+    "a506df5756472e2ebaf9078affdde2c4f1502cd4"
+  ],
+  "taming": [
+    "CompVis/taming-transformers",
+    "3ba01b241669f5ade541ce990f7650a3b8f65318"
+  ]
+}

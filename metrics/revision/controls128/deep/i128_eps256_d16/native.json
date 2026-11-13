@@ -1,0 +1,291 @@
+{
+  "complete": true,
+  "provenance": {
+    "case": {
+      "id": "i128_eps256_d16",
+      "image_size": 128,
+      "patch": 8,
+      "patch_dimension": 192,
+      "width": 256,
+      "attention_width": 192,
+      "conditioning_width": 192,
+      "mlp_intermediate": 512,
+      "heads": 3,
+      "head_dim": 64,
+      "depth": 16,
+      "model": "JiT-W256-C192-D16/8",
+      "gpus": 1,
+      "microbatch": 256,
+      "accumulation": 4,
+      "global_batch": 1024,
+      "target_epochs": 200,
+      "seed": 0,
+      "expected_trainable_parameters": 14758144,
+      "standard_trainable_parameters": 14834096,
+      "checkpoint_epochs": [
+        40,
+        80,
+        120,
+        160,
+        200
+      ],
+      "training_args": {
+        "model": "JiT-W256-C192-D16/8",
+        "img_size": 128,
+        "attn_dropout": 0.0,
+        "proj_dropout": 0.0,
+        "patch_embed": "linear",
+        "epochs": 200,
+        "warmup_epochs": 5,
+        "batch_size": 256,
+        "grad_accum_steps": 4,
+        "lr": 0.0002,
+        "blr": 5e-05,
+        "min_lr": 0.0,
+        "lr_schedule": "constant",
+        "weight_decay": 0.0,
+        "ema_decay1": 0.9999,
+        "ema_decay2": 0.9996,
+        "P_mean": -0.8,
+        "P_std": 0.8,
+        "noise_scale": 1.0,
+        "t_eps": 0.05,
+        "label_drop_prob": 0.1,
+        "pred_space": "eps",
+        "loss_space": "x",
+        "loss_impl": "weighted_v",
+        "output_shortcut": "none",
+        "max_steps": 0,
+        "bench_warmup": 20,
+        "seed": 0,
+        "start_epoch": 0,
+        "num_workers": 4,
+        "pin_mem": true,
+        "sampling_method": "heun",
+        "num_sampling_steps": 50,
+        "cfg": 1.0,
+        "interval_min": 0.1,
+        "interval_max": 1.0,
+        "num_images": 10000,
+        "eval_freq": 40,
+        "online_eval": false,
+        "eval_completed_epochs": [
+          40,
+          80,
+          120,
+          160,
+          200
+        ],
+        "evaluate_gen": false,
+        "gen_bsz": 8,
+        "data_path": "external/imagenet",
+        "class_num": 1000,
+        "exclude_image_manifest": "",
+        "output_dir": "external/train",
+        "resume": "external/train",
+        "save_last_freq": 1,
+        "save_freq": 1000000,
+        "ema_snapshot_epochs": [],
+        "save_rng_state": true,
+        "log_freq": 100,
+        "device": "cuda",
+        "world_size": 1,
+        "local_rank": -1,
+        "dist_on_itp": false,
+        "dist_url": "env://",
+        "rank": 0,
+        "gpu": 0,
+        "distributed": true,
+        "dist_backend": "nccl",
+        "experiment_kind": "restricted-computation-depth-control",
+        "compute_width": 192,
+        "conditioning_width": 192,
+        "model_width": 256,
+        "head_dim": 64,
+        "model_depth": 16
+      },
+      "memory_fraction": 0.28,
+      "reference_depth": 12,
+      "context_start": 4,
+      "reference_case": "i128_eps256",
+      "parameter_difference_percent": -0.512009629707133,
+      "pred": "eps",
+      "kind": "width",
+      "checkpoint_sha256": "02ed48d5a86836f082b842b9b25f20478abc43e2696920237b7d1f15c728813f"
+    },
+    "checkpoint_sha256": "02ed48d5a86836f082b842b9b25f20478abc43e2696920237b7d1f15c728813f",
+    "weights": "model_ema1",
+    "completed_epochs": 200,
+    "protocol_sha256": "ce5c93ca9863bfe8fb45eab5d38fb2e19c749ca601feae7f847daac9f162c78f",
+    "evaluation_source_manifest_sha256": "1d83c101d15c4b79f1bf9f4afb48d97e994803c78089e24b257c4294ffd0cb8c",
+    "training_source_manifest_sha256": "39b1904364974e3ea7da6363469f9d7845efd03b15b8e3b113a96701e825e1e8",
+    "torch": "2.11.0+cu126",
+    "gpu": "NVIDIA H200",
+    "precision": "BF16 backbone, FP32 clean-image conversion, FP64 affine solve and metrics; TF32 disabled",
+    "split_note": "Official ILSVRC2012 validation images; all images excluded from backbone training; fit/tuning/test images disjoint within each diagnostic."
+  },
+  "records": [
+    {
+      "t": 0.05,
+      "sigma": 18.999999999999996,
+      "clean_mse": {
+        "mean": 0.16366430934146048,
+        "ci95": [
+          0.16109094908153637,
+          0.16625035294424742
+        ],
+        "n_images": 2000
+      },
+      "noise_mse": {
+        "mean": 0.0004533637544118392,
+        "ci95": [
+          0.0004462353328362042,
+          0.00046052731023783056
+        ],
+        "n_images": 2000
+      },
+      "clean_skip": 1.0,
+      "rank_upper_bound": 192,
+      "clean_mse_floor": 0.0
+    },
+    {
+      "t": 0.1,
+      "sigma": 9.0,
+      "clean_mse": {
+        "mean": 0.10197522312961518,
+        "ci95": [
+          0.10021463410449215,
+          0.10381093200820032
+        ],
+        "n_images": 2000
+      },
+      "noise_mse": {
+        "mean": 0.0012589534850922064,
+        "ci95": [
+          0.0012372178153869755,
+          0.001281616559735994
+        ],
+        "n_images": 2000
+      },
+      "clean_skip": 1.0,
+      "rank_upper_bound": 192,
+      "clean_mse_floor": 0.0
+    },
+    {
+      "t": 0.2,
+      "sigma": 4.0,
+      "clean_mse": {
+        "mean": 0.05868099143588915,
+        "ci95": [
+          0.05753448423577938,
+          0.05984168732112739
+        ],
+        "n_images": 2000
+      },
+      "noise_mse": {
+        "mean": 0.0036675619509769605,
+        "ci95": [
+          0.0035959052531303313,
+          0.003740105438337923
+        ],
+        "n_images": 2000
+      },
+      "clean_skip": 1.0,
+      "rank_upper_bound": 192,
+      "clean_mse_floor": 0.0
+    },
+    {
+      "t": 0.5,
+      "sigma": 1.0,
+      "clean_mse": {
+        "mean": 0.019508380507992116,
+        "ci95": [
+          0.019054096379020485,
+          0.019951919809434913
+        ],
+        "n_images": 2000
+      },
+      "noise_mse": {
+        "mean": 0.019508380555023904,
+        "ci95": [
+          0.01905409646474873,
+          0.019951919862203064
+        ],
+        "n_images": 2000
+      },
+      "clean_skip": 1.0,
+      "rank_upper_bound": 192,
+      "clean_mse_floor": 0.0
+    },
+    {
+      "t": 0.8,
+      "sigma": 0.24999999999999994,
+      "clean_mse": {
+        "mean": 0.005585370944696478,
+        "ci95": [
+          0.005457685106171266,
+          0.005710015901804582
+        ],
+        "n_images": 2000
+      },
+      "noise_mse": {
+        "mean": 0.08936593472678214,
+        "ci95": [
+          0.08732296137415105,
+          0.09136025403960375
+        ],
+        "n_images": 2000
+      },
+      "clean_skip": 1.0,
+      "rank_upper_bound": 192,
+      "clean_mse_floor": 0.0
+    },
+    {
+      "t": 0.9,
+      "sigma": 0.11111111111111108,
+      "clean_mse": {
+        "mean": 0.0026095195204979974,
+        "ci95": [
+          0.002557362542149349,
+          0.002660150173317743
+        ],
+        "n_images": 2000
+      },
+      "noise_mse": {
+        "mean": 0.2113710604188964,
+        "ci95": [
+          0.2071463461943902,
+          0.21547214305114468
+        ],
+        "n_images": 2000
+      },
+      "clean_skip": 1.0,
+      "rank_upper_bound": 192,
+      "clean_mse_floor": 0.0
+    },
+    {
+      "t": 0.95,
+      "sigma": 0.052631578947368474,
+      "clean_mse": {
+        "mean": 0.001211248737614369,
+        "ci95": [
+          0.0011953537365046942,
+          0.0012276126413969905
+        ],
+        "n_images": 2000
+      },
+      "noise_mse": {
+        "mean": 0.43726076873391867,
+        "ci95": [
+          0.4315226737787947,
+          0.4431681376416236
+        ],
+        "n_images": 2000
+      },
+      "clean_skip": 1.0,
+      "rank_upper_bound": 192,
+      "clean_mse_floor": 0.0
+    }
+  ],
+  "seconds": 38.86767792701721
+}

@@ -1,0 +1,56 @@
+{
+  "dit": {
+    "url": "https://dl.fbaipublicfiles.com/DiT/models/DiT-XL-2-256x256.pt",
+    "bytes": 2700611775,
+    "sha256": "9ec1876e4c03471bca126663a30e2d1b20610b6d2f87850a39a36f25cc685521"
+  },
+  "adm128": {
+    "checkpoint_sha256": "afaa73c380a2d05d2060949d48ac8721c065e2b4b1c6a316a802c7ef53fadcc9",
+    "sha256": "afaa73c380a2d05d2060949d48ac8721c065e2b4b1c6a316a802c7ef53fadcc9",
+    "url": "https://openaipublic.blob.core.windows.net/diffusion/jul-2021/128x128_diffusion.pt"
+  },
+  "vae_config": {
+    "url": "https://huggingface.co/stabilityai/sd-vae-ft-ema/resolve/f04b2c4b98319346dad8c65879f680b1997b204a/config.json",
+    "bytes": 547,
+    "sha256": "92d3dfb746fca211a2c9e019e285f8597412211728dce3c5bcf4eda0f2d62e7e"
+  },
+  "vae_weights": {
+    "url": "https://huggingface.co/stabilityai/sd-vae-ft-ema/resolve/f04b2c4b98319346dad8c65879f680b1997b204a/diffusion_pytorch_model.safetensors",
+    "bytes": 334643276,
+    "sha256": "32db726da04f06c1b6b14c0043ce115cc87a501482945c5add89a40d838fcb46"
+  },
+  "adm256": {
+    "checkpoint_sha256": "37ea85387f44a6485697fbf31ccfea46acb5dddabcf869fddc007270a7e2e87e",
+    "sha256": "37ea85387f44a6485697fbf31ccfea46acb5dddabcf869fddc007270a7e2e87e",
+    "url": "https://openaipublic.blob.core.windows.net/diffusion/jul-2021/256x256_diffusion.pt"
+  },
+  "vae_mse_config": {
+    "url": "https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/31f26fdeee1355a5c34592e401dd41e45d25a493/config.json",
+    "sha256": "92d3dfb746fca211a2c9e019e285f8597412211728dce3c5bcf4eda0f2d62e7e",
+    "bytes": 547
+  },
+  "vae_mse_weights": {
+    "url": "https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/31f26fdeee1355a5c34592e401dd41e45d25a493/diffusion_pytorch_model.safetensors",
+    "sha256": "a1d993488569e928462932c8c38a0760b874d166399b14414135bd9c42df5815",
+    "bytes": 334643276
+  },
+  "uvit_checkpoint": {
+    "url": "https://drive.google.com/file/d/13StUdrjaaSXjfqqF7M47BzPyhMAArQ4u",
+    "bytes": 2003457824,
+    "sha256": "84279dd9c5ef36a31dc993028fda6c8a35edd5a97652f6eee7b81832c480994f"
+  },
+  "uvit_autoencoder": {
+    "url": "https://drive.google.com/file/d/10nbEiFd4YCHlzfTkJjZf45YcSMCN34m6",
+    "bytes": 334691281,
+    "sha256": "b09d09a54c5b765f42952db8385c8ff50ee5696a647415cd15a619fda16c5663"
+  },
+  "ldm_archive": {
+    "url": "https://ommer-lab.com/files/latent-diffusion/cin.zip",
+    "bytes": 3194872236,
+    "sha256": "ca45c7e3830144cc8a755c88c2ef5daec2495b52c7d0ce1510365e30f5a03291"
+  },
+  "ldm_checkpoint": {
+    "bytes": 3433459511,
+    "sha256": "56bff832f5b382b4733ba0d1dad82fad9065ab2cb6d38eb2e2aab53e5499aedf"
+  }
+}

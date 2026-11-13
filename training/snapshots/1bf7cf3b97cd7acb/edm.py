@@ -28,7 +28,7 @@ class EDMDenoiser(Denoiser):
         t = self.sample_t(x.shape[0], x.device).view(-1, 1, 1, 1)
         z = t*x + (1-t)*torch.randn_like(x)*self.noise_scale
         image = self.image_estimate(z, t, labels)
-        # Preserve Pengxi's weighted-v implementation, including its endpoint clamp.
+        # Preserve The reference weighted-v implementation, including its endpoint clamp.
         velocity = (x-z)/(1-t).clamp_min(self.t_eps)
         predicted = self.out_to_v(image, z, t)
         return ((1-t).square() * (velocity-predicted).square()).mean()

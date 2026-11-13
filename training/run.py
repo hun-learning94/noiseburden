@@ -11,7 +11,7 @@ def main():
     p.add_argument('--accumulation',type=int);p.add_argument('--epochs',type=int,default=200)
     p.add_argument('--resume',default='');p.add_argument('--no-cache',action='store_true');p.add_argument('--dry-run',action='store_true')
     opt=p.parse_args();case=next((c for c in SPEC['cases'] if c['id']==opt.case),None)
-    if case is None or case['kind']=='adm':p.error('choose one of the 26 JiT configurations in configs/experiments.json')
+    if case is None or case['kind']=='adm':p.error('choose a JiT configuration in configs/experiments.json')
     world=int(os.environ.get('WORLD_SIZE',1));accum=opt.accumulation or 1024//(opt.microbatch*world)
     if opt.microbatch*world*accum!=1024:p.error('microbatch × world size × accumulation must equal 1024')
     values=dict(case['training_args']);values.update(data_path=str(opt.data_root.resolve()),output_dir=str(opt.output.resolve()),

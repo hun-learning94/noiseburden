@@ -1,0 +1,11 @@
+{
+  "2": "paper_bottleneck_performance",
+  "3": "paper_noise_ceiling",
+  "4": "paper_width_summary_i128",
+  "5": "paper_input_recovery_public256",
+  "6": "paper_learned_coefficients",
+  "7": "paper_bottleneck_loss_grid",
+  "8": "paper_width_summary_i256",
+  "9": "paper_public_recovery_extra256",
+  "10": "paper_public_recovery_extra128"
+}

@@ -31,7 +31,7 @@ class Denoiser(nn.Module):
         self.pred_space = getattr(args, 'pred_space', 'x')
         self.loss_space = getattr(args, 'loss_space', 'v')
         # Keep this clone's existing conversions by default. weighted_v matches
-        # the pl229 experiments, including their t_eps endpoint handling.
+        # the reference experiments, including their t_eps endpoint handling.
         self.loss_impl = getattr(args, 'loss_impl', 'direct')
         assert self.pred_space in ('x', 'eps', 'v')
         assert self.loss_space in ('x', 'eps', 'v')

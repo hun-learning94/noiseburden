@@ -1,0 +1,41 @@
+{
+  "complete": true,
+  "case": "uvit",
+  "resolution": 256,
+  "fid": 92.69970719876784,
+  "inception_score": 12.264326604857487,
+  "num_images": 10000,
+  "verified_image_count": 10000,
+  "classes": 1000,
+  "images_per_class": 10,
+  "guidance": 1.0,
+  "sampling_method": "adapted-heun",
+  "sampling_steps": 50,
+  "network_evaluations": 99,
+  "t_end": 1.0,
+  "initialization": "(1-t_start)*standard Gaussian",
+  "x0_clipping": false,
+  "reference_sha256": "412046720c0d496dc6d72a30eac3e22b9ef6ddac3501cce7f996674ad227ba4c",
+  "source_manifest_sha256": "ae1ded87a400a3b24b6d645491266d51400b8c4c22bdec260e35a9743b75dfd3",
+  "protocol_sha256": "d46d12d7eb724e00a9de36aabe05c37d3b07c1674d6b654321e32ba917126459",
+  "precision": "FP32 network/VAE and ODE (stable across heterogeneous generic GPUs)",
+  "batch": 8,
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "checkpoint_sha256": "84279dd9c5ef36a31dc993028fda6c8a35edd5a97652f6eee7b81832c480994f",
+  "t_start": 0.006528822749096391,
+  "native_audit": {
+    "vae": "official autoencoder_kl_ema.pth; posterior sample; scale0.18215",
+    "case": "uvit",
+    "parameters": 500832016,
+    "checkpoint_sha256": "84279dd9c5ef36a31dc993028fda6c8a35edd5a97652f6eee7b81832c480994f",
+    "latent_shape": [
+      4,
+      32,
+      32
+    ],
+    "feature_dimension": 1152,
+    "schedule": "continuous VP beta(s)=0.1+19.9*s; network timestep=999*s",
+    "t_start": 0.006528822749096391,
+    "strict_load": true
+  }
+}

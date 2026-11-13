@@ -1,243 +1,195 @@
 # NoiseBurden
 
-Reproducibility code and measurements for **The Noise-Transmission Burden of
-Diffusion Networks: Why Image Prediction Can Outperform Noise Prediction**.
+Code and numerical measurements for the noise-transmission burden in diffusion networks.
+This revision extends the arXiv release with restricted-computation and deeper
+width controls, and noisy-input recovery probes of public noise predictors.
 
-This repository contains four parts:
+The repository includes training implementations and configurations, evaluation
+workers, saved numerical measurements, and CPU code to reproduce all seven tables
+and Figures 2–10 of the revision. Figure 1 is a conceptual diagram and is excluded.
+ImageNet images, model checkpoints, and FID reference statistics are external inputs.
+Rendering the supplied measurements requires none of those large inputs.
 
-1. **Training code and configurations** for the 26 JiT checkpoints used in the
-   target/preconditioning and model-width experiments.
-2. **Evaluation code** for generation/FID, fixed-time denoising, layerwise noise
-   probes, affine input recovery, and residual spectra with ADM references.
-3. **Saved numerical results**, including per-image denoising errors, probe
-   scores, covariance eigenvalues, learned coefficients, and generation metrics.
-4. **Rendering code** for every manuscript table and Figures 2–9. The conceptual
-   architecture diagram, Figure 1, is outside this reproduction workflow.
+## Reproduce the revision on CPU
 
-The checkout is self-contained: no original cluster workspace is needed.
-Training and new model evaluations require your own ImageNet images and model
-weights. Rebuilding the published tables and figures requires neither.
-
-## Reproduce the tables and figures on CPU
-
-Use Python 3.11 and run from this checkout:
+Use Python 3.11:
 
 ```bash
 python -m pip install -r requirements.txt
 python -m noiseburden --output artifacts --strict
 ```
 
-The command verifies the included inputs, recomputes metric consistency checks
-and paired gain intervals, produces six LaTeX/CSV tables and eight PDF/PNG
-figures, and writes `artifacts/verification.json`. In the pinned environment,
-all table source blocks and figure PNGs match the manuscript references exactly.
-PDF creation timestamps may differ.
-The strict PNG check also depends on font/rendering libraries; omit `--strict`
-on a different rendering platform. Table values are always checked exactly.
+This verifies the included data, checks per-image losses and recovery scores,
+regenerates figures and tables, and writes `artifacts/verification.json`.
+All seven tables and all nine figure PNGs match the manuscript in the pinned
+rendering environment. PDF creation timestamps may differ. On another rendering
+platform, omit `--strict`; numerical and table checks still run.
 
 ```bash
 python -m noiseburden --check-only
 ```
 
-This independently checks 182 native-loss cells against their per-image arrays,
-78 noise-probe scores, 16 paired input-probe cases, and 14 central ADM spectra
-against their included covariance eigenvalues. `MANIFEST.json` records SHA-256
-identities of the distributed data, configurations, and reference outputs.
-
-| Manuscript item | Output / underlying measurement |
+| Figure | Measurement |
 | --- | --- |
-| Table 1 | Target/estimator notation; fixed definition template |
-| Table 2 | Fixed preconditioning coefficients; fixed definition template |
-| Table 3 | 13 layers × 6 times of affine noise recovery |
-| Tables 4–5 | Absolute ImageNet256/ImageNet128 clean-image MSE grids |
-| Table 6 | ADM/JiT reference denoising quality at both resolutions |
-| Figure 2 | Bottleneck FIDs and fixed-time denoising with theoretical floors |
-| Figure 3 | Final-block noise recovery and the 1/6 ceiling |
-| Figure 4 | ImageNet256 width FIDs, relative denoising gains, residual structure |
-| Figure 5 | Paired ImageNet256 denoising and affine input recovery |
-| Figure 6 | Learned preconditioning coefficients relative to exact values |
-| Figure 7 | Complete bottleneck denoising-loss heatmap |
-| Figure 8 | ImageNet128 counterpart to Figure 4 |
-| Figure 9 | 1×4 denoising/input-recovery comparison, both resolutions and targets |
+| 2 | Bottleneck generation and fixed-time denoising floors |
+| 3 | Final-block noise recovery and the rank ceiling |
+| 4 | ImageNet128: width, parameter count, denoising gains, residual structure |
+| 5 | ImageNet256: generation versus affine noisy-input recovery |
+| 6 | Learned versus exact preconditioning coefficients |
+| 7 | Full bottleneck denoising-loss grid |
+| 8 | ImageNet256 counterpart of Figure 4, at epoch 120 |
+| 9 | Additional ImageNet256 denoising and recovery curves |
+| 10 | Additional ImageNet128 generation, denoising, and recovery curves |
 
-Outputs are under `artifacts/figures/`, `artifacts/tables/`, and
-`artifacts/metrics/`. Generated table source preserves the manuscript's labels
-and notation; Table 1's equation references resolve when included in the paper.
-The `reference/` directory contains the published experimental figure assets
-and table blocks used to check reproduction, including the 1×4 Figure 9.
+Tables 1–2 define prediction notation and coefficients; Table 3 gives the
+layerwise noise probes; Table 4 contains matched ImageNet256 epoch-120 controls;
+Tables 5–6 contain the historical epoch-200 width loss grids; Table 7 compares
+ADM and JiT denoising quality. Missing deeper ImageNet256 results remain blank.
+Measurements from different epochs or numerical protocols are never substituted
+for one another. See [the protocol notes](docs/revision.md).
 
-## Training the checkpoints
+The previous reproduction workflow remains available:
 
-The earlier anonymous training release is pinned from
-[kilonova801/jit](https://github.com/kilonova801/jit) at commit
-`25667dd44e24e619f2e3300e4b16dbe4e91680ad`. Its source is included in
-`training/base/`; no access to that repository is required after cloning this one.
-`training/snapshots/` overlays the exact run-specific files, with original file
-hashes in `training/source_manifest.json`. This preserves width, patch-embedding,
-preconditioning, and loss implementations that differ from the older release.
+```bash
+python -m noiseburden --arxiv --output artifacts/arxiv --strict
+```
 
-Install a compatible CUDA PyTorch/torchvision pair and the additional packages:
+Its source, measurements, and references are preserved. See
+[the arXiv workflow](docs/arxiv.md) for its training and evaluation commands.
+
+## Train the width controls
+
+Install a CUDA-compatible PyTorch/torchvision pair and then:
 
 ```bash
 python -m pip install -r requirements-gpu.txt
 python -m evaluation.audit_sources
-python -m training.run --case i128_eps256 \
-  --data-root /data/imagenet --output /results/i128_eps256 --dry-run
+python -m training.run --case i128_restricted256 \
+  --data-root /data/imagenet --output /results/restricted256 --dry-run
 ```
 
-To train, omit `--dry-run`. For multiple GPUs:
+Omit `--dry-run` to train. Use `i128_restricted256_d16`,
+`i128_restricted320_d20`, or `i128_restricted384_d24` for deeper controls.
+The ImageNet256 counterparts are listed in `configs/controls.json`.
+Standard image/noise and bottleneck cases remain in `configs/experiments.json`.
+
+Restricted models widen the residual representation while fixing the attention
+projection, MLP intermediate, and conditioning dimensions. The dimensions are
+192/512/192 for ImageNet128 and 768/2048/768 for ImageNet256. Extra depth is
+introduced at each already-expanded width. The model code includes the input
+projection, context-token lift, attention, SwiGLU, AdaLN, and final readout.
+
+The launcher uses effective batch 1024, seed 0, learning rate 0.0002, five warm-up
+epochs, constant subsequent learning rate, zero weight decay, and the saved
+prediction/loss conventions. Its default recipe is 200 epochs; `--epochs 120`
+replicates the shorter comparison endpoint under the same constant-rate schedule.
+Microbatch × accumulation × number of GPUs must equal 1024. For example:
 
 ```bash
 torchrun --standalone --nproc_per_node=2 -m training.run \
-  --case i256_eps896 --data-root /data/imagenet \
-  --output /results/i256_eps896 --microbatch 256
+  --case i256_restricted896 --microbatch 128 \
+  --data-root /data/imagenet --output /results/restricted896
 ```
 
-The launcher retains the effective batch size of 1024, seed 0, 200 epochs,
-learning rate 0.0002, five warm-up epochs, constant subsequent learning rate,
-zero weight decay, and the saved target/loss/preconditioning configuration.
-Microbatch size and accumulation may be changed while preserving their product
-with GPU count. Incomplete final effective batches are omitted. New training is
-a replication rather than a promise of byte-identical checkpoint weights;
-distributed kernels and hardware can change the stochastic trajectory.
+Local lossless center-crop caching is enabled by default. Set `JIT_CACHE_ROOT`
+to node-local storage and keep outputs on persistent storage. Checkpoints retain
+optimizer and EMA state; source versions supporting RNG/loader resumes retain
+those states as well. Training on different hardware is a replication and may
+produce different weights. Large checkpoints are not included in this repository.
 
-Node-local center-crop caching is enabled by default. Set `JIT_CACHE_ROOT` to
-node-local disk and keep `--output` on persistent storage. The adapter preserves
-pixels, labels, sample order, random flips, and augmentation RNG consumption.
-Use `--no-cache` for a different data environment. Do not run historical
-continuation scripts inside the snapshots directly; use the portable launcher.
+## Evaluate new or supplied checkpoints
 
-## Recompute the numerical measurements
+The arXiv commands in [docs/arxiv.md](docs/arxiv.md) cover the original bottleneck
+suite, noise probes, and residual spectra. The revision adds a separate FP32,
+shared-intercept input probe; it preserves the historical BF16 loss grid separately.
 
-The frozen mathematical implementations are in `evaluation/frozen/`.
-The portable setup command supplies local paths and checksums in an external
-work directory; it does not modify those implementations or the included paper
-metrics. Use one checkpoint or teacher per process to isolate model namespaces.
-
-1. Obtain the original official 50,000 ImageNet validation JPEGs. Image pixels
-   are not redistributed here. `configs/validation_samples.json` specifies the
-   exact class-balanced 10,000-image subset and class labels. The canonical
-   class order and all validation synsets are included in `configs/`.
-2. Supply checkpoint paths in a JSON map. Start with
-   `cp configs/checkpoints.example.json checkpoints.json`, edit paths relative
-   to that file or use absolute paths. IDs and expected hashes are in
-   `configs/experiments.json`. ADM checkpoint URLs and a downloader are included.
-3. Prepare arrays, configure the run, and execute the relevant workers below.
-
-Image preprocessing is CPU-only:
+First prepare the common validation cache using the user-supplied official JPEGs:
 
 ```bash
 python -m evaluation.prepare --images /data/imagenet-validation-jpegs \
-  --cache /scratch/validation-cache
+  --cache external/validation-cache
+python -m revision.evaluate prepare --cache external/validation-cache \
+  --output external/recovery-cache
 ```
 
-On the evaluation GPU, prepare the input-probe corruption bank. Its first 640
-fields reproduce the historical single CUDA draw and the CUDA 2×2 reduction for
-128px. The remainder use the frozen per-image CPU seeds:
+The second command selects the recorded 384 fitting / 128 tuning / 2000 test
+images, preserves their original indices, and uses CPU-only image operations.
+Noise is generated on the evaluation GPU from per-image **CPU** seeds.
+
+Prepare `checkpoints.json` from `configs/revision_checkpoints.example.json`.
+Prepare `public-assets.json` from `configs/public_assets.example.json` when
+including public models, or use `{}` for JiT-only work. All checkpoint paths are
+relative to the map file unless absolute. Public download URLs and expected
+hashes are in `configs/public_assets.json`; official models retain their original
+licenses. Then configure a separate work directory:
 
 ```bash
-python -m evaluation.prepare --cache /scratch/validation-cache \
-  --noise-only --input-noise
-python -m evaluation.run setup --workspace work/evaluation \
-  --cache /scratch/validation-cache --checkpoints checkpoints.json
+python -m revision.evaluate setup --workspace work/revision \
+  --cache external/recovery-cache --checkpoints checkpoints.json \
+  --assets public-assets.json
+python -m revision.evaluate input --workspace work/revision \
+  --case i128_restricted256 --times 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9
 ```
 
-The original input-corruption fingerprints require the recorded CUDA generator
-implementation (PyTorch 2.11.0+cu126 on H200). The preparation command verifies
-the first-image hashes. Native/spectral corruptions use per-image CPU generators.
+For new training weights, add `--accept-new-checkpoints` during setup. The actual
+hashes and the published hashes are recorded separately. Each command handles
+one model in its own process. JiT outputs appear in
+`work/revision/<case>/results/`. Use `mse` instead of `input` for image predictors.
+Epoch-120 aliases end in `_ep120`, e.g. `i256_eps896_ep120` or
+`i256_restricted896_ep120`. The loader checks the completed epoch and EMA1 state.
+
+To repeat the historical BF16 native-loss curves used in Figure 4(c):
 
 ```bash
-python -m evaluation.run native --workspace work/evaluation --case i256_eps768
-python -m evaluation.run input --workspace work/evaluation --case i256_eps768
-python -m evaluation.run noise --workspace work/evaluation
-python -m evaluation.run spectra --workspace work/evaluation \
-  --resolution 256 --teacher adm256
-python -m evaluation.run analyze --workspace work/evaluation --resolution 256
+python -m revision.native --workspace work/revision --case i128_restricted256 \
+  --cache external/validation-cache --output /results/restricted256-native
 ```
 
-Run native evaluation for all 26 JiT IDs, input probes for the 16 width IDs,
-and each spectral teacher before analysis. At 256px the teachers are `adm256`,
-`i256_eps1536`, and `i256_x768`; at 128px they are `adm128`, `i128_eps384`,
-and `i128_x192`. Use `--cpu` on `analyze` for CPU covariance/eigenspectrum
-analysis. `native`, `input`, and `spectra` support `--smoke`. The noise worker
-evaluates the complete paired six-time cohort. Reconfigure with
-`--accept-new-checkpoints` when evaluating fresh training runs; their actual
-hashes are recorded separately from the published checkpoint identities.
-
-The model weights are external large inputs. To download an official ADM model:
+To evaluate generation using the original JiT single-rank batch-eight Heun-50
+protocol and supplied, resolution-matched reference statistics:
 
 ```bash
-python -m evaluation.download_adm --resolution 128 --output checkpoints/adm128.pth
+python -m revision.generate --workspace work/revision --case i128_restricted256 \
+  --output /results/restricted256-fid --fid-stats /data/fid/jit_in128_stats.npz
 ```
 
-To generate images and evaluate FID using the same JiT reference-statistics
-format:
+For public models, install `requirements-public.txt`, obtain the weights listed
+in the asset manifest, and supply their paths during setup. The source versions
+are pinned in `configs/public_sources.json`. For example:
 
 ```bash
-python -m evaluation.generate --workspace work/evaluation --case i256_eps896 \
-  --output /results/i256_eps896/samples --fid-stats /data/fid/jit_in256_stats.npz
+python -m revision.evaluate input --workspace work/revision --case adm256
+python -m revision.evaluate input --workspace work/revision --case dit256
+python -m revision.evaluate validate --workspace work/revision --case adm256
+python -m revision.evaluate fid --workspace work/revision --case adm256
 ```
 
-Generation uses EMA1, seed 0, 50-step Heun with an Euler last step, 10 images per
-class, and batch 8. Width runs use guidance 1; bottleneck runs use guidance 2.9
-over [0.1,1.0]. Supply the resolution-matched reference statistics used by JiT;
-the evaluator records their checksum. `training/base/prepare_ref.py` contains
-the original clean-reference image preparation code. The frozen fork of
-`torch-fidelity` is included with its license. Regenerating the published plots
-uses the included FIDs and does not rerun image generation.
+ADM128 uses `adm128`. U-ViT and LDM use `uvit` and `ldm`; run `validate`, `input`,
+then `fid` for each. The public sampler uses adapted Heun-50, no guidance, 10
+samples per class, and the same FID-10K reference format. Its CPU checks validate
+the schedule/conversion math; workers additionally check actual model outputs.
+BF16 is selected only on GPUs with native support; LDM/U-ViT FID remains FP32.
 
-## Build figures from newly computed numerics
+DiT, U-ViT, and LDM recover **noisy latents**. Their latent denoising losses are
+not plotted against RGB MSE. ADM recovery uses the 3×3 receptive field of its final
+convolution, while JiT/DiT/U-ViT use the features entering their final readout.
 
-After completing a numerical rerun, extract its learned coefficients and collect
-the outputs into the renderer's input format:
+## Data, provenance, and anonymity
 
-```bash
-python -m evaluation.coefficients --workspace work/evaluation \
-  --output /results/coefficients
-python -m evaluation.collect --workspace work/evaluation \
-  --generation /results/generation --coefficients /results/coefficients \
-  --output /results/new-metrics
-python -m noiseburden --metrics /results/new-metrics --output /results/new-figures
-```
+`metrics/revision/` contains saved measurements and per-image arrays;
+`revision/plotting.py` and `revision/tables.py` build the figures and tables from
+those records. Rendered CSVs expose the plotted numbers. Checksums are in
+`MANIFEST.json` (arXiv) and `REVISION_MANIFEST.json` (revision). Original source
+hashes and distributed, anonymized source hashes are distinguished in the source
+manifest. Anonymization changes comments, identifying metadata, and path handling;
+it does not alter model equations, numerical measurements, or licensed attribution.
 
-The generation folder contains `<case-id>/metrics.json` from
-`evaluation.generate` for each JiT case. Collection requires the full native,
-probe, and teacher output set and independently checks spectral summaries
-against their saved eigenvalues. If diagnostics are repeated with the identical
-published checkpoint hashes, use `evaluation.collect --reuse-saved-generation`
-instead of the generation/coefficient arguments. This explicitly reuses those
-saved measurements and is refused for fresh checkpoint weights. The original
-distributed paper metrics are preserved.
+The source distribution omits author names, private cluster paths, personal
+repository links, scheduling/account records, credentials, and Git history.
+Third-party licenses and public model citations remain intact. For an anonymous
+mirror, export the current source tree without `.git`; GitHub account and commit
+history metadata belong to the hosting repository rather than the source tree.
 
-## Protocol and interpretation
-
-All denoising, probe, and residual-spectrum measurements distributed here use
-official validation images held out from backbone training. Native losses use
-2,000 test images per resolution. Noise probes use 8,000 fit / 2,000 test images;
-input probes use 384 fit / 128 tuning / 2,000 test images. The input-probe native
-MSE uses the same images and corruptions as its fitted input readout; its draws
-differ from the native-loss grid. Residual baselines use 6,000 fit / 4,000
-evaluation images. These splits are disjoint within each diagnostic.
-
-The time convention is `X_t=t X_1+(1-t) epsilon`, with
-`sigma_t=(1-t)/t`; small time means high noise. Native backbones use BF16 and
-FP32 conversion; noise probes use FP32 inference and FP64 solves; residual
-proxies use FP32 inference and FP64 covariance estimates. ADM is a practical
-proxy for the population-optimal denoiser. The spectral shading spans patch
-positions, not a confidence interval. FID values describe individual training
-runs, not run-to-run uncertainty.
-
-The theorem, corollary, and supporting-lemma proofs are in Appendix A of the
-manuscript; experiment details and qualifications are in Appendix B. This
-repository reproduces the numerical evidence and does not replace those proofs.
-
-## Validation and provenance
-
-The CPU workflow was checked in the pinned rendering environment against the
-paper: all six table blocks are identical and all eight PNGs match pixel for
-pixel. Model-source hashes, configuration construction, and portable runtime
-setup are checked separately. Full checkpoint training and GPU inference are
-not rerun when packaging this release; their numerical outputs and frozen
-implementations are included. See `metrics/provenance.json`,
-`metrics/protocol.json`, `training/source_manifest.json`, and
-`THIRD_PARTY_NOTICES.md` for identities, versions, and source attribution.
+The CPU reproduction and source/interface checks do not retrain models or rerun
+GPU inference. The manuscript's Appendix A contains the mathematical proofs;
+Appendix B gives experimental protocols and qualifications.

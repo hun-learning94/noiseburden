@@ -65,7 +65,7 @@ def get_args_parser():
     parser.add_argument('--loss_space', default='v', type=str, choices=['x', 'eps', 'v'],
                         help='Space the l2 loss is computed in (Table 2)')
     parser.add_argument('--loss_impl', default='direct', choices=['direct', 'weighted_v'],
-                        help='direct: existing x-hat conversions; weighted_v: pl229 loss and sampling conversions')
+                        help='direct: existing x-hat conversions; weighted_v: reference loss and sampling conversions')
     parser.add_argument('--output_shortcut', default='none', choices=['none', 'learned_a'],
                         help='Optional output-only learned A(t)*z bypass for eps prediction')
     parser.add_argument('--max_steps', default=0, type=int,

@@ -1,0 +1,15 @@
+{
+  "dit": "checkpoints/dit.pth",
+  "adm128": "checkpoints/adm128.pth",
+  "vae_config": "checkpoints/vae-ema/config.json",
+  "vae_weights": "checkpoints/vae-ema/diffusion_pytorch_model.safetensors",
+  "adm256": "checkpoints/adm256.pth",
+  "vae_mse_config": "checkpoints/vae-mse/config.json",
+  "vae_mse_weights": "checkpoints/vae-mse/diffusion_pytorch_model.safetensors",
+  "uvit_checkpoint": "checkpoints/uvit_checkpoint.pth",
+  "uvit_autoencoder": "checkpoints/uvit_autoencoder.pth",
+  "ldm_archive": "checkpoints/ldm_archive.pth",
+  "ldm_checkpoint": "checkpoints/ldm_checkpoint.pth",
+  "fid128": "fid/jit_in128_stats.npz",
+  "fid256": "fid/jit_in256_stats.npz"
+}
