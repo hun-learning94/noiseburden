@@ -9,7 +9,7 @@ scaled to [-1,1], and never redistributed. The clean-data convention is
 
 Figure 4 uses ImageNet128, RGB patch dimension 192, and completed epoch 200 EMA1
 checkpoints. The seven original image/noise cases are accompanied by three
-restricted and three deeper restricted cases. Restricted blocks fix attention,
+Fixed and three Fixed + depth cases. Fixed blocks hold attention,
 SwiGLU intermediate, and conditioning dimensions at 192, 512, and 192 while
 varying representation width through 256, 320, and 384. The corresponding deeper
 models use 16, 20, and 24 blocks. The context-token insertion stays after block 4.
@@ -17,16 +17,17 @@ Image predictors are displayed at their actual width plus the patch dimension;
 noise predictors are displayed at their actual width.
 
 Figure 8 uses ImageNet256, patch dimension 768, and **epoch 120 throughout**.
-Restricted widths are 896, 1024, 1152, and 1536. Fixed internal dimensions are
-768, 2048, and 768. Deeper controls have 14, 16, 18, and 24 blocks. Only completed
-measurements in the manuscript snapshot are included. Missing deeper cases remain
-blank even when training/evaluation infrastructure is provided for reproducing them.
+Fixed widths are 896, 1024, 1152, and 1536. Fixed internal dimensions are
+768, 2048, and 768. Deeper controls have 14, 16, 18, and 24 blocks; their training
+configurations are supplied, while the current manuscript comparisons include
+only the Image, Noise, and Fixed families.
 
 The ImageNet128 relative-loss curves use the historical BF16 backbone / FP32
 conversion cohort, shared with the unrestricted baseline. They use seven times
-0.05, 0.1, 0.2, 0.5, 0.8, 0.9, 0.95 and 2000 common validation images. Imagewise
-CPU noise seeds are 8100000 plus the original index in the validation fixture.
-The ImageNet256 epoch-120 curves use FP32 backbones, TF32 disabled, FP64 loss
+0.05, 0.1, 0.2, 0.5, 0.8, 0.9, 0.95 and 2000 common validation images. Their
+imagewise CPU noise seeds are 23102026 plus the original index in the validation fixture.
+The ImageNet256 epoch-120 curves use CPU noise seeds 8100000 plus the original
+fixture index, FP32 backbones, TF32 disabled, FP64 loss
 accumulation, and eleven times (also 0.3, 0.4, 0.6, 0.7). Relative gain is
 100 * mean(baseline_loss - model_loss) / mean(baseline_loss). These two precision
 protocols are labeled separately and are not pooled. Figures show point estimates.
@@ -60,9 +61,8 @@ readouts. U-ViT uses its token decoder input; LDM uses the final-convolution 3×
 context in its native latent space. The actual original network output is
 reconstructed from captured features before evaluating recovery.
 
-Figure 5 includes epoch-200 unrestricted JiT and completed restricted endpoints;
-restricted widths 1024/1152 are explicitly marked epoch 120. It does not treat
-that panel as a matched-epoch causal comparison. Figures 9–10 supply denoising and
+Figures 5 and 9 use epoch-120 EMA1 checkpoints for every JiT point. Figure 10
+uses epoch-200 ImageNet128 JiT checkpoints. Figures 9–10 supply denoising and
 time-dependent recovery. Public DiT/U-ViT/LDM points are labeled latent recovery;
 their latent losses are excluded from RGB-MSE panels. The public LDM's FID under
 adapted Heun-50 is high; strong recovery is not sufficient to establish good

@@ -1,8 +1,8 @@
 # NoiseBurden
 
 Code and numerical measurements for the noise-transmission burden in diffusion networks.
-This revision extends the arXiv release with restricted-computation and deeper
-width controls, and noisy-input recovery probes of public noise predictors.
+This revision extends the arXiv release with width controls using fixed internal
+dimensions and additional depth, and noisy-input recovery probes of public noise predictors.
 
 The repository includes training implementations and configurations, evaluation
 workers, saved numerical measurements, and CPU code to reproduce all seven tables
@@ -43,8 +43,10 @@ python -m noiseburden --check-only
 
 Tables 1–2 define prediction notation and coefficients; Table 3 gives the
 layerwise noise probes; Table 4 contains matched ImageNet256 epoch-120 controls;
-Tables 5–6 contain the historical epoch-200 width loss grids; Table 7 compares
-ADM and JiT denoising quality. Missing deeper ImageNet256 results remain blank.
+Table 5 contains the matched FP32 ImageNet256 epoch-120 loss grid; Table 6 retains
+the ImageNet128 epoch-200 grid; Table 7 compares ADM and JiT denoising quality.
+Deeper ImageNet256 cases are excluded from the current manuscript comparisons;
+their training configurations remain available.
 Measurements from different epochs or numerical protocols are never substituted
 for one another. See [the protocol notes](docs/revision.md).
 
@@ -78,6 +80,8 @@ projection, MLP intermediate, and conditioning dimensions. The dimensions are
 192/512/192 for ImageNet128 and 768/2048/768 for ImageNet256. Extra depth is
 introduced at each already-expanded width. The model code includes the input
 projection, context-token lift, attention, SwiGLU, AdaLN, and final readout.
+Figures label these families `Fixed` and `Fixed + depth`; configuration IDs retain
+`restricted` for compatibility.
 
 The launcher uses effective batch 1024, seed 0, learning rate 0.0002, five warm-up
 epochs, constant subsequent learning rate, zero weight decay, and the saved
@@ -114,7 +118,7 @@ python -m revision.evaluate prepare --cache external/validation-cache \
 
 The second command selects the recorded 384 fitting / 128 tuning / 2000 test
 images, preserves their original indices, and uses CPU-only image operations.
-Noise is generated on the evaluation GPU from per-image **CPU** seeds.
+Probe noise is drawn with per-image CPU generators and transferred to the evaluation GPU.
 
 Prepare `checkpoints.json` from `configs/revision_checkpoints.example.json`.
 Prepare `public-assets.json` from `configs/public_assets.example.json` when

@@ -15,8 +15,8 @@ OUT=ROOT/'artifacts/figures'
 controls=SimpleNamespace(FAMILIES={
  'image':('Image','#0072B2','s','-.'),
  'noise':('Noise','#C94C00','o','-'),
- 'restricted':('Restricted','#8B52A1','^','--'),
- 'deep':('Restricted + depth','#00856A','D',':')})
+ 'restricted':('Fixed','#8B52A1','^','--'),
+ 'deep':('Fixed + depth','#00856A','D',':')})
 def save(fig,name):
  for ext in ['pdf','png']:fig.savefig(OUT/f'{name}.{ext}',dpi=220,bbox_inches='tight',pad_inches=.025)
  plt.close(fig)
@@ -26,6 +26,10 @@ def style(ax):
 def width_summary(rows,gains,spectrum,*,image_size=128):
     """One row: width, parameter allocation, denoising, residual structure."""
     assert image_size in (128,256)
+    # ImageNet256 depth controls are not part of the current manuscript.
+    if image_size==256:
+        rows=[r for r in rows if r["family"]!="deep"]
+        gains=[r for r in gains if r["family"]!="deep"]
     dp=192 if image_size==128 else 768
     widths=[256,320,384] if image_size==128 else [896,1024,1152,1536]
     color_ticks=[64,128,192,256,320,384] if image_size==128 else [128,384,768,1024,1536]
@@ -68,7 +72,7 @@ def width_summary(rows,gains,spectrum,*,image_size=128):
         a.legend(frameon=False,loc='upper right',handlelength=1.25,labelspacing=.25,borderaxespad=.3)
         b.set(xlim=(0,35) if image_size==128 else (0,550),xlabel='Trainable parameters\n(millions)',title='(b) Parameters')
         b.set_xticks([0,10,20,30] if image_size==128 else [0,250,500]);b.tick_params(labelleft=False)
-        handles=[Line2D([],[],color='.4',marker=marker,ls=ls,label=label.replace('Restricted + depth','Restricted\n+ depth'),ms=3,lw=.7)
+        handles=[Line2D([],[],color='.4',marker=marker,ls=ls,label=label.replace('Fixed + depth','Fixed\n+ depth'),ms=3,lw=.7)
                  for family,(label,_,marker,ls) in controls.FAMILIES.items() if family in available_families]
         b.legend(handles=handles,frameon=False,loc='upper right',fontsize=7.2,
                  labelspacing=.25,handlelength=1.25,borderaxespad=.2)
@@ -111,6 +115,7 @@ def width_summary(rows,gains,spectrum,*,image_size=128):
 
 def scatter(ax,rows,key,title,resolution,compact=False):
     publiccolors={'ADM':'#0072B2','DiT':'#8B52A1','U-ViT':'#009E73','LDM':'#303030'}
+    mixed_epochs=len({r.get('epoch') for r in rows if r['model'].startswith('JiT')})>1
     offsets={768:(0,10),896:(9,-11),1024:(14,-1),1152:(-6,-14),1536:(-2,-2),192:(0,10),256:(12,-11),320:(12,-8),384:(10,17)}
     for r in rows:
         model=r['model'];x,y=r[key],r['recovery_percent'];width=int(r['width']) if r['width']!='' else None
@@ -122,8 +127,11 @@ def scatter(ax,rows,key,title,resolution,compact=False):
             marker={'noise':'o','restricted':'^','deep':'D'}[family]
             ax.scatter(x,y,color=color,marker=marker,s=25,edgecolor='white',lw=.4,zorder=4)
             if compact:continue
-            label=str(width)+('/'+str(int(r['depth'])) if family=='deep' else '')+('*' if r.get('epoch')==120 else '')
+            label=str(width)+('/'+str(int(r['depth'])) if family=='deep' else '')+('*' if mixed_epochs and r.get('epoch')==120 else '')
             dx,dy=offsets[width]
+            if resolution==256 and not mixed_epochs and family=='noise':
+                dx,dy={768:(0,10),896:(12,-24),1024:(-28,-18),1152:(-28,0),1536:(-5,12)}[width]
+            if resolution==256 and not mixed_epochs and family=='noise' and key=='rgb_mse' and width==1152:dx,dy=-15,-8
             if family=='restricted':dx,dy={896:(17,-10),1024:(27,-4),1152:(28,8),1536:(-23,-37)}[width]
             ax.annotate(label,(x,y),xytext=(dx,dy),textcoords='offset points',ha='right' if dx<0 else ('center' if dx==0 else 'left'),fontsize=7,color=color if family!='noise' else 'black',arrowprops={'arrowstyle':'-','color':color,'lw':.4} if dx else None)
         else:
@@ -137,11 +145,11 @@ def scatter(ax,rows,key,title,resolution,compact=False):
     ticks=([20,100,400] if compact else [20,50,100,200,400]) if key=='fid' else ([.015,.025] if compact else [.015,.02,.025])
     ticks=[x for x in ticks if ax.get_xlim()[0]<x<ax.get_xlim()[1]];ax.set_xticks(ticks);ax.xaxis.set_major_formatter(FuncFormatter(lambda x,p:f'{x:g}'));ax.xaxis.set_minor_locator(FixedLocator([]))
     ax.set(xlabel='FID-10K' if key=='fid' else 'Clean-image MSE',ylabel='Noisy-input recovery (%)',title=title)
-    hs=[Line2D([],[],color='#c94c00',marker='o',ls='',ms=4,label='Unrestricted'),Line2D([],[],color='#318a47',marker='^',ls='',ms=4,label='Restricted')]
-    if any(r['model'].endswith('+ depth') for r in rows):hs.append(Line2D([],[],color='#ba1e60',marker='D',ls='',ms=4,label='Restricted + depth'))
+    hs=[Line2D([],[],color='#c94c00',marker='o',ls='',ms=4,label='Unrestricted'),Line2D([],[],color='#318a47',marker='^',ls='',ms=4,label='Fixed')]
+    if any(r['model'].endswith('+ depth') for r in rows):hs.append(Line2D([],[],color='#ba1e60',marker='D',ls='',ms=4,label='Fixed + depth'))
     if compact:hs.append(Line2D([],[],color='#0072B2',marker='s',ls='',ms=4,label='ADM'))
     ax.legend(handles=hs,loc='lower left',frameon=False,fontsize=6.6 if compact else 7.3,handlelength=1,labelspacing=.2)
-    if any(r.get('epoch')==120 for r in rows):ax.text(.98,.035,'* epoch120',transform=ax.transAxes,ha='right',fontsize=6.8,color='.3')
+    if mixed_epochs and any(r.get('epoch')==120 for r in rows):ax.text(.98,.035,'* epoch120',transform=ax.transAxes,ha='right',fontsize=6.8,color='.3')
     style(ax)
 
 def times(ax,rows,title,compact=False):

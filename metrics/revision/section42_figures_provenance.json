@@ -880,81 +880,6 @@
   "public_panels": {
     "a": [
       {
-        "model": "JiT",
-        "width": 768.0,
-        "recovery_percent": 78.19630658830201,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "fid": 404.0294739774552,
-        "fid_images": "10000",
-        "fid_origin": "local",
-        "checkpoint_sha256": "79279fa19f7959ef5594597d6b810bdb47d1537cd0e4ec079a38a453aadd7749",
-        "depth": "",
-        "epoch": ""
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "recovery_percent": 93.61649411344321,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "fid": 93.11152552934959,
-        "fid_images": "10000",
-        "fid_origin": "local",
-        "checkpoint_sha256": "faeb8ff250957af9f4b28b2ab8a90f84b2e3eee5ff37cca25c244c1a47c83442",
-        "depth": "",
-        "epoch": ""
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "recovery_percent": 94.82829520543363,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "fid": 78.95175628581256,
-        "fid_images": "10000",
-        "fid_origin": "local",
-        "checkpoint_sha256": "a6d895a177b91c0a6b7d48164e58368920abb08e756fdb37c33c536965dfb5d5",
-        "depth": "",
-        "epoch": ""
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "recovery_percent": 98.40312981682337,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "fid": 76.17713118661538,
-        "fid_images": "10000",
-        "fid_origin": "local",
-        "checkpoint_sha256": "194c4d2e2f9702dd365e9c39e53f0a935b89c261aa60209ba05051b1e84eb81e",
-        "depth": "",
-        "epoch": ""
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "recovery_percent": 99.18415767667,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "fid": 54.71480166311892,
-        "fid_images": "10000",
-        "fid_origin": "local",
-        "checkpoint_sha256": "c94108975b7d58219a4ba92fd63b1c5fa4b3f7b78d85abcb37da6ef9488e4490",
-        "depth": "",
-        "epoch": ""
-      },
-      {
         "model": "ADM",
         "width": "",
         "recovery_percent": 99.45480761587356,
@@ -1015,32 +940,107 @@
         "epoch": ""
       },
       {
+        "model": "JiT",
+        "width": 768.0,
+        "recovery_percent": 78.29875983797402,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "fid": 408.14995499604515,
+        "fid_images": "",
+        "fid_origin": "",
+        "checkpoint_sha256": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "recovery_percent": 95.16010821948477,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "fid": 106.27826715160779,
+        "fid_images": "",
+        "fid_origin": "",
+        "checkpoint_sha256": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "recovery_percent": 96.13014924424787,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "fid": 93.47779098758753,
+        "fid_images": "",
+        "fid_origin": "",
+        "checkpoint_sha256": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "recovery_percent": 98.81533957425613,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "fid": 87.95465937466304,
+        "fid_images": "",
+        "fid_origin": "",
+        "checkpoint_sha256": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "recovery_percent": 99.40459997980227,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "fid": 68.08531687330225,
+        "fid_images": "",
+        "fid_origin": "",
+        "checkpoint_sha256": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
         "model": "JiT restricted",
         "width": 896.0,
-        "recovery_percent": 88.4621036908209,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "fid": 98.4732474291988,
-        "fid_images": "10000",
-        "fid_origin": "local",
-        "checkpoint_sha256": "28430fd732765661dcc174716d52039da6a71aa97e3bcc7ec23b373cf5fdc8ce",
+        "recovery_percent": 90.27059830187221,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "fid": 113.88602008540033,
+        "fid_images": "",
+        "fid_origin": "",
+        "checkpoint_sha256": "",
         "depth": 12.0,
-        "epoch": 200.0
+        "epoch": 120.0
       },
       {
         "model": "JiT restricted",
         "width": 1024.0,
         "recovery_percent": 96.60890059848238,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
         "fid": 98.3151327492696,
-        "fid_images": "10000",
-        "fid_origin": "local",
-        "checkpoint_sha256": "48695f02ada574e28c270f7401eb388aef59a4c899fb412cea57c45ed41ae2eb",
+        "fid_images": "",
+        "fid_origin": "",
+        "checkpoint_sha256": "",
         "depth": 12.0,
         "epoch": 120.0
       },
@@ -1048,94 +1048,34 @@
         "model": "JiT restricted",
         "width": 1152.0,
         "recovery_percent": 97.66487301945509,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
         "fid": 91.24525635024492,
-        "fid_images": "10000",
-        "fid_origin": "local",
-        "checkpoint_sha256": "6069d2c62eef3996f8b6aaf34a0556a50b9b75e09086f53b95b7cff9fe920c9b",
+        "fid_images": "",
+        "fid_origin": "",
+        "checkpoint_sha256": "",
         "depth": 12.0,
         "epoch": 120.0
       },
       {
         "model": "JiT restricted",
         "width": 1536.0,
-        "recovery_percent": 99.43828870805844,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "fid": 69.30817185445358,
-        "fid_images": "10000",
-        "fid_origin": "local",
-        "checkpoint_sha256": "c165b56f291ce3363385613f4989cc072a6c39dbbe74072c1a0d835c4632d689",
+        "recovery_percent": 99.5690177571378,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "fid": 84.44636348762083,
+        "fid_images": "",
+        "fid_origin": "",
+        "checkpoint_sha256": "",
         "depth": 12.0,
-        "epoch": 200.0
+        "epoch": 120.0
       }
     ],
     "b": [
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "rgb_mse": 0.019538782726086,
-        "recovery_percent": 78.19630658830201,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "depth": "",
-        "epoch": ""
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "rgb_mse": 0.015917374301883936,
-        "recovery_percent": 93.61649411344321,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "depth": "",
-        "epoch": ""
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "rgb_mse": 0.015732064888507,
-        "recovery_percent": 94.82829520543363,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "depth": "",
-        "epoch": ""
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "rgb_mse": 0.015513164386604763,
-        "recovery_percent": 98.40312981682337,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "depth": "",
-        "epoch": ""
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "rgb_mse": 0.01520094300351411,
-        "recovery_percent": 99.18415767667,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
-        "depth": "",
-        "epoch": ""
-      },
       {
         "model": "ADM",
         "width": "",
@@ -1149,26 +1089,86 @@
         "epoch": ""
       },
       {
+        "model": "JiT",
+        "width": 768.0,
+        "rgb_mse": 0.019800552151799995,
+        "recovery_percent": 78.29875983797402,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "rgb_mse": 0.01612893710876793,
+        "recovery_percent": 95.16010821948477,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "rgb_mse": 0.01592728369755979,
+        "recovery_percent": 96.13014924424787,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "rgb_mse": 0.015702753019181608,
+        "recovery_percent": 98.81533957425613,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "rgb_mse": 0.015379705827186686,
+        "recovery_percent": 99.40459997980227,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
+        "depth": 12.0,
+        "epoch": 120.0
+      },
+      {
         "model": "JiT restricted",
         "width": 896.0,
-        "rgb_mse": 0.016066908884062293,
-        "recovery_percent": 88.4621036908209,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
+        "rgb_mse": 0.016263435294265247,
+        "recovery_percent": 90.27059830187221,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
         "depth": 12.0,
-        "epoch": 200.0
+        "epoch": 120.0
       },
       {
         "model": "JiT restricted",
         "width": 1024.0,
         "rgb_mse": 0.015986116184737217,
         "recovery_percent": 96.60890059848238,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
         "depth": 12.0,
         "epoch": 120.0
       },
@@ -1177,24 +1177,24 @@
         "width": 1152.0,
         "rgb_mse": 0.015831975729857152,
         "recovery_percent": 97.66487301945509,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
         "depth": 12.0,
         "epoch": 120.0
       },
       {
         "model": "JiT restricted",
         "width": 1536.0,
-        "rgb_mse": 0.015502750742435605,
-        "recovery_percent": 99.43828870805844,
-        "input_space": "RGB pixels",
-        "corruption": "pixel",
-        "reference_t": "0.5",
-        "actual_sigma": "1.0",
+        "rgb_mse": 0.015707498161000946,
+        "recovery_percent": 99.5690177571378,
+        "input_space": "",
+        "corruption": "",
+        "reference_t": "",
+        "actual_sigma": "",
         "depth": 12.0,
-        "epoch": 200.0
+        "epoch": 120.0
       }
     ],
     "c": [
@@ -1207,7 +1207,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.99098503699904,
         "hidden_ci95_low": "99.99061657874178",
-        "hidden_ci95_high": "99.99131985171118"
+        "hidden_ci95_high": "99.99131985171118",
+        "epoch": ""
       },
       {
         "model": "DiT",
@@ -1218,7 +1219,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.96907555303875,
         "hidden_ci95_low": "99.9680345550574",
-        "hidden_ci95_high": "99.97006728253929"
+        "hidden_ci95_high": "99.97006728253929",
+        "epoch": ""
       },
       {
         "model": "DiT",
@@ -1229,7 +1231,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.93436374553606,
         "hidden_ci95_low": "99.93233492056541",
-        "hidden_ci95_high": "99.9362031889068"
+        "hidden_ci95_high": "99.9362031889068",
+        "epoch": ""
       },
       {
         "model": "DiT",
@@ -1240,7 +1243,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.8692988846436,
         "hidden_ci95_low": "99.86591395457123",
-        "hidden_ci95_high": "99.87229744451258"
+        "hidden_ci95_high": "99.87229744451258",
+        "epoch": ""
       },
       {
         "model": "DiT",
@@ -1251,7 +1255,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.75360884698655,
         "hidden_ci95_low": "99.7483842551694",
-        "hidden_ci95_high": "99.75829408374776"
+        "hidden_ci95_high": "99.75829408374776",
+        "epoch": ""
       },
       {
         "model": "DiT",
@@ -1262,7 +1267,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.55912534419029,
         "hidden_ci95_low": "99.55069275387245",
-        "hidden_ci95_high": "99.56625789518588"
+        "hidden_ci95_high": "99.56625789518588",
+        "epoch": ""
       },
       {
         "model": "DiT",
@@ -1273,7 +1279,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.23506115890903,
         "hidden_ci95_low": "99.22145725901788",
-        "hidden_ci95_high": "99.24707653318036"
+        "hidden_ci95_high": "99.24707653318036",
+        "epoch": ""
       },
       {
         "model": "DiT",
@@ -1284,7 +1291,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 98.61169549844095,
         "hidden_ci95_low": "98.58919026693451",
-        "hidden_ci95_high": "98.63306222789029"
+        "hidden_ci95_high": "98.63306222789029",
+        "epoch": ""
       },
       {
         "model": "DiT",
@@ -1295,7 +1303,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 96.51712289007168,
         "hidden_ci95_low": "96.46125057128873",
-        "hidden_ci95_high": "96.57117538464104"
+        "hidden_ci95_high": "96.57117538464104",
+        "epoch": ""
       },
       {
         "model": "ADM",
@@ -1306,7 +1315,8 @@
         "recovery_target": "noisy RGB input",
         "hidden_recovery_percent": 99.99534955269634,
         "hidden_ci95_low": "99.99522073167438",
-        "hidden_ci95_high": "99.99546747382988"
+        "hidden_ci95_high": "99.99546747382988",
+        "epoch": ""
       },
       {
         "model": "ADM",
@@ -1317,7 +1327,8 @@
         "recovery_target": "noisy RGB input",
         "hidden_recovery_percent": 99.97300489050994,
         "hidden_ci95_low": "99.9722063953201",
-        "hidden_ci95_high": "99.9737248557149"
+        "hidden_ci95_high": "99.9737248557149",
+        "epoch": ""
       },
       {
         "model": "ADM",
@@ -1328,7 +1339,8 @@
         "recovery_target": "noisy RGB input",
         "hidden_recovery_percent": 99.90724156687804,
         "hidden_ci95_low": "99.90436053508752",
-        "hidden_ci95_high": "99.90972991293067"
+        "hidden_ci95_high": "99.90972991293067",
+        "epoch": ""
       },
       {
         "model": "ADM",
@@ -1339,7 +1351,8 @@
         "recovery_target": "noisy RGB input",
         "hidden_recovery_percent": 99.75681080917307,
         "hidden_ci95_low": "99.74817288490283",
-        "hidden_ci95_high": "99.7642584236639"
+        "hidden_ci95_high": "99.7642584236639",
+        "epoch": ""
       },
       {
         "model": "ADM",
@@ -1350,7 +1363,8 @@
         "recovery_target": "noisy RGB input",
         "hidden_recovery_percent": 99.45480761587356,
         "hidden_ci95_low": "99.43617875181616",
-        "hidden_ci95_high": "99.47061325447764"
+        "hidden_ci95_high": "99.47061325447764",
+        "epoch": ""
       },
       {
         "model": "ADM",
@@ -1361,7 +1375,8 @@
         "recovery_target": "noisy RGB input",
         "hidden_recovery_percent": 98.87254848228415,
         "hidden_ci95_low": "98.83562226600222",
-        "hidden_ci95_high": "98.9052456847698"
+        "hidden_ci95_high": "98.9052456847698",
+        "epoch": ""
       },
       {
         "model": "ADM",
@@ -1372,7 +1387,8 @@
         "recovery_target": "noisy RGB input",
         "hidden_recovery_percent": 97.76106616035733,
         "hidden_ci95_low": "97.69575202908891",
-        "hidden_ci95_high": "97.82032867849527"
+        "hidden_ci95_high": "97.82032867849527",
+        "epoch": ""
       },
       {
         "model": "ADM",
@@ -1383,7 +1399,8 @@
         "recovery_target": "noisy RGB input",
         "hidden_recovery_percent": 95.60444460061476,
         "hidden_ci95_low": "95.45322492635205",
-        "hidden_ci95_high": "95.74160841443019"
+        "hidden_ci95_high": "95.74160841443019",
+        "epoch": ""
       },
       {
         "model": "ADM",
@@ -1394,502 +1411,8 @@
         "recovery_target": "noisy RGB input",
         "hidden_recovery_percent": 90.6875673709018,
         "hidden_ci95_low": "90.37475851175117",
-        "hidden_ci95_high": "90.96468287147576"
-      },
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "t": 0.1,
-        "sigma": "9.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.56480802513063,
-        "hidden_ci95_low": "99.55693062758675",
-        "hidden_ci95_high": "99.5722616618558"
-      },
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "t": 0.2,
-        "sigma": "4.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 98.2657313136804,
-        "hidden_ci95_low": "98.22572075363786",
-        "hidden_ci95_high": "98.30324258685945"
-      },
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "t": 0.3,
-        "sigma": "2.3333333333333335",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 95.16411063775911,
-        "hidden_ci95_low": "95.05326377693676",
-        "hidden_ci95_high": "95.26895721693344"
-      },
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "t": 0.4,
-        "sigma": "1.4999999999999998",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 89.01554071621803,
-        "hidden_ci95_low": "88.78176429763208",
-        "hidden_ci95_high": "89.23907255542471"
-      },
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "t": 0.5,
-        "sigma": "1.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 78.19630658830201,
-        "hidden_ci95_low": "77.79732218749785",
-        "hidden_ci95_high": "78.58235782204179"
-      },
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "t": 0.6,
-        "sigma": "0.6666666666666667",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 61.481191232554025,
-        "hidden_ci95_low": "60.933763081219304",
-        "hidden_ci95_high": "62.012782316985934"
-      },
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "t": 0.7,
-        "sigma": "0.42857142857142866",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 40.05741217685929,
-        "hidden_ci95_low": "39.51139896877497",
-        "hidden_ci95_high": "40.577004146289056"
-      },
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "t": 0.8,
-        "sigma": "0.24999999999999994",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 19.155041704214792,
-        "hidden_ci95_low": "18.79739906444087",
-        "hidden_ci95_high": "19.48033927747957"
-      },
-      {
-        "model": "JiT",
-        "width": 768.0,
-        "t": 0.9,
-        "sigma": "0.11111111111111108",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 8.530028873668948,
-        "hidden_ci95_low": "8.319813213948175",
-        "hidden_ci95_high": "8.708473144581408"
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "t": 0.1,
-        "sigma": "9.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.9584682598671,
-        "hidden_ci95_low": "99.95720358991663",
-        "hidden_ci95_high": "99.95966971125424"
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "t": 0.2,
-        "sigma": "4.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.6843060644407,
-        "hidden_ci95_low": "99.67563380411461",
-        "hidden_ci95_high": "99.69195362872694"
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "t": 0.3,
-        "sigma": "2.3333333333333335",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 98.80147365271134,
-        "hidden_ci95_low": "98.77451391808168",
-        "hidden_ci95_high": "98.82781402745988"
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "t": 0.4,
-        "sigma": "1.4999999999999998",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 97.15739740914077,
-        "hidden_ci95_low": "97.09837218323659",
-        "hidden_ci95_high": "97.21486236127897"
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "t": 0.5,
-        "sigma": "1.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 93.61649411344321,
-        "hidden_ci95_low": "93.49800187187302",
-        "hidden_ci95_high": "93.73281450438857"
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "t": 0.6,
-        "sigma": "0.6666666666666667",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 86.96937921767494,
-        "hidden_ci95_low": "86.7675240041122",
-        "hidden_ci95_high": "87.16820101903402"
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "t": 0.7,
-        "sigma": "0.42857142857142866",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 76.62493891477529,
-        "hidden_ci95_low": "76.28472000658456",
-        "hidden_ci95_high": "76.93595443048979"
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "t": 0.8,
-        "sigma": "0.24999999999999994",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 65.09865816737116,
-        "hidden_ci95_low": "64.58797617707819",
-        "hidden_ci95_high": "65.53195741730221"
-      },
-      {
-        "model": "JiT",
-        "width": 896.0,
-        "t": 0.9,
-        "sigma": "0.11111111111111108",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 61.31008385310388,
-        "hidden_ci95_low": "60.63595120524028",
-        "hidden_ci95_high": "61.915455218390456"
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "t": 0.1,
-        "sigma": "9.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.97257997659088,
-        "hidden_ci95_low": "99.97175600743208",
-        "hidden_ci95_high": "99.97333221535406"
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "t": 0.2,
-        "sigma": "4.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.77981195807803,
-        "hidden_ci95_low": "99.77382470450416",
-        "hidden_ci95_high": "99.78527810846475"
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "t": 0.3,
-        "sigma": "2.3333333333333335",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.10658776620681,
-        "hidden_ci95_low": "99.08557810615247",
-        "hidden_ci95_high": "99.12687190327529"
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "t": 0.4,
-        "sigma": "1.4999999999999998",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 97.67299938289305,
-        "hidden_ci95_low": "97.6249934739271",
-        "hidden_ci95_high": "97.72123569239575"
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "t": 0.5,
-        "sigma": "1.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 94.82829520543363,
-        "hidden_ci95_low": "94.73711913182046",
-        "hidden_ci95_high": "94.92363471971598"
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "t": 0.6,
-        "sigma": "0.6666666666666667",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 89.96421495732571,
-        "hidden_ci95_low": "89.81004256904606",
-        "hidden_ci95_high": "90.11581373019821"
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "t": 0.7,
-        "sigma": "0.42857142857142866",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 82.93885224964544,
-        "hidden_ci95_low": "82.67273874364093",
-        "hidden_ci95_high": "83.17666353397782"
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "t": 0.8,
-        "sigma": "0.24999999999999994",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 75.58383402435437,
-        "hidden_ci95_low": "75.16640959564589",
-        "hidden_ci95_high": "75.98673938861708"
-      },
-      {
-        "model": "JiT",
-        "width": 1024.0,
-        "t": 0.9,
-        "sigma": "0.11111111111111108",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 72.90974635523209,
-        "hidden_ci95_low": "72.33234272958569",
-        "hidden_ci95_high": "73.43462992122215"
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "t": 0.1,
-        "sigma": "9.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.98640749722621,
-        "hidden_ci95_low": "99.98594621694119",
-        "hidden_ci95_high": "99.98684929548669"
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "t": 0.2,
-        "sigma": "4.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.91145663542741,
-        "hidden_ci95_low": "99.90884142984149",
-        "hidden_ci95_high": "99.9137575813702"
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "t": 0.3,
-        "sigma": "2.3333333333333335",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.69590963888606,
-        "hidden_ci95_low": "99.68771084267344",
-        "hidden_ci95_high": "99.70306613467318"
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "t": 0.4,
-        "sigma": "1.4999999999999998",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.2474123605179,
-        "hidden_ci95_low": "99.22900563149012",
-        "hidden_ci95_high": "99.26415595046768"
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "t": 0.5,
-        "sigma": "1.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 98.40312981682337,
-        "hidden_ci95_low": "98.36904042350623",
-        "hidden_ci95_high": "98.43450021571812"
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "t": 0.6,
-        "sigma": "0.6666666666666667",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 96.8791035968363,
-        "hidden_ci95_low": "96.81759082957862",
-        "hidden_ci95_high": "96.93882878534468"
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "t": 0.7,
-        "sigma": "0.42857142857142866",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 94.41400070635329,
-        "hidden_ci95_low": "94.30454380330843",
-        "hidden_ci95_high": "94.51821510781225"
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "t": 0.8,
-        "sigma": "0.24999999999999994",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 90.81175424806133,
-        "hidden_ci95_low": "90.62216057837773",
-        "hidden_ci95_high": "90.9917282907738"
-      },
-      {
-        "model": "JiT",
-        "width": 1152.0,
-        "t": 0.9,
-        "sigma": "0.11111111111111108",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 87.31009701500871,
-        "hidden_ci95_low": "87.03505036775512",
-        "hidden_ci95_high": "87.58024653581809"
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "t": 0.1,
-        "sigma": "9.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.99199963024364,
-        "hidden_ci95_low": "99.99168837341517",
-        "hidden_ci95_high": "99.99228541034344"
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "t": 0.2,
-        "sigma": "4.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.94322479249647,
-        "hidden_ci95_low": "99.94115983937998",
-        "hidden_ci95_high": "99.94494677736864"
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "t": 0.3,
-        "sigma": "2.3333333333333335",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.80975766844627,
-        "hidden_ci95_low": "99.80416202004366",
-        "hidden_ci95_high": "99.81488815168754"
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "t": 0.4,
-        "sigma": "1.4999999999999998",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.57546629307183,
-        "hidden_ci95_low": "99.56449462046054",
-        "hidden_ci95_high": "99.58572614278405"
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "t": 0.5,
-        "sigma": "1.0",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 99.18415767667,
-        "hidden_ci95_low": "99.16426738583418",
-        "hidden_ci95_high": "99.20227085278833"
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "t": 0.6,
-        "sigma": "0.6666666666666667",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 98.66054696365208,
-        "hidden_ci95_low": "98.62926275062851",
-        "hidden_ci95_high": "98.69044135835927"
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "t": 0.7,
-        "sigma": "0.42857142857142866",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 98.11215674017578,
-        "hidden_ci95_low": "98.0663870833299",
-        "hidden_ci95_high": "98.15663832658672"
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "t": 0.8,
-        "sigma": "0.24999999999999994",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 97.767183023717,
-        "hidden_ci95_low": "97.70888685299408",
-        "hidden_ci95_high": "97.82137011328584"
-      },
-      {
-        "model": "JiT",
-        "width": 1536.0,
-        "t": 0.9,
-        "sigma": "0.11111111111111108",
-        "input_space": "RGB pixels",
-        "recovery_target": "noisy RGB input",
-        "hidden_recovery_percent": 97.50911505987668,
-        "hidden_ci95_low": "97.42219906434201",
-        "hidden_ci95_high": "97.5869631745819"
+        "hidden_ci95_high": "90.96468287147576",
+        "epoch": ""
       },
       {
         "model": "U-ViT",
@@ -1900,7 +1423,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.98632232186965,
         "hidden_ci95_low": "99.98610370237212",
-        "hidden_ci95_high": "99.98652093464237"
+        "hidden_ci95_high": "99.98652093464237",
+        "epoch": ""
       },
       {
         "model": "U-ViT",
@@ -1911,7 +1435,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.96519507259174,
         "hidden_ci95_low": "99.96466450176626",
-        "hidden_ci95_high": "99.96571774118311"
+        "hidden_ci95_high": "99.96571774118311",
+        "epoch": ""
       },
       {
         "model": "U-ViT",
@@ -1922,7 +1447,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.92355408826116,
         "hidden_ci95_low": "99.92242175157504",
-        "hidden_ci95_high": "99.92467777433241"
+        "hidden_ci95_high": "99.92467777433241",
+        "epoch": ""
       },
       {
         "model": "U-ViT",
@@ -1933,7 +1459,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.84466454151851,
         "hidden_ci95_low": "99.84240960936407",
-        "hidden_ci95_high": "99.84676209371429"
+        "hidden_ci95_high": "99.84676209371429",
+        "epoch": ""
       },
       {
         "model": "U-ViT",
@@ -1944,7 +1471,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.6932467996104,
         "hidden_ci95_low": "99.68919575633343",
-        "hidden_ci95_high": "99.69699874089962"
+        "hidden_ci95_high": "99.69699874089962",
+        "epoch": ""
       },
       {
         "model": "U-ViT",
@@ -1955,7 +1483,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.43015629990116,
         "hidden_ci95_low": "99.42266224683384",
-        "hidden_ci95_high": "99.4370009726276"
+        "hidden_ci95_high": "99.4370009726276",
+        "epoch": ""
       },
       {
         "model": "U-ViT",
@@ -1966,7 +1495,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.01970109405148,
         "hidden_ci95_low": "99.00550611934666",
-        "hidden_ci95_high": "99.03337938912847"
+        "hidden_ci95_high": "99.03337938912847",
+        "epoch": ""
       },
       {
         "model": "U-ViT",
@@ -1977,7 +1507,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 98.46785956313097,
         "hidden_ci95_low": "98.44263823862201",
-        "hidden_ci95_high": "98.48993631962391"
+        "hidden_ci95_high": "98.48993631962391",
+        "epoch": ""
       },
       {
         "model": "U-ViT",
@@ -1988,7 +1519,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 97.159303075555,
         "hidden_ci95_low": "97.10355633100919",
-        "hidden_ci95_high": "97.20666545721512"
+        "hidden_ci95_high": "97.20666545721512",
+        "epoch": ""
       },
       {
         "model": "LDM",
@@ -1999,7 +1531,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.999105752315,
         "hidden_ci95_low": "99.9990852345668",
-        "hidden_ci95_high": "99.99912537918281"
+        "hidden_ci95_high": "99.99912537918281",
+        "epoch": ""
       },
       {
         "model": "LDM",
@@ -2010,7 +1543,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.99629813848586,
         "hidden_ci95_low": "99.99619437493833",
-        "hidden_ci95_high": "99.99640004575431"
+        "hidden_ci95_high": "99.99640004575431",
+        "epoch": ""
       },
       {
         "model": "LDM",
@@ -2021,7 +1555,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.98485482780191,
         "hidden_ci95_low": "99.9843580550463",
-        "hidden_ci95_high": "99.98532137113007"
+        "hidden_ci95_high": "99.98532137113007",
+        "epoch": ""
       },
       {
         "model": "LDM",
@@ -2032,7 +1567,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.94549851281329,
         "hidden_ci95_low": "99.94406119541235",
-        "hidden_ci95_high": "99.94673994940567"
+        "hidden_ci95_high": "99.94673994940567",
+        "epoch": ""
       },
       {
         "model": "LDM",
@@ -2043,7 +1579,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.84629584236704,
         "hidden_ci95_low": "99.84371662385482",
-        "hidden_ci95_high": "99.84872043085824"
+        "hidden_ci95_high": "99.84872043085824",
+        "epoch": ""
       },
       {
         "model": "LDM",
@@ -2054,7 +1591,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.678064603204,
         "hidden_ci95_low": "99.6738554549554",
-        "hidden_ci95_high": "99.68185689356042"
+        "hidden_ci95_high": "99.68185689356042",
+        "epoch": ""
       },
       {
         "model": "LDM",
@@ -2065,7 +1603,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.47982800516063,
         "hidden_ci95_low": "99.47341763396467",
-        "hidden_ci95_high": "99.48579460468476"
+        "hidden_ci95_high": "99.48579460468476",
+        "epoch": ""
       },
       {
         "model": "LDM",
@@ -2076,7 +1615,8 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.28656200789918,
         "hidden_ci95_low": "99.27400978028527",
-        "hidden_ci95_high": "99.29772522972821"
+        "hidden_ci95_high": "99.29772522972821",
+        "epoch": ""
       },
       {
         "model": "LDM",
@@ -2087,7 +1627,548 @@
         "recovery_target": "noisy latent",
         "hidden_recovery_percent": 99.1231783008085,
         "hidden_ci95_low": "99.09302736466407",
-        "hidden_ci95_high": "99.15251453465764"
+        "hidden_ci95_high": "99.15251453465764",
+        "epoch": ""
+      },
+      {
+        "model": "JiT",
+        "width": 768.0,
+        "t": 0.1,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.56785783469108,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 768.0,
+        "t": 0.2,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 98.27812208393452,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 768.0,
+        "t": 0.3,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 95.19287482479137,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 768.0,
+        "t": 0.4,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 89.07072400758376,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 768.0,
+        "t": 0.5,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 78.29875983797402,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 768.0,
+        "t": 0.6,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 61.67259274107205,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 768.0,
+        "t": 0.7,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 40.37149416440634,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 768.0,
+        "t": 0.8,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 19.900631590241236,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 768.0,
+        "t": 0.9,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 10.60626118354161,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "t": 0.1,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.97265404600556,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "t": 0.2,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.79287983930256,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "t": 0.3,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.16997171513114,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "t": 0.4,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 97.91333638127735,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "t": 0.5,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 95.16010821948477,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "t": 0.6,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 90.30562632315866,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "t": 0.7,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 82.40805365071637,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "t": 0.8,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 72.23728212790566,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 896.0,
+        "t": 0.9,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 66.13416228006123,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "t": 0.1,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.97425446256351,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "t": 0.2,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.80095981132544,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "t": 0.3,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.2782033847838,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "t": 0.4,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 98.24039118209113,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "t": 0.5,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 96.13014924424787,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "t": 0.6,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 92.38697397544813,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "t": 0.7,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 86.67290374093655,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "t": 0.8,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 79.61157644971331,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1024.0,
+        "t": 0.9,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 75.38065001081952,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "t": 0.1,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.98756294447466,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "t": 0.2,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.93283220551852,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "t": 0.3,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.77932829084052,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "t": 0.4,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.45213244127757,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "t": 0.5,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 98.81533957425613,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "t": 0.6,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 97.7122149383528,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "t": 0.7,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 96.2866259691312,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "t": 0.8,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 94.48237174935564,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1152.0,
+        "t": 0.9,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 93.04206592936306,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "t": 0.1,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.99465838858504,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "t": 0.2,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.96347559204416,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "t": 0.3,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.87309987910773,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "t": 0.4,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.70205685779437,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "t": 0.5,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 99.40459997980227,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "t": 0.6,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 98.98499593941602,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "t": 0.7,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 98.54527402043826,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "t": 0.8,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 98.28844078850938,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
+      },
+      {
+        "model": "JiT",
+        "width": 1536.0,
+        "t": 0.9,
+        "sigma": "",
+        "input_space": "",
+        "recovery_target": "",
+        "hidden_recovery_percent": 97.92020551844884,
+        "hidden_ci95_low": "",
+        "hidden_ci95_high": "",
+        "epoch": 120.0
       }
     ],
     "d": [
@@ -2889,7 +2970,7 @@
       }
     ]
   },
-  "script_sha256": "ddebcfc2cd85befe954e186436e89dce930ce5869ff6b0632c368aed5715a2ff",
+  "script_sha256": "9dc511bcfeace9cac94b58039c7da6af74b2bdbdf4d42d39ab0ba32fdd1f0c72",
   "width_summary_layout": {
     "figsize_inches": [
       6.6,

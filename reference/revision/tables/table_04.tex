@@ -1,6 +1,6 @@
 \begin{table}[H]
 \centering
-\caption{ImageNet256 controls at the common epoch-$120$ endpoint. FID-10K uses EMA1; clean-image MSE and shared-intercept recovery use FP32 at $t=0.5$. Blank entries are unavailable; input recovery is measured only for noise predictors. Counts are trainable parameters in millions.}
+\caption{ImageNet256 controls at the common epoch-$120$ endpoint. FID-10K uses EMA1; clean-image MSE and shared-intercept recovery use FP32 at $t=0.5$. Input recovery is measured only for noise predictors. Counts are trainable parameters in millions.}
 \label{tab:width-controls-120}
 \small
 \begin{tabular}{lrrrrrr}
@@ -16,14 +16,10 @@ Noise & 896 & 12 & 178.54 & 106.28 & 0.01613 & 95.16\\
 Noise & 1024 & 12 & 232.74 & 93.48 & 0.01593 & 96.13\\
 Noise & 1152 & 12 & 294.15 & 87.95 & 0.01570 & 98.82\\
 Noise & 1536 & 12 & 521.37 & 68.09 & 0.01538 & 99.40\\
-Restricted & 896 & 12 & 153.85 & 113.89 & 0.01626 & 90.27\\
-Restricted & 1024 & 12 & 175.60 & 98.32 & 0.01599 & 96.61\\
-Restricted & 1152 & 12 & 197.34 & 91.25 & 0.01583 & 97.66\\
-Restricted & 1536 & 12 & 262.58 & 84.45 & 0.01571 & 99.57\\
-Restricted + depth & 896 & 14 & 178.66 &  &  & \\
-Restricted + depth & 1024 & 16 & 232.29 &  &  & \\
-Restricted + depth & 1152 & 18 & 293.00 &  &  & \\
-Restricted + depth & 1536 & 24 & 517.64 &  &  & \\
+Fixed & 896 & 12 & 153.85 & 113.89 & 0.01626 & 90.27\\
+Fixed & 1024 & 12 & 175.60 & 98.32 & 0.01599 & 96.61\\
+Fixed & 1152 & 12 & 197.34 & 91.25 & 0.01583 & 97.66\\
+Fixed & 1536 & 12 & 262.58 & 84.45 & 0.01571 & 99.57\\
 \bottomrule
 \end{tabular}
 \end{table}

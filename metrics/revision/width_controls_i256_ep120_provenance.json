@@ -143,50 +143,6 @@
       "parameters": 262577664,
       "fid": 84.44636348762083,
       "checkpoint_sha256": "ad2d284df868d08d72d3d0b6cb86498081d6b0d44cebe43bbfbe1f3fab0329a7"
-    },
-    {
-      "case": "jit256w896d14-deep-ep120",
-      "family": "deep",
-      "width": 896,
-      "depth": 14,
-      "epoch": 120,
-      "aligned_width": 896,
-      "parameters": 178655488,
-      "fid": null,
-      "checkpoint_sha256": null
-    },
-    {
-      "case": "jit256w1024d16-deep-ep120",
-      "family": "deep",
-      "width": 1024,
-      "depth": 16,
-      "epoch": 120,
-      "aligned_width": 1024,
-      "parameters": 232287232,
-      "fid": null,
-      "checkpoint_sha256": null
-    },
-    {
-      "case": "jit256w1152d18-deep-ep120",
-      "family": "deep",
-      "width": 1152,
-      "depth": 18,
-      "epoch": 120,
-      "aligned_width": 1152,
-      "parameters": 293001984,
-      "fid": null,
-      "checkpoint_sha256": null
-    },
-    {
-      "case": "jit256w1536d24-deep-ep120",
-      "family": "deep",
-      "width": 1536,
-      "depth": 24,
-      "epoch": 120,
-      "aligned_width": 1536,
-      "parameters": 517644288,
-      "fid": null,
-      "checkpoint_sha256": null
     }
   ],
   "gains": [
@@ -1245,99 +1201,16 @@
       "test_images": 4000.0
     }
   ],
-  "pending": [
-    {
-      "case": "jit256w1024d16-deep-ep120",
-      "measurement": "FID-10K"
-    },
-    {
-      "case": "jit256w1024d16-deep-ep120",
-      "measurement": "denoising",
-      "times": [
-        0.05,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5,
-        0.6,
-        0.7,
-        0.8,
-        0.9,
-        0.95
-      ]
-    },
-    {
-      "case": "jit256w1152d18-deep-ep120",
-      "measurement": "FID-10K"
-    },
-    {
-      "case": "jit256w1152d18-deep-ep120",
-      "measurement": "denoising",
-      "times": [
-        0.05,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5,
-        0.6,
-        0.7,
-        0.8,
-        0.9,
-        0.95
-      ]
-    },
-    {
-      "case": "jit256w1536d24-deep-ep120",
-      "measurement": "FID-10K"
-    },
-    {
-      "case": "jit256w1536d24-deep-ep120",
-      "measurement": "denoising",
-      "times": [
-        0.05,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5,
-        0.6,
-        0.7,
-        0.8,
-        0.9,
-        0.95
-      ]
-    },
-    {
-      "case": "jit256w896d14-deep-ep120",
-      "measurement": "FID-10K"
-    },
-    {
-      "case": "jit256w896d14-deep-ep120",
-      "measurement": "denoising",
-      "times": [
-        0.05,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5,
-        0.6,
-        0.7,
-        0.8,
-        0.9,
-        0.95
-      ]
-    }
-  ],
+  "pending": [],
   "script_sha256": "8b480e5508f11afcc0d2eda02310887daf543525c4b4c1f8d874b86c1c53eee8",
-  "layout_script_sha256": "19f78d9d64c84a0b2809e0053d617eb216232ab7cf5b61bfffbde5aaee98eac7",
+  "layout_script_sha256": "dc727f80e4ad9970367f160261c587277a58e96655dd034fa56ae1ac54e3d7cd",
   "notes": [
     "All JiT measurements use epoch120 EMA1; no epoch mixing.",
     "FID and denoising become available independently; absent measurements remain unplotted.",
     "FP32 denoising uses the common 2000-image validation cohort and imagewise corruption seeds.",
     "ADM256 residual spectrum is reused; it is independent of JiT training epoch.",
-    "One row of four panels, vertical width color bar, no uncertainty bands."
-  ]
+    "One row of four panels, vertical width color bar, no uncertainty bands.",
+    "Manuscript excludes ImageNet256 Fixed + depth controls pending readiness; saved source measurements are retained."
+  ],
+  "excluded_from_manuscript": "Deeper ImageNet256 configurations; their training code remains available."
 }
