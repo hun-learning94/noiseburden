@@ -1,0 +1,57 @@
+{
+  "completed_epochs": 200,
+  "ema": "EMA1",
+  "fixture_indices": [
+    8000,
+    10000
+  ],
+  "noise_seed": 23102026,
+  "loss_batch": 16,
+  "generation_batch": 8,
+  "fid_images": 10000,
+  "cfg": 1.0,
+  "sampling_steps": 50,
+  "endpoint_floor": 0.05,
+  "rows": [
+    {
+      "case": "i128_eps192",
+      "label": "d_h=d_p",
+      "width": 192,
+      "depth": 12,
+      "parameters": 8439552,
+      "fid10k": 396.25964109310286,
+      "native_per_image": "metrics/native/native-i128_eps192-per-image.npz",
+      "checkpoint_sha256": "3ab6c9d0a5e295ddb557b0da34f204baf41e4774731fbf0898fe3f87da2e883a"
+    },
+    {
+      "case": "i128_eps192_d24",
+      "label": "Increased depth at d_h=d_p",
+      "width": 192,
+      "depth": 24,
+      "parameters": 16445952,
+      "fid10k": 389.89171139064445,
+      "native_per_image": "metrics/rebuttal/a1/critical-native-per-image.npz",
+      "checkpoint_sha256": "631bb6257318daab9e9d6e46c9c18d75efc0a9c03f504cc735615f8a526374b8"
+    },
+    {
+      "case": "i128_eps256",
+      "label": "Unrestricted widening",
+      "width": 256,
+      "depth": 12,
+      "parameters": 14834096,
+      "fid10k": 114.37811562879028,
+      "native_per_image": "metrics/native/native-i128_eps256-per-image.npz",
+      "checkpoint_sha256": "71818db468da560d1452531017adbe68813996eaad8d4375ba4795f6d7c39848"
+    },
+    {
+      "case": "i128_restricted384",
+      "label": "Fixed widening",
+      "width": 384,
+      "depth": 12,
+      "parameters": 16653312,
+      "fid10k": 102.6833016924927,
+      "native_per_image": "metrics/revision/controls128/restricted/i128_eps384/native-per-image.npz",
+      "checkpoint_sha256": "ad71e3bf3af42fe526ba28902752aafbf52bb4f313025ec1b26c4ea2c549f9df"
+    }
+  ]
+}

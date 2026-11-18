@@ -1,0 +1,102 @@
+{
+  "training/controls/critical/accum_train.py": {
+    "original_sha256": "c826e843bb15f841379dd84792ef61d918f711c40045298c73ca2338b9a59bda",
+    "distributed_sha256": "c826e843bb15f841379dd84792ef61d918f711c40045298c73ca2338b9a59bda",
+    "transformation": "none"
+  },
+  "training/controls/critical/main_jit.py": {
+    "original_sha256": "4d565a191b33b4ee885e577ac14628a3846c5d49d23b7e69d082ffbe66c272fb",
+    "distributed_sha256": "41e4fc2f87e627f80cbce534847e71adf682da61e239543ba533fd48726339e3",
+    "transformation": "anonymize comments only"
+  },
+  "training/controls/critical/denoiser.py": {
+    "original_sha256": "6768c4b86a97a87e42a39e1f2379dc6923bbe9d0417fceaa8164af75c3d31358",
+    "distributed_sha256": "9bff04da0e4d298aaa022923d0c7d166f67e3ca795c4e0bf10b5f3ef1189940d",
+    "transformation": "anonymize comments only"
+  },
+  "training/controls/critical/model_jit.py": {
+    "original_sha256": "8056effb970f6c01015a26a499d67961df94fb76feb7f1ac4a6628fcc8ad0dac",
+    "distributed_sha256": "8056effb970f6c01015a26a499d67961df94fb76feb7f1ac4a6628fcc8ad0dac",
+    "transformation": "none"
+  },
+  "training/controls/critical/engine_jit.py": {
+    "original_sha256": "3d205148be7d103fba80a852d0dd11c9b97d9e5be36859826d4ba8cec37da827",
+    "distributed_sha256": "3d205148be7d103fba80a852d0dd11c9b97d9e5be36859826d4ba8cec37da827",
+    "transformation": "none"
+  },
+  "training/controls/critical/util/crop.py": {
+    "original_sha256": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+    "distributed_sha256": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+    "transformation": "none"
+  },
+  "training/controls/critical/util/misc.py": {
+    "original_sha256": "387da299eb28fee0f4f49831f51a8e25aebed42845707a85fbff8acd6aff8942",
+    "distributed_sha256": "387da299eb28fee0f4f49831f51a8e25aebed42845707a85fbff8acd6aff8942",
+    "transformation": "none"
+  },
+  "training/controls/critical/util/model_util.py": {
+    "original_sha256": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+    "distributed_sha256": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+    "transformation": "none"
+  },
+  "training/controls/critical/util/__init__.py": {
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "distributed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "transformation": "none"
+  },
+  "training/controls/critical/util/lr_sched.py": {
+    "original_sha256": "47765fbc75affedb8c8c062d8b784fd00a6ee4527c8a82edb8cf514235d7e048",
+    "distributed_sha256": "47765fbc75affedb8c8c062d8b784fd00a6ee4527c8a82edb8cf514235d7e048",
+    "transformation": "none"
+  },
+  "synthetic_width/common.py": {
+    "original_sha256": "1ba9f6c65a71dd658c584a9ce00ecef41b98b7bfd053ae9b2fa312d8a3f5167c",
+    "distributed_sha256": "1ba9f6c65a71dd658c584a9ce00ecef41b98b7bfd053ae9b2fa312d8a3f5167c",
+    "transformation": "none"
+  },
+  "synthetic_width/extra_hash.py": {
+    "original_sha256": "dc625fcc91b248f8b457caa8ac76256a82a4a0bd985ec5c39b9271a530684b16",
+    "distributed_sha256": "dc625fcc91b248f8b457caa8ac76256a82a4a0bd985ec5c39b9271a530684b16",
+    "transformation": "none"
+  },
+  "synthetic_width/gmm.py": {
+    "original_sha256": "5abfa5ef97460dfd2599f6f273f1fac6f4dbd4e743115d4e13bc71ad4e931c67",
+    "distributed_sha256": "5abfa5ef97460dfd2599f6f273f1fac6f4dbd4e743115d4e13bc71ad4e931c67",
+    "transformation": "none"
+  },
+  "synthetic_width/models.py": {
+    "original_sha256": "ad3250ae85db5475c8d2cffa5866e1ef1ad5871d45e5871f921d1b59af78ae4d",
+    "distributed_sha256": "ad3250ae85db5475c8d2cffa5866e1ef1ad5871d45e5871f921d1b59af78ae4d",
+    "transformation": "none"
+  },
+  "synthetic_width/train.py": {
+    "original_sha256": "0f1ff34e4bd624549b4c0b6ab563b33386db484376705adfc61bf92df5f68e2f",
+    "distributed_sha256": "0f1ff34e4bd624549b4c0b6ab563b33386db484376705adfc61bf92df5f68e2f",
+    "transformation": "none"
+  },
+  "synthetic_width/train_resume.py": {
+    "original_sha256": "01ff197089146be6b75644fea5ceaaa628e9309fbd6cdb2f96c5ed0f3d25531b",
+    "distributed_sha256": "01ff197089146be6b75644fea5ceaaa628e9309fbd6cdb2f96c5ed0f3d25531b",
+    "transformation": "none"
+  },
+  "synthetic_width/spectrum.py": {
+    "original_sha256": "f71ace5c47d151450057e3a5310feb7782cf15ba59c44d2f0ece85b65d6a9f7a",
+    "distributed_sha256": "f71ace5c47d151450057e3a5310feb7782cf15ba59c44d2f0ece85b65d6a9f7a",
+    "transformation": "none"
+  },
+  "synthetic_width/fit_patch_gmm.py": {
+    "original_sha256": "b39153da14c309e7d2dcd984b338ebd1622d19dc8400389edeb36844f2d3bba0",
+    "distributed_sha256": "dc7cc4d2c5a42dde6dae6288e5e952a71c49ddc1fe3512ab48eaaeab4aef0219",
+    "transformation": "portable crop import and required data-root argument; numerical code unchanged"
+  },
+  "synthetic_width/data/patch_gmm_K128.pt": {
+    "original_sha256": "207f6c4699d03b72b2fdf28a5016d991b62a3ca22cb89772ff634ab35629b129",
+    "distributed_sha256": "340d9086931261da3c24b2444d87246129b9170fb2ab2b36731e7e3ae66d1baf",
+    "transformation": "preserve mixture tensors exactly; remove path-bearing metadata"
+  },
+  "metrics/rebuttal/a1/critical-native-per-image.npz": {
+    "original_sha256": "5292dda827331c6155ed6b98e32edb41996adc2ecd15ad94a1186a13ed900d06",
+    "distributed_sha256": "5292dda827331c6155ed6b98e32edb41996adc2ecd15ad94a1186a13ed900d06",
+    "transformation": "none"
+  }
+}

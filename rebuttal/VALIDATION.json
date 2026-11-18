@@ -1,0 +1,16 @@
+{
+  "scientific_tests": [
+    "test_binary_vs_enumeration",
+    "test_fullcov_random",
+    "test_spectrum_identities",
+    "test_eval_oracle",
+    "test_models",
+    "test_frozen_readout"
+  ],
+  "mixture_digest": "9dd9d694daee1200",
+  "mixture_dimension": 192,
+  "source_hashes_match_historical_results": true,
+  "critical_checkpoint_strict_load": true,
+  "critical_parameters": 16445952,
+  "gpu_evaluation_rerun": false
+}

@@ -1,0 +1,20 @@
+{
+  "dimension": 192,
+  "components": 128,
+  "distribution_digest": "9dd9d694daee1200",
+  "sha256": "340d9086931261da3c24b2444d87246129b9170fb2ab2b36731e7e3ae66d1baf",
+  "training_images": 38000,
+  "validation_images": 2000,
+  "patches_per_image": 32,
+  "fit_patches": 1216000,
+  "validation_patches": 64000,
+  "patch_side": 8,
+  "image_size": 128,
+  "normalization": "[-1,1]",
+  "flattening": "HWC",
+  "fit_metadata": {
+    "K": 128,
+    "val_ll_per_dim": 2.1824523525869357,
+    "digest": "9dd9d694daee1200"
+  }
+}

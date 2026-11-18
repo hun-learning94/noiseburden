@@ -11,6 +11,25 @@ and Figures 2–10 of the revision. Figure 1 is a conceptual diagram and is excl
 ImageNet images, model checkpoints, and FID reference statistics are external inputs.
 Rendering the supplied measurements requires none of those large inputs.
 
+## Additional rebuttal experiments
+
+The repository includes reproduction code, experiment descriptions, and numerical
+results for [A1, depth versus model width](docs/critical_width.md), and
+[A2, controlled tests of the conditional width theorem](docs/synthetic_width.md).
+A1 includes the epoch-200 critical-width depth control, training configurations,
+and matched denoising/FID evaluation commands. A2 includes the exact-denoiser
+implementations, fitted patch mixture, spectrum estimation, training and readout
+refitting code, and all 32 mixture comparisons plus 20 prescribed-spectrum cells.
+
+```bash
+python -m rebuttal verify
+python -m rebuttal report --output artifacts/rebuttal
+```
+
+These commands check the supplied measurements and reproduce the additional
+tables on CPU. The linked notes give the commands to repeat training and GPU
+evaluation.
+
 ## Reproduce the revision on CPU
 
 Use Python 3.11:

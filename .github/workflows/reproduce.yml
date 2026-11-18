@@ -11,6 +11,7 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements.txt
       - run: python -m evaluation.audit_sources
+      - run: python -m rebuttal report --output artifacts/rebuttal
       - run: python -m noiseburden --output artifacts
       - run: python -m noiseburden --arxiv --output artifacts/arxiv
       - uses: actions/upload-artifact@v4

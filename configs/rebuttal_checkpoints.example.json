@@ -1,0 +1,6 @@
+{
+  "i128_eps192": "../checkpoints/i128_eps192.pth",
+  "i128_eps192_d24": "../checkpoints/i128_eps192_d24.pth",
+  "i128_eps256": "../checkpoints/i128_eps256.pth",
+  "i128_restricted384": "../checkpoints/i128_restricted384.pth"
+}
