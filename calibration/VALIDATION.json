@@ -1,0 +1,116 @@
+{
+  "scope": "CPU verification; synthetic model for arithmetic parity, no new pretrained-model GPU evaluation",
+  "frozen_sampler_cases": [
+    {
+      "floor": 0.05,
+      "method": "baseline",
+      "exact_fp32_equality": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "floor": 0.05,
+      "method": "full",
+      "exact_fp32_equality": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "floor": 0.05,
+      "method": "late_half",
+      "exact_fp32_equality": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "floor": 0.02,
+      "method": "baseline",
+      "exact_fp32_equality": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "floor": 0.02,
+      "method": "full",
+      "exact_fp32_equality": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "floor": 0.02,
+      "method": "late_half",
+      "exact_fp32_equality": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "floor": 0.0,
+      "method": "baseline",
+      "exact_fp32_equality": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "floor": 0.0,
+      "method": "full",
+      "exact_fp32_equality": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "floor": 0.0,
+      "method": "late_half",
+      "exact_fp32_equality": true,
+      "maximum_difference": 0.0
+    }
+  ],
+  "fp32_late_boundary": true,
+  "gaussian_risk_identity": [
+    {
+      "sigma": 0.05,
+      "predicted_gain": 7.080453451981483,
+      "measured_analytic_gain": 7.080453451981478
+    },
+    {
+      "sigma": 0.2,
+      "predicted_gain": 6.842726928975823,
+      "measured_analytic_gain": 6.842726928975819
+    },
+    {
+      "sigma": 1.0,
+      "predicted_gain": 3.860846441587301,
+      "measured_analytic_gain": 3.8608464415873005
+    },
+    {
+      "sigma": 4.0,
+      "predicted_gain": 1.3837465918298886,
+      "measured_analytic_gain": 1.3837465918298903
+    }
+  ],
+  "bank_reconstruction_checks": [
+    {
+      "bank": "fit0",
+      "position": 0,
+      "pixels_and_cpu_noise_exact": true
+    },
+    {
+      "bank": "fit0",
+      "position": 999,
+      "pixels_and_cpu_noise_exact": true
+    },
+    {
+      "bank": "fit1",
+      "position": 0,
+      "pixels_and_cpu_noise_exact": true
+    },
+    {
+      "bank": "fit1",
+      "position": 3999,
+      "pixels_and_cpu_noise_exact": true
+    },
+    {
+      "bank": "test",
+      "position": 0,
+      "pixels_and_cpu_noise_exact": true
+    },
+    {
+      "bank": "test",
+      "position": 1999,
+      "pixels_and_cpu_noise_exact": true
+    }
+  ],
+  "torch": "2.11.0+cu126",
+  "numpy": "2.4.3"
+}

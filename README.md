@@ -2,7 +2,8 @@
 
 Code and numerical measurements for the noise-transmission burden in diffusion networks.
 This revision extends the arXiv release with width controls using fixed internal
-dimensions and additional depth, and noisy-input recovery probes of public noise predictors.
+dimensions and additional depth, noisy-input recovery probes of public noise predictors,
+and scalar calibration of a frozen image predictor.
 
 The repository includes training implementations and configurations, evaluation
 workers, saved numerical measurements, and CPU code to reproduce all seven tables
@@ -58,6 +59,26 @@ python -m noiseburden --arxiv --output artifacts/arxiv --strict
 
 Its source, measurements, and references are preserved. See
 [the arXiv workflow](docs/arxiv.md) for its training and evaluation commands.
+
+## Reproduce the scalar-calibration comparison
+
+The calibration release includes all 51 fitted time-dependent coefficients,
+paired per-image denoising measurements, and the complete nine-condition FID-10K
+comparison for the released ImageNet256 JiT-B/16 EMA1 checkpoint.
+
+```bash
+python -m calibration verify
+python -m calibration report --output artifacts/calibration
+```
+
+These commands run on CPU without model weights or ImageNet images. The report
+rebuilds the rebuttal tables and a calibration/denoising/FID plot from saved
+measurements. [The calibration guide](docs/calibration.md) documents the formula,
+exact train/validation cohorts, frozen checkpoint and source identities, fitting,
+held-out denoising, and paired generation for the original and relaxed endpoint
+settings. The portable GPU commands are `prepare`, `fit`, `denoise`, `sample`, and
+`score`; external weights, images, and reference statistics remain separate.
+The half-late FID-10K cohorts include exploratory screening samples.
 
 ## Train the width controls
 

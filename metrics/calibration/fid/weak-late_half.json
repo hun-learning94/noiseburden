@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "case": "official",
+  "stage": "fid10k",
+  "method": "late_half",
+  "fid": 6.490097099695788,
+  "inception_score": 199.48640876155883,
+  "images": 10000,
+  "classes": 1000,
+  "images_per_class": 10,
+  "cfg": 3.0,
+  "interval": [
+    0.1,
+    1.0
+  ],
+  "interval_comparison": "strict FP32",
+  "sampler": "Heun50 with final Euler step",
+  "network_evaluations": 99,
+  "precision": "FP32; TF32 disabled",
+  "seed_offset": 0,
+  "initial_noise": "CUDA seed=offset+image_id",
+  "reference_sha256": "412046720c0d496dc6d72a30eac3e22b9ef6ddac3501cce7f996674ad227ba4c",
+  "endpoint_clamp": 0.02,
+  "late_multiplier": 0.5,
+  "late_start": 0.9,
+  "early_multiplier": 1.0,
+  "cohort": "same 10,000 seeds as original full-strength table"
+}

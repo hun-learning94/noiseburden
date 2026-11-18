@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "case": "official",
+  "stage": "zero",
+  "method": "full",
+  "fid": 7.154951079615614,
+  "inception_score": 203.00105229500906,
+  "images": 10000,
+  "classes": 1000,
+  "images_per_class": 10,
+  "cfg": 3.0,
+  "interval": [
+    0.1,
+    1.0
+  ],
+  "interval_comparison": "strict FP32",
+  "sampler": "Heun50 with final Euler step",
+  "network_evaluations": 99,
+  "precision": "FP32; TF32 disabled",
+  "seed_offset": 0,
+  "initial_noise": "CUDA seed=offset+image_id",
+  "reference_sha256": "412046720c0d496dc6d72a30eac3e22b9ef6ddac3501cce7f996674ad227ba4c",
+  "endpoint_clamp": 0.0
+}

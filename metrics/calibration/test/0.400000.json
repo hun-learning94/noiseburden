@@ -1,0 +1,39 @@
+{
+  "complete": true,
+  "t": 0.4,
+  "images": 2000,
+  "records": {
+    "unguided": {
+      "baseline": {
+        "mse": 0.020716838204065453,
+        "improvement": 0.0,
+        "reduction_percent": 0.0,
+        "paired_se": 0.0,
+        "c_t": 0.0
+      },
+      "full": {
+        "mse": 0.020708975080115623,
+        "improvement": 7.863123949825609e-06,
+        "reduction_percent": 0.037955231741311546,
+        "paired_se": 3.1101556801021993e-07,
+        "c_t": 0.0018818372531965147
+      }
+    },
+    "guided": {
+      "baseline": {
+        "mse": 0.021525237126888676,
+        "improvement": 0.0,
+        "reduction_percent": 0.0,
+        "paired_se": 0.0,
+        "c_t": 0.0
+      },
+      "full": {
+        "mse": 0.021517157350513717,
+        "improvement": 8.079776374960201e-06,
+        "reduction_percent": 0.03753629438473033,
+        "paired_se": 3.172151451792769e-07,
+        "c_t": 0.0019045428543976635
+      }
+    }
+  }
+}

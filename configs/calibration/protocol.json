@@ -1,0 +1,165 @@
+{
+  "model": "Released JiT-B/16 ImageNet256",
+  "checkpoint": {
+    "bytes": 1576057392,
+    "sha256": "4ebcf24698748548d13bef1b4c3b26c72c6ec2bc633002b3f558697920cb2695",
+    "url": "https://www.dropbox.com/scl/fo/3ken1avtsd81ip67b9qpi/AGlp4FoN0cIF8nMbS4DN7Ns/jit-b-16/checkpoint-last.pth?rlkey=14gjrblmljewpl6ygxzlr3njm&dl=1",
+    "source": "Official LTH14/JiT README Dropbox release",
+    "source_revision": "cbc743a2ada5e9762697da2c83f8c4f8379e8c17",
+    "publisher_hash_available": false
+  },
+  "ema": "model_ema1",
+  "image_size": 256,
+  "patch_size": 16,
+  "patch_dimension": 768,
+  "encoder_rank": 128,
+  "fit_times": [
+    0.02,
+    0.04,
+    0.05,
+    0.06,
+    0.08,
+    0.1,
+    0.12,
+    0.14,
+    0.16,
+    0.18,
+    0.2,
+    0.22,
+    0.24,
+    0.26,
+    0.28,
+    0.3,
+    0.32,
+    0.34,
+    0.36,
+    0.38,
+    0.4,
+    0.42,
+    0.44,
+    0.46,
+    0.48,
+    0.5,
+    0.52,
+    0.54,
+    0.56,
+    0.58,
+    0.6,
+    0.62,
+    0.64,
+    0.66,
+    0.68,
+    0.7,
+    0.72,
+    0.74,
+    0.76,
+    0.78,
+    0.8,
+    0.82,
+    0.84,
+    0.86,
+    0.88,
+    0.9,
+    0.92,
+    0.94,
+    0.95,
+    0.96,
+    0.98
+  ],
+  "test_times": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    0.95
+  ],
+  "fit_images": 10000,
+  "test_images": 2000,
+  "cfg": 3.0,
+  "interval": [
+    0.1,
+    1.0
+  ],
+  "interval_comparison": "strict float32",
+  "fit_modes": [
+    "unguided",
+    "guided"
+  ],
+  "floors": [
+    0.05,
+    0.02,
+    0.0
+  ],
+  "methods": [
+    "baseline",
+    "full",
+    "late_half"
+  ],
+  "late_start": 0.9,
+  "late_multiplier": 0.5,
+  "sampling_steps": 50,
+  "network_evaluations": 99,
+  "batch_size": 64,
+  "precision": "FP32; TF32 disabled; FP64 fitting and denoising statistics",
+  "generated_images": 10000,
+  "classes": 1000,
+  "images_per_class": 10,
+  "seed_offset": 0,
+  "fid_reference_sha256": "412046720c0d496dc6d72a30eac3e22b9ef6ddac3501cce7f996674ad227ba4c",
+  "data_bank_sha256": {
+    "fit0-images.npy": "51b953ae3b73a902f8121f2449b1cf2383e57e3272a274978d65f0556b42be17",
+    "fit0-noise.npy": "ab1eeaddd027db0c538d906a1d26646348dab5dfd56920b2c42afee6a3d563fa",
+    "fit0-labels.npy": "53f76d697a15fd61397e1f296fbebd9f76c87f7545e8237a4173879306dd8c1f",
+    "fit0-indices.npy": "1c38e2dcc834d97da771c463ed100d092f92fff0199c62e056fbd72e97ce53cc",
+    "fit1-images.npy": "daddbb5fefa4793ce0ef5dc9ed76006fdedf4fd7dba7ae26176df8921598b5b4",
+    "fit1-noise.npy": "32246b1e09b27d89060ac094c081b4943f7dd53f32dc75d94fde0e0f6d0b4e6e",
+    "fit1-labels.npy": "3e922adf1554cb53cd1f0b5f875a1329fbf7d96c437fd3b462b736d8d20c99d1",
+    "fit1-indices.npy": "1813052235b51c97193361794fc34472229ee009b0fb17104fa60c34dd6c597a",
+    "test-images.npy": "0539528a5a124c2e1aa32ccedd34bd9b4683a2cd1ad3ba39ddd8d355e232727a",
+    "test-noise.npy": "d8aa1188d659714cca6819bcdc96c650f2dd68c3073593ddb10c68b2f05476f4",
+    "test-labels.npy": "34dccb3fb0b5eb215bbaba1f99b25c3621c91ccbc3cb26b4086efb02438de391",
+    "test-indices.npy": "3cba32a9ed09160c60d92a6a657b13e8ed2e78e8f180274a1449e0bd4ff9e5c3"
+  },
+  "cohort_note": "FID-10K expands the exploratory FID-2K cohort and contains its screening samples; it is not an independent confirmation cohort.",
+  "source": {
+    "calibration/frozen/jit/denoiser.py": {
+      "original_sha256": "3649319428f758080828b164266284a75dcd73b53ce81827302be0824bca91a4",
+      "distributed_sha256": "3649319428f758080828b164266284a75dcd73b53ce81827302be0824bca91a4",
+      "transformation": "none"
+    },
+    "calibration/frozen/jit/model_jit.py": {
+      "original_sha256": "0293a23c01312317701c96704b85e7fe00b15d9261aa845731ea434103fd7563",
+      "distributed_sha256": "0293a23c01312317701c96704b85e7fe00b15d9261aa845731ea434103fd7563",
+      "transformation": "none"
+    },
+    "calibration/frozen/jit/util/model_util.py": {
+      "original_sha256": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "distributed_sha256": "f4f35cc86a41b374d9e3654c8a2cddc12fbb11d41a28d24f05cf667c008b912e",
+      "transformation": "none"
+    },
+    "calibration/frozen/jit/util/__init__.py": {
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "distributed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    "calibration/frozen/crop.py": {
+      "original_sha256": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "distributed_sha256": "08da8c1300202e66773806085fcaf2415acf1e38ac8923d5cdf79cafd770ccb6",
+      "transformation": "none"
+    }
+  },
+  "experiment_source_sha256": {
+    "calibration_worker.py": "0609c7be7358967ef5ac112241ecac18db206691964b1b7755a7c5415f4194db",
+    "late_strength_worker.py": "e4b3662cd497826dc6a6ae1c918060614682e72a01a85a76b06e9b5e362841d6",
+    "late_strength_schedule.py": "d50bb07b0ea2ff3b7a245d9699e27d3a3a51f81e3a0cdf9f27cba0c35e63d95e",
+    "half_late_fid10k_worker.py": "6216cc9a3c2e7563479da7525c022ff0d4efbd90bb80dde26e11a3c36e3b0534",
+    "clamp_fid10k_worker.py": "ec5f86362ccfeb1df7e1953f46e5943fe89dd00752cbb0bd8ced20a010a0f3f9"
+  },
+  "portable_worker_note": "Cluster orchestration and private paths removed; scalar projection, guidance, Heun/final-Euler arithmetic, seeds, and quantization preserved. CPU sampler equivalence checks are recorded in calibration/VALIDATION.json."
+}

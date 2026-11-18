@@ -1,0 +1,39 @@
+{
+  "complete": true,
+  "t": 0.8,
+  "images": 2000,
+  "records": {
+    "unguided": {
+      "baseline": {
+        "mse": 0.0056276633026693034,
+        "improvement": 0.0,
+        "reduction_percent": 0.0,
+        "paired_se": 0.0,
+        "c_t": 0.0
+      },
+      "full": {
+        "mse": 0.0054661926773621975,
+        "improvement": 0.00016147062530710556,
+        "reduction_percent": 2.8692303825375816,
+        "paired_se": 6.678211654582494e-06,
+        "c_t": 0.05042521020514004
+      }
+    },
+    "guided": {
+      "baseline": {
+        "mse": 0.005748555959784623,
+        "improvement": 0.0,
+        "reduction_percent": 0.0,
+        "paired_se": 0.0,
+        "c_t": 0.0
+      },
+      "full": {
+        "mse": 0.005582987457992173,
+        "improvement": 0.00016556850179244998,
+        "reduction_percent": 2.8801755249618064,
+        "paired_se": 6.798843135134581e-06,
+        "c_t": 0.05096823861104708
+      }
+    }
+  }
+}

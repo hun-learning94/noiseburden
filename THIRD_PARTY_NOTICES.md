@@ -33,3 +33,10 @@ Revision source copies neutralize collaborator names and machine paths. The
 original source hashes and distributed source hashes are distinguished where
 applicable; model definitions and numerical arithmetic are retained. Third-party
 authorship and license notices are preserved.
+
+The scalar-calibration adapter uses the released LTH14/JiT inference code at
+commit `cbc743a2ada5e9762697da2c83f8c4f8379e8c17`. The unchanged scientific
+source is under `calibration/frozen/jit/` with its upstream MIT license.
+The center-crop helper under `calibration/frozen/crop.py` retains the ADM source
+reference. Public checkpoint provenance is recorded in
+`configs/calibration/protocol.json`; the weights are not redistributed.
