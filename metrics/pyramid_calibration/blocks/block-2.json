@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "block": 2,
+  "count": 10000,
+  "start": 20000,
+  "stop_exclusive": 30000,
+  "caption_and_noise_indices_inclusive": [
+    20000,
+    29999
+  ],
+  "reference_images": 40504,
+  "manifest_sha256": "4a9d616a7409bc6aac26227d773ee080174506a25ede576e8af5717ff9b5493c",
+  "selection_sha256": "f114592f1e9c2388f9da2c46962641dd92a72c6ff55a051d507949d00f4a2fc4",
+  "reference_sha256": "ca177f219b224280f8fd4b57339674050e4f226094643f82fa538ba3b5d7e3e0",
+  "fids": {
+    "baseline": 20.13117041284687,
+    "calibrated": 19.221329169882324,
+    "late_half": 19.812918008895053
+  },
+  "time": 1795064553.859413,
+  "detail_sha256": "6b752ab5925f05a805b7c1947da7448ebcc809c6f1a9fefc9d996aa89c774024"
+}

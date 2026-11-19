@@ -168,7 +168,7 @@
       "late_half"
     ],
     "aggregation": "Recompute FP64 mean and sample covariance of all 30K Inception features; apply the same frozen FID implementation. Not an average of block FIDs.",
-    "reporting": "All three block scores plus pooled FID-30K, both calibration schedules, and the signed full-calibration change from baseline; FID-50K continues separately.",
+    "reporting": "All three audited block scores plus pooled FID-30K, both calibration schedules, and the signed full-calibration change from baseline.",
     "validation": "Require all three block audits, verify feature hashes, and compare frozen FID with a symmetric-PSD calculation."
   }
 }

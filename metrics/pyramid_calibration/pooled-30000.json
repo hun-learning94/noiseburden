@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "count": 30000,
+  "start": 0,
+  "stop_exclusive": 30000,
+  "reference_images": 40504,
+  "manifest_sha256": "4972f1d9068a8629e86af008e72b1555d15e017203863bf73c5f6547e43f79cc",
+  "reference_sha256": "ca177f219b224280f8fd4b57339674050e4f226094643f82fa538ba3b5d7e3e0",
+  "selection_sha256": "f114592f1e9c2388f9da2c46962641dd92a72c6ff55a051d507949d00f4a2fc4",
+  "source_blocks": {
+    "0": {
+      "metric_sha256": "f0744adedb4c9f7bd5ff08aa1ac9a566765f33d318c9196ce8b381536bfc9de1",
+      "detail_sha256": "721c80f81453750e423c776a05c7f2cce5792281ad7b5f011c1b4482bb95570d",
+      "fids": {
+        "baseline": 19.74148339331623,
+        "calibrated": 18.886689208755286,
+        "late_half": 19.480290458640525
+      }
+    },
+    "1": {
+      "metric_sha256": "3bc368e0d3b6e00c9c690616f2bc5d034f464c2ad6be79a934c7961c18cff410",
+      "detail_sha256": "df8c4ea72f6439f993c73637610c588af43e42c41339aefe86b6664bf9479f96",
+      "fids": {
+        "baseline": 19.750969300271663,
+        "calibrated": 18.893436891335,
+        "late_half": 19.455160701607895
+      }
+    },
+    "2": {
+      "metric_sha256": "228ad9d21680b8f4de00037986b64caa62894a1ad81718fb51a8a3fadb2f8c72",
+      "detail_sha256": "6b752ab5925f05a805b7c1947da7448ebcc809c6f1a9fefc9d996aa89c774024",
+      "fids": {
+        "baseline": 20.13117041284687,
+        "calibrated": 19.221329169882324,
+        "late_half": 19.812918008895053
+      }
+    }
+  },
+  "fids": {
+    "baseline": 17.746468309364275,
+    "calibrated": 16.8703026153442,
+    "late_half": 17.45474971817407
+  },
+  "checks": [
+    "Three complete audited blocks with identical reference and fixed selection",
+    "Every feature-batch hash matches its completed block audit",
+    "Exactly ordered finite features for indices 0..29999",
+    "Recompute pooled FP64 mean and covariance from all 30K feature vectors",
+    "Frozen FID implementation agrees with independent symmetric-PSD calculation"
+  ],
+  "additional_gpu_count": 0,
+  "time": 1795064615.636219,
+  "elapsed_seconds": 44.820903062820435,
+  "detail_sha256": "be129c1fec8ca348ad3634d2c40f5c38a1431ea8c3223d462ee806e6d6c76b06"
+}

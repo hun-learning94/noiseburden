@@ -1,9 +1,9 @@
 # Scalar calibration of released Pyramid-JiT512
 
 We apply the input-bottleneck correction to the released 2.18B-parameter
-Pyramid-JiT512 text-to-image model, retaining its native sampler. On the first
-fixed COCO FID-10K block, full calibration reduces Inception-FID from
-**19.7415 to 18.8867 (4.3%)**. The backbone is frozen. This is our matched
+Pyramid-JiT512 text-to-image model, retaining its native sampler. Full calibration
+reduces pooled COCO Inception-FID-30K from **17.75 to 16.87 (4.9%)**, with
+**4.3–4.5%** improvements across all three audited 10K blocks. The backbone is frozen. This is our matched
 COCO evaluation of the released model; it is not a reproduction of the
 authors' FD-DINOv2 evaluation.
 
@@ -19,19 +19,19 @@ Snapshot: November 19, 2026 UTC. Only completed, audited comparisons are numeric
 results here. The rebuttal comparison reports the three blocks and their pooled
 30K result, with both full and half-late calibration. ΔFID is full calibration minus
 uncalibrated; lower is better. The table is generated from the accompanying
-audited records; pending entries are not numerical results.
+completed audit records.
 
 <!-- BEGIN FID COMPARISON -->
 | Evaluation | Uncalibrated | Full calibration | Half-late calibration | ΔFID, full |
 |---|---:|---:|---:|---:|
-| FID-10K, block 1 | 19.74 | 18.89 | 19.48 | −0.85 |
-| FID-10K, block 2 | 19.75 | 18.89 | 19.46 | −0.86 |
-| FID-10K, block 3 | Pending | Pending | Pending | Pending |
-| Pooled FID-30K | Pending | Pending | Pending | Pending |
+| FID-10K, block 1 | 19.74 | **18.89** | 19.48 | −0.85 |
+| FID-10K, block 2 | 19.75 | **18.89** | 19.46 | −0.86 |
+| FID-10K, block 3 | 20.13 | **19.22** | 19.81 | −0.91 |
+| Pooled FID-30K | 17.75 | **16.87** | 17.45 | −0.88 |
 <!-- END FID COMPARISON -->
 
 The original nested 2K pilot remains in the numerical records: 33.34746063
-uncalibrated, 32.57026738 full, and 33.16996545 half-late. FID-50K remains pending.
+uncalibrated, 32.57026738 full, and 33.16996545 half-late.
 
 The three FID-10K cohorts are fixed, disjoint blocks of the same 50K caption/noise
 bank: zero-based indices `[0,10000)`, `[10000,20000)`, and `[20000,30000)`.
@@ -47,10 +47,10 @@ before generation. No additional seed-repeat result is included.
 Pooled FID-30K recomputes the FP64 feature mean and covariance over all 30,000
 generated images per variant, using the same 40,504-image reference. It reuses
 the three blocks; it is not their average FID or an additional independent
-evaluation. We designate this aggregate for the rebuttal while the 50K extension
-continues. All three variants and all three fixed blocks are retained regardless
-of their scores. The campaign's CPU pooled score waits for all block audits and checks each
-feature-batch hash against its audit before aggregation. No new generation is
+evaluation. All three variants and all three fixed blocks are retained regardless
+of their scores. The completed CPU pooled audit checks each
+feature-batch hash against its block audit before aggregation and independently
+cross-checks the FID calculation. No new generation is
 needed. Descriptive block means/SDs, if reported, remain distinct from pooled FID
 and do not constitute a confidence interval or significance test.
 
@@ -173,7 +173,7 @@ recomputed them from the original saved features and reference. The CPU command
 does not recompute Inception features or rerun GPU sampling.
 
 `artifacts/pyramid-calibration/REPORT.md`, `fid.csv`, `fid-comparison.csv`, and `denoising.csv` are
-rebuilt from the measurements. The report explicitly retains pending entries.
+rebuilt from the completed measurements, including all three blocks and pooled FID-30K.
 
 ## Repeat fitting and generation
 

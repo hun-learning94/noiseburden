@@ -82,6 +82,11 @@ def verify():
             assert audit['passed'] and audit['fids'] == block['fids']
             assert audit['start'] == block['start'] and audit['stop_exclusive'] == block['stop_exclusive']
             assert audit['reference_sha256'] == read(MEASUREMENTS/'audits/REFERENCE_AUDIT.json')['reference_sha256']
+            detail_path = MEASUREMENTS/'audits'/f'FID10K_BLOCK{b+1}_AUDIT.json'
+            if detail_path.exists():
+                assert digest(detail_path) == audit['detail_sha256']
+                detail = read(detail_path)
+                assert detail['passed'] and detail['fids'] == audit['fids']
         else:
             assert block['status'] == 'pending' and 'fids' not in block
     pooled = status['pooled_fid30k']
@@ -90,6 +95,17 @@ def verify():
         audit = read(MEASUREMENTS/'pooled-30000.json')
         assert audit['passed'] and audit['count'] == 30000 and audit['fids'] == pooled['fids']
         assert all(b['status'] == 'audited' for b in status['fid10k_blocks'])
+        assert audit['reference_sha256'] == read(MEASUREMENTS/'audits/REFERENCE_AUDIT.json')['reference_sha256']
+        detail_path = MEASUREMENTS/'audits/FID30K_RECOMPUTE_AUDIT.json'
+        assert digest(detail_path) == audit['detail_sha256']
+        detail = read(detail_path)
+        assert detail['passed'] and detail['fids'] == audit['fids']
+        for b, block in enumerate(status['fid10k_blocks']):
+            source = audit['source_blocks'][str(b)]
+            assert source['metric_sha256'] == digest(MEASUREMENTS/'blocks'/f'block-{b}.json')
+            assert source['fids'] == block['fids']
+        for variant, fid in pooled['fids'].items():
+            np.testing.assert_allclose(fid, detail['variants'][variant]['symmetric_psd_crosscheck'], atol=1e-4, rtol=0)
     else:
         assert pooled['status'] == 'pending' and 'fids' not in pooled
     return {'passed': True, 'fit_times': len(TIMES), 'fit_images_per_time': 10000,
@@ -108,11 +124,14 @@ def render(output, measurements=MEASUREMENTS):
              '|---:|---:|---:|---:|']
     fid_rows = []
     for count in [2000, 10000, 50000]:
+        if not all((measurements/'fid'/f'{variant}-{count}.json').exists()
+                   for variant in ['baseline', 'calibrated', 'late_half']):
+            continue
         row = {'images': count}
         for variant in ['baseline', 'calibrated', 'late_half']:
             path = measurements/'fid'/f'{variant}-{count}.json'
             row[variant] = read(path)['fid'] if path.exists() else None
-        lines.append('| '+str(count)+' | '+' | '.join('Pending' if row[v] is None else f'{row[v]:.8f}'
+        lines.append('| '+str(count)+' | '+' | '.join(f'**{row[v]:.8f}**' if v == 'calibrated' else f'{row[v]:.8f}'
                      for v in ['baseline', 'calibrated', 'late_half'])+' |')
         fid_rows.append(row)
     lines += ['', 'The 2K and first 10K results are nested. Three disjoint 10K caption/noise blocks',
@@ -143,7 +162,7 @@ def render(output, measurements=MEASUREMENTS):
             fids = evaluation.get('fids', {})
             values = [fids.get(v) for v in ['baseline','calibrated','late_half']]
             values += [fids['calibrated']-fids['baseline'] if fids else None]
-            cells = ['Pending' if v is None else (f'{v:.2f}' if i<3 else f'{v:+.2f}') for i,v in enumerate(values)]
+            cells = ['Pending' if v is None else (f'**{v:.2f}**' if i == 1 else (f'{v:.2f}' if i<3 else f'{v:+.2f}')) for i,v in enumerate(values)]
             lines.append('| '+label+' | '+' | '.join(cells)+' |')
             comparison_rows.append(dict(zip(['evaluation','status','baseline','calibrated','late_half',
                                              'full_minus_baseline'],
