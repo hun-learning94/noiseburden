@@ -1,0 +1,23 @@
+{
+  "approved_variants": {
+    "baseline": true,
+    "calibrated": true,
+    "late_half": true
+  },
+  "criterion": "finite results; positive conditional low-noise MSE gain at one or more tested times; no >3-SE conditional low-noise harm; otherwise review before generation",
+  "assessment": "Held-out raw conditional denoising improves at 0.8, 0.9, 0.95, 0.98. There is no >3-SE MSE deterioration at tested t>=0.8. Retain the full and JiT-style half-late schedules for generation, with a paired uncalibrated control. This decision uses denoising only; generation FID has not been used to choose coefficients or schedules.",
+  "denoising_sha256": {
+    "0.050000": "4debbe8b395b48d2e5e998b8b6247fb7cf415aff31ffa7d358923e8ac7428446",
+    "0.100000": "2eab7636a0b85f27632a82557ccb88af41070330344d7c09b35d383e12f12364",
+    "0.200000": "39d55209959e1ab4afead0701d00242fa04deab310bb0cb433b87f9f1034253b",
+    "0.300000": "95754d9eea684a908d598a596e090d03918860f874435ea5fbb0fc2d8aa84469",
+    "0.400000": "4e0d1275b1e52e1bc9d32fdcaf2c6275c0697486d6d5db4ecd6667ec6993f26c",
+    "0.500000": "41e1c530e2f93f91285073775b467ce8e753ec09a145dcaf7165bb48a60152f0",
+    "0.600000": "f6010be47d1588935f58b6b9ca4e377edb5aae1891e77e70a87e72aa5c890eb7",
+    "0.700000": "208aa9b7316ae4f973462e691e75433363fbf9f8d1416e3b11b237627cd40b24",
+    "0.800000": "b22451da85edf4c400cde200665a8fd2b0bd2c0219280d171a5362aff14095f6",
+    "0.900000": "e92c72c594040e9b2dd6ff5d946a130d8388ae65128f87bd5e5efc8d6743a103",
+    "0.950000": "e76b52d6dc82c66f6f02c7ea56f5514f4dd0ab2e292034c9e19fb4f9d4a8dbf1",
+    "0.980000": "cab76cf45bf61a13c78d14e546dfccd21bde348c602323301b5022fb5e0d1121"
+  }
+}

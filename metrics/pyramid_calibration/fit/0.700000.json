@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "t": 0.7,
+  "source_time": 0.29999998211860657,
+  "images": 10000,
+  "conditional": {
+    "vbar": 0.0016693239639759007,
+    "coefficient": 0.0022669850838939287,
+    "effective_sigma": 0.8571427464485168
+  },
+  "negative": {
+    "vbar": 0.001668175173348164,
+    "coefficient": 0.002265428530799357,
+    "effective_sigma": 0.8571427464485168
+  }
+}

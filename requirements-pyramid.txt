@@ -1,0 +1,13 @@
+# Dedicated Python 3.11 environment; see docs/pyramid_calibration.md for CUDA wheels.
+torch==2.11.0
+torchvision==0.26.0
+transformers==5.5.3
+triton==3.6.0; platform_system == "Linux"
+huggingface-hub==1.10.1
+numpy==2.4.3
+scipy==1.17.1
+Pillow==12.1.1
+safetensors==0.7.0
+einops==0.8.2
+accelerate==1.13.0
+tqdm>=4.66

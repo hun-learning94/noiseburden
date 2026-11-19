@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "audited_at_unix": 1795030578.3081884,
+  "checks": [
+    "All 12 prescribed times present",
+    "Each time contains exactly ordered validation IDs 0..1999",
+    "All six per-image MSE arrays finite and nonnegative",
+    "Reported means, paired differences, standard errors and percentages match retained arrays"
+  ],
+  "original_receipt_sha256": "c91c06a484576eefa9e092eacab7a229d85572c5c6e434ea7131911abfa55f92"
+}

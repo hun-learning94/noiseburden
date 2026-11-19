@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "validation_kind": "CPU release validation; no new GPU inference run",
+  "checks": {
+    "release_file_hashes": true,
+    "exact_cohort_and_seed_identities": true,
+    "all_51_fit_moments_and_coefficients": true,
+    "all_12_held_out_loss_grids_and_paired_statistics": true,
+    "row_basis_orthonormality": true,
+    "unchanged_scientific_worker_definitions": 21,
+    "completed_fids_match_original_recomputation_audits": true,
+    "workspace_initialization_and_reuse": true,
+    "supplied_fit_import_and_conflicting_fit_rejection": true,
+    "pixel_crops_match_original_banks": 6,
+    "worker_and_frozen_metric_imports": true,
+    "identical_distribution_metric_zero": true,
+    "existing_source_audit_file_checks": 483,
+    "existing_rebuttal_release_checks": true,
+    "private_path_identifier_scan": true,
+    "cli_help_and_python_compilation": true
+  },
+  "limitations": [
+    "The original measured run passed GPU native-sampler parity; the portable wrapper was not rerun end to end on a GPU.",
+    "Raw generation/reference features and PNGs are external; release verification checks FID audit identities rather than recomputing those features.",
+    "The second and third FID-10K blocks and FID-50K remain pending."
+  ]
+}

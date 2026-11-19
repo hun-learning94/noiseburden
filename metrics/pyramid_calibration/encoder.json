@@ -1,0 +1,9 @@
+{
+  "rank": 1024,
+  "patch_dimension": 3072,
+  "discarded_dimension": 2048,
+  "projector_weight_precision": "BF16-cast released FP32 weights, matching native autocast",
+  "nominal_projector_relative_leakage": 0.0013487629733067673,
+  "rows_sha256": "4463d87e278da80a9d928f7295b6473ab7b51fd401186e0de0e77935a13c5447",
+  "input_quantization_note": "Native BF16 input/output rounding means ideal Gaussian risk identities are checked empirically, not asserted bit-exact."
+}

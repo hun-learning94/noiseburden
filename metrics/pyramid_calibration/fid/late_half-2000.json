@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "variant": "late_half",
+  "generated_images": 2000,
+  "reference_images": 40504,
+  "fid": 33.169965451905455,
+  "cohorts_sha256": "32c7af50f4bf86ccf667e8937baba2079b380cd53c02f840c1e70dca559ce1c6",
+  "reference_sha256": "ca177f219b224280f8fd4b57339674050e4f226094643f82fa538ba3b5d7e3e0",
+  "model_revision": "05b4ca725545096b5d1485e185c074e70a72a769",
+  "native_unclamped_sampler": true,
+  "time": 1795035328.794218,
+  "nested_prefix": true,
+  "generation_batch": 40
+}

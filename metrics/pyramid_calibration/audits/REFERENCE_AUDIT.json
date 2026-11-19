@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "time": 1795032934.4936318,
+  "images": 40504,
+  "batches": 633,
+  "feature_dimension": 2048,
+  "checks": [
+    "Exactly ordered reference bank IDs 0..40503",
+    "Finite features and statistics",
+    "Mean and diagonal covariance agree with retained features",
+    "Covariance symmetry"
+  ],
+  "reference_sha256": "ca177f219b224280f8fd4b57339674050e4f226094643f82fa538ba3b5d7e3e0",
+  "original_receipt_sha256": "59535da675f7f1e1459ce327a4b2fa144199fc1d936aa92372c904d1aad6be1d"
+}

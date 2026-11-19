@@ -40,3 +40,12 @@ source is under `calibration/frozen/jit/` with its upstream MIT license.
 The center-crop helper under `calibration/frozen/crop.py` retains the ADM source
 reference. Public checkpoint provenance is recorded in
 `configs/calibration/protocol.json`; the weights are not redistributed.
+
+The Pyramid-JiT calibration follow-up bundles Linum-AI/pyramid-jit at commit
+`dbe6d654d8c2770e00299d5ee562430447a40f8c`, retaining its Apache-2.0 license in
+`pyramid_calibration/frozen/pyramid-LICENSE`. The exact metric-source snapshot
+used for this experiment and its license are also retained in that directory.
+Model and Qwen text-encoder weights are external downloads pinned by revision
+and SHA-256; their upstream terms apply. Selected public COCO2014 captions and
+image identifiers are included for exact cohort reproduction; COCO images remain
+external inputs. Source and protocol details are in `docs/pyramid_calibration.md`.

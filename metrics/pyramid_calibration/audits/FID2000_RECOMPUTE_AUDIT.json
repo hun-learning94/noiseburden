@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "count": 2000,
+  "started": 1795035980.9925754,
+  "source_sha256": "22e6e380e402237115bd2edd111ac79d319236bb2cf96a0c8978279737c48d40",
+  "previous_audit_sha256": "1f7e949afcd079b65c9017267b04b610f8307c21e58249ca18ce6b00767c9dc5",
+  "cohort_sha256": "32c7af50f4bf86ccf667e8937baba2079b380cd53c02f840c1e70dca559ce1c6",
+  "reference_sha256": "ca177f219b224280f8fd4b57339674050e4f226094643f82fa538ba3b5d7e3e0",
+  "checks": [
+    "Ordered finite 2048-dimensional features for every image",
+    "Every PNG has valid CRC, RGB mode and 512x512 shape",
+    "All earlier-stage PNG and feature hashes unchanged",
+    "Metric identities match the frozen model, sampler and cohorts",
+    "FID recomputed from saved features and common reference"
+  ],
+  "time": 1795036021.1040673,
+  "elapsed_seconds": 40.111492395401,
+  "fids": {
+    "baseline": 33.34746062970112,
+    "calibrated": 32.57026737681366,
+    "late_half": 33.169965451905455
+  },
+  "detail_sha256": "e25e7cad4400e3021a1669494c961569442739ffdcdbc27e88f2e99d87697fa9",
+  "original_receipt_sha256": "b08bdec55b8bdebfeaa7425e1170446b15f1ea5b119e5417863c7a05333f08b5"
+}

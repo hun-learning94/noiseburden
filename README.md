@@ -30,6 +30,18 @@ These commands check the supplied measurements and reproduce the additional
 tables on CPU. The linked notes give the commands to repeat training and GPU
 evaluation.
 
+The [Pyramid-JiT calibration follow-up](docs/pyramid_calibration.md) includes
+native-sampler reproduction code, fitted coefficients, per-image denoising
+measurements, exact COCO caption/noise identities, and audited Inception-FID.
+Full calibration improves the completed first FID-10K block from 19.7415 to
+18.8867. Two further disjoint 10K blocks and the full FID-50K remain pending;
+the guide explains their relation to the shared 50K bank.
+
+```bash
+python -m pyramid_calibration verify
+python -m pyramid_calibration report --output artifacts/pyramid-calibration
+```
+
 ## Reproduce the revision on CPU
 
 Use Python 3.11:

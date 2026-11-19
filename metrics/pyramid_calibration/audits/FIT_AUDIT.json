@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "time": 1795032860.8738112,
+  "checks": [
+    "All 51 prescribed fit times present",
+    "Each time contains exactly ordered fit IDs 0..9999",
+    "Both branch error arrays finite and nonnegative",
+    "Reported vbar and coefficients match retained moments and effective sigma"
+  ],
+  "original_receipt_sha256": "38c7220906dfb8da897ac0ce375a6b82f38f93e4a1c4043dc8c4add134a9adbb"
+}

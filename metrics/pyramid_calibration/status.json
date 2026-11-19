@@ -1,0 +1,28 @@
+{
+  "snapshot": "2026-11-19 UTC",
+  "fid10k_blocks": [
+    {
+      "start": 0,
+      "stop_exclusive": 10000,
+      "status": "audited",
+      "fids": {
+        "baseline": 19.74148339331623,
+        "calibrated": 18.886689208755286,
+        "late_half": 19.480290458640525
+      }
+    },
+    {
+      "start": 10000,
+      "stop_exclusive": 20000,
+      "status": "pending"
+    },
+    {
+      "start": 20000,
+      "stop_exclusive": 30000,
+      "status": "pending"
+    }
+  ],
+  "fid50000": "pending",
+  "summary_mean_sd": "pending all three blocks",
+  "pretraining_overlap": "unknown"
+}

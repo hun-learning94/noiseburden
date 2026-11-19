@@ -1,0 +1,34 @@
+{
+  "original_worker_sha256": "14b35f0c8cb725c01f0353af92473ee4a03fb98287c7afaec85cfac70a720df4",
+  "scientific_functions_ast_sha256": {
+    "patches": "959e69b4caca3c0c197e14cc8fa4f511ce8cbed830421e4f69322b78078d63e5",
+    "unpatch": "0017fe350d1e42186f4d5a0e8953622fdba5dbb56ebbdbfadb047a527d0b71fa",
+    "project": "38905a9b0ffafff51bc8995a173ab6a3b561633e7c037e765edbc34bfc81920a",
+    "source_time": "439038e86edc96ac4814c9f96c1c490b0521644f207a5ecec4fb3fdb1d082419",
+    "strength": "b0f3ea10d1de814f727f141b2b033765c1533af0213957c7ebad554851e09200",
+    "TextCache": "61c64070747eb25522a7fb99669777a57bdb5b05cbcf056a6f5bf713f8da40d9",
+    "text_batch": "0fc995f60b5e8db855284c9bc722bffb2d93f73260e6e664c01545cb3789b70a",
+    "load_model": "bab2ac71e2ddd989cf72d716cda005d1c86c16f09aa88c2797774dae199059e9",
+    "raw_predictions": "794fb5f8597cccc62a1aa6ef878d31cb4d97b54f7fd11d23020c398856baff78",
+    "corrected": "4d44c3b6b4e5b4fdb5ad66c454535a849134a96ed6b3721cb2ecb58ccfefa734",
+    "sample": "7d76845f08e6a004c9c8484720d56dda54f6a214b70610ab99736cc9e75d51fc",
+    "images": "79720c3567f8610e2db67839f00c347320d41875dbad2272781704dbf248b560",
+    "noises": "787e489b7f7e2592e60a24bcc5430f48cbd1d19e129e3ffc29a596715c0acffe",
+    "fit": "e3072474dd69ae23e96eaf71d09ecc3c469c2fefe8e15cc013d80caea4921aa1",
+    "coefficients": "6a17934f9a0bf8e76836fc67b4b1fd294e3cd53534c89260fd16fe6c1586dcb5",
+    "denoise": "0133225a11e0a44ef162943c11a6bdb370f9161fb2d7c03efde3f555ab491d97",
+    "feature_extractor": "170e6ce5b47d91b2801574a14e7c7ead6995df812867d9488fabf6f0f29cea17",
+    "reference_features": "52f466933c39bdb268da4aa6d044d851a4be8f96970f8acb95fa824792f230da",
+    "score": "ae5d529de59b2a23a9eaf4fd9444db2b49f4d14a3735b9d8cd5383f22b6eb7c9",
+    "save_png": "82d23a3bdddf296357180e54a0f8970e1a961d8ec29d9cc3c6005fe0e6bf4cac",
+    "generation": "d7430196810e908ee8976e7bc3637a205ed6a36b584a1b7e011650b3aa56a395"
+  },
+  "adaptations": [
+    "Portable package imports and workspace paths",
+    "Portable reporting and CLI entry points",
+    "Neutral execution identifier",
+    "Additional 20K/30K prefix count choices",
+    "Preparation validates pinned asset hashes and reuses the released basis after checking its BF16 encoder row space"
+  ],
+  "gpu_validation": "Native baseline PNG parity passed in the measured run and is required at each worker startup. The portable command wrapper is CPU-validated; no new GPU campaign was run for this release."
+}
