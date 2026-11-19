@@ -1,5 +1,5 @@
 {
-  "snapshot": "2026-11-19 UTC",
+  "snapshot": "2026-11-19T03:08:51.615601+00:00",
   "fid10k_blocks": [
     {
       "start": 0,
@@ -14,7 +14,12 @@
     {
       "start": 10000,
       "stop_exclusive": 20000,
-      "status": "pending"
+      "status": "audited",
+      "fids": {
+        "baseline": 19.750969300271663,
+        "calibrated": 18.893436891335,
+        "late_half": 19.455160701607895
+      }
     },
     {
       "start": 20000,
@@ -24,5 +29,10 @@
   ],
   "fid50000": "pending",
   "summary_mean_sd": "pending all three blocks",
-  "pretraining_overlap": "unknown"
+  "pretraining_overlap": "unknown",
+  "pooled_fid30k": {
+    "start": 0,
+    "stop_exclusive": 30000,
+    "status": "pending"
+  }
 }

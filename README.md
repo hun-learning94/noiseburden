@@ -34,8 +34,9 @@ The [Pyramid-JiT calibration follow-up](docs/pyramid_calibration.md) includes
 native-sampler reproduction code, fitted coefficients, per-image denoising
 measurements, exact COCO caption/noise identities, and audited Inception-FID.
 Full calibration improves the completed first FID-10K block from 19.7415 to
-18.8867. Two further disjoint 10K blocks and the full FID-50K remain pending;
-the guide explains their relation to the shared 50K bank.
+18.8867. The follow-up table includes full and half-late calibration for three
+disjoint 10K blocks and pooled FID-30K, marking unfinished evaluations pending.
+The full FID-50K continues separately; the guide explains the shared sample bank.
 
 ```bash
 python -m pyramid_calibration verify

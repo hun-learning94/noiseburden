@@ -153,8 +153,22 @@
     ],
     "intervals": "zero-based, stop exclusive",
     "pairing": "same caption and noise seed at each index across variants",
-    "interpretation": "Disjoint caption/noise blocks within the 50K bank; underlying image IDs can overlap. Not seed-only repeats or independent training/calibration repeats. Block-0 reused; later blocks and 50K are pending in this release.",
+    "interpretation": "Disjoint caption/noise blocks within the 50K bank; underlying image IDs can overlap. Not seed-only repeats or independent training/calibration repeats. Completion status is recorded in metrics/pyramid_calibration/status.json.",
     "summaries": "Report three block scores and descriptive mean/sample SD when complete; no significance or independence claim."
   },
-  "metric": "Inception FID only; no FD-DINOv2 evaluation is included in this release."
+  "metric": "Inception FID only; no FD-DINOv2 evaluation is included in this release.",
+  "pooled_fid30k": {
+    "start": 0,
+    "stop_exclusive": 30000,
+    "generated_images_per_variant": 30000,
+    "reference_images": 40504,
+    "methods": [
+      "baseline",
+      "calibrated",
+      "late_half"
+    ],
+    "aggregation": "Recompute FP64 mean and sample covariance of all 30K Inception features; apply the same frozen FID implementation. Not an average of block FIDs.",
+    "reporting": "All three block scores plus pooled FID-30K, both calibration schedules and signed changes from baseline; FID-50K continues separately.",
+    "validation": "Require all three block audits, verify feature hashes, and compare frozen FID with a symmetric-PSD calculation."
+  }
 }

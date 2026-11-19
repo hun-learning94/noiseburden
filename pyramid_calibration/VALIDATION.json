@@ -17,11 +17,14 @@
     "existing_source_audit_file_checks": 483,
     "existing_rebuttal_release_checks": true,
     "private_path_identifier_scan": true,
-    "cli_help_and_python_compilation": true
+    "cli_help_and_python_compilation": true,
+    "audited_fid10k_blocks_in_current_release": 2,
+    "comparison_table_rows": 4,
+    "comparison_includes_both_calibration_schedules_and_deltas": true
   },
   "limitations": [
     "The original measured run passed GPU native-sampler parity; the portable wrapper was not rerun end to end on a GPU.",
     "Raw generation/reference features and PNGs are external; release verification checks FID audit identities rather than recomputing those features.",
-    "The second and third FID-10K blocks and FID-50K remain pending."
+    "The third FID-10K block, pooled FID-30K, and FID-50K remain pending."
   ]
 }

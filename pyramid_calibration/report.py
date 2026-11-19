@@ -75,6 +75,23 @@ def verify():
         assert hashlib.sha256(ast.dump(definitions[name], include_attributes=False).encode()).hexdigest() == sha, name
     status = read(MEASUREMENTS/'status.json')
     assert status['fid10k_blocks'][0]['fids'] == read(MEASUREMENTS/'audits/FID10000_RECOMPUTE_AUDIT.json')['fids']
+    for b, block in enumerate(status['fid10k_blocks']):
+        assert block['start'] == b*10000 and block['stop_exclusive'] == (b+1)*10000
+        if block['status'] == 'audited':
+            audit = read(MEASUREMENTS/'blocks'/f'block-{b}.json')
+            assert audit['passed'] and audit['fids'] == block['fids']
+            assert audit['start'] == block['start'] and audit['stop_exclusive'] == block['stop_exclusive']
+            assert audit['reference_sha256'] == read(MEASUREMENTS/'audits/REFERENCE_AUDIT.json')['reference_sha256']
+        else:
+            assert block['status'] == 'pending' and 'fids' not in block
+    pooled = status['pooled_fid30k']
+    assert pooled['start'] == 0 and pooled['stop_exclusive'] == 30000
+    if pooled['status'] == 'audited':
+        audit = read(MEASUREMENTS/'pooled-30000.json')
+        assert audit['passed'] and audit['count'] == 30000 and audit['fids'] == pooled['fids']
+        assert all(b['status'] == 'audited' for b in status['fid10k_blocks'])
+    else:
+        assert pooled['status'] == 'pending' and 'fids' not in pooled
     return {'passed': True, 'fit_times': len(TIMES), 'fit_images_per_time': 10000,
             'denoising_times': len(TEST_TIMES), 'held_out_images_per_time': 2000,
             'original_scientific_definitions_unchanged': len(parity),
@@ -114,18 +131,30 @@ def render(output, measurements=MEASUREMENTS):
         lines.append(f'| {t:g} | {row["conditional_baseline"]:.8g} | {row["conditional_calibrated"]:.8g} | '
                      f'{row["conditional_late_half"]:.8g} | {row["full_reduction_percent"]:.6g} |')
     status_file = measurements/'status.json'
+    comparison_rows = []
     if status_file.exists():
         status = read(status_file)
-        lines += ['', '## Three FID-10K blocks', '', '| Indices (stop exclusive) | Status | Baseline | Full | Half-late |',
-                  '|---|---|---:|---:|---:|']
-        for block in status['fid10k_blocks']:
-            values = block.get('fids', {})
-            lines.append(f'| [{block["start"]}, {block["stop_exclusive"]}) | {block["status"]} | '+
-                         ' | '.join(f'{values[v]:.8f}' if v in values else 'Pending' for v in ['baseline','calibrated','late_half'])+' |')
-        lines += ['', 'Mean and sample SD remain pending until all three blocks are complete.']
+        lines += ['', '## Three FID-10K blocks and pooled FID-30K', '',
+                  '| Evaluation | Uncalibrated | Full calibration | Half-late calibration | ΔFID, full | ΔFID, half-late |',
+                  '|---|---:|---:|---:|---:|---:|']
+        evaluations = [(f'FID-10K, block {i+1}', b) for i,b in enumerate(status['fid10k_blocks'])]
+        evaluations.append(('Pooled FID-30K', status['pooled_fid30k']))
+        for label, evaluation in evaluations:
+            fids = evaluation.get('fids', {})
+            values = [fids.get(v) for v in ['baseline','calibrated','late_half']]
+            values += [fids[v]-fids['baseline'] if fids else None for v in ['calibrated','late_half']]
+            cells = ['Pending' if v is None else (f'{v:.2f}' if i<3 else f'{v:+.2f}') for i,v in enumerate(values)]
+            lines.append('| '+label+' | '+' | '.join(cells)+' |')
+            comparison_rows.append(dict(zip(['evaluation','status','baseline','calibrated','late_half',
+                                             'full_minus_baseline','half_minus_baseline'],
+                                            [label,evaluation['status'],*values])))
+        lines += ['', 'Lower FID is better; ΔFID is calibrated minus uncalibrated.',
+                  'Half-late uses full correction before clean time 0.9 and half strength thereafter.',
+                  'Pooled FID-30K recomputes statistics over the union of the three blocks, using the same 40,504-image reference.',
+                  'It is not an average of block FIDs or an additional independent evaluation.']
     lines += ['', 'See docs/pyramid_calibration.md for equations, precision, data selection, reproduction commands, and limitations.']
     (output/'REPORT.md').write_text('\n'.join(lines)+'\n')
-    for name, records in [('fid', fid_rows), ('denoising', denoising_rows)]:
+    for name, records in [('fid', fid_rows), ('denoising', denoising_rows), ('fid-comparison', comparison_rows)]:
         if records:
             with (output/f'{name}.csv').open('w', newline='') as f:
                 writer = csv.DictWriter(f, fieldnames=list(records[0]))

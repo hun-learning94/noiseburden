@@ -1,7 +1,7 @@
 {
   "sha256": {
     ".github/workflows/reproduce.yml": "5e53175dcd3384692fe6425085d69b8af7878666c8432a7c82e4ea02ff697888",
-    "README.md": "bd7a6e2d9e6201411621795aaf987e9c882534fa2e36190037695523fd8e9a6a",
+    "README.md": "86a3351d92eb3aed70db9b65570041be5dd3ba32615b6a7f3c5f7c87772203f5",
     "configs/rebuttal_checkpoints.example.json": "8598ad15d74123a71655c5d8cd522b73a4de1890bf34e77ab81784239970aadc",
     "configs/rebuttal_sources.json": "37a58e8b680694fb60243a03100f60d2daaf233fa5c8959917cf2b0f192edbe4",
     "configs/rebuttal_width.json": "ed2f3b77c64acaf1226e00e7d9caad0d1c974d2011a12480f6fc7aca17ac1846",

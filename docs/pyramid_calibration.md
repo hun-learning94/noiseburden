@@ -16,15 +16,22 @@ inputs. The commands below rebuild them.
 ## Results and completion status
 
 Snapshot: November 19, 2026 UTC. Only completed, audited comparisons are numerical
-results here. The first 2,000 generations are a subset of the first 10,000.
+results here. The rebuttal comparison reports the three blocks and their pooled
+30K result, with both full and half-late calibration. ΔFID is calibrated minus
+uncalibrated; lower is better. The table is generated from the accompanying
+audited records; pending entries are not numerical results.
 
-| Cohort | Uncalibrated | Full calibration | Half-late calibration |
-|---|---:|---:|---:|
-| First 2,000 | 33.34746063 | 32.57026738 | 33.16996545 |
-| First 10,000 | 19.74148339 | **18.88668921** | 19.48029046 |
-| Indices 10,000–19,999 | Pending | Pending | Pending |
-| Indices 20,000–29,999 | Pending | Pending | Pending |
-| Full 50,000 | Pending | Pending | Pending |
+<!-- BEGIN FID COMPARISON -->
+| Evaluation | Uncalibrated | Full calibration | Half-late calibration | ΔFID, full | ΔFID, half-late |
+|---|---:|---:|---:|---:|---:|
+| FID-10K, block 1 | 19.74 | 18.89 | 19.48 | −0.85 | −0.26 |
+| FID-10K, block 2 | 19.75 | 18.89 | 19.46 | −0.86 | −0.30 |
+| FID-10K, block 3 | Pending | Pending | Pending | Pending | Pending |
+| Pooled FID-30K | Pending | Pending | Pending | Pending | Pending |
+<!-- END FID COMPARISON -->
+
+The original nested 2K pilot remains in the numerical records: 33.34746063
+uncalibrated, 32.57026738 full, and 33.16996545 half-late. FID-50K remains pending.
 
 The three FID-10K cohorts are fixed, disjoint blocks of the same 50K caption/noise
 bank: zero-based indices `[0,10000)`, `[10000,20000)`, and `[20000,30000)`.
@@ -37,10 +44,15 @@ training or calibration repeats. The blocks were designated during the ongoing
 were not used to choose their boundaries. The initial 50K caption bank was fixed
 before generation. No additional seed-repeat result is included.
 
-We will report all three block scores and their descriptive mean and sample SD
-once complete. Those summaries are pending. The mean of three FID-10K values is
-not pooled FID-30K or FID-50K; the three blocks also overlap the final 50K sample.
-We make no significance or independent-replication claim from these blocks.
+Pooled FID-30K recomputes the FP64 feature mean and covariance over all 30,000
+generated images per variant, using the same 40,504-image reference. It reuses
+the three blocks; it is not their average FID or an additional independent
+evaluation. We designate this aggregate for the rebuttal while the 50K extension
+continues. All three variants and all three fixed blocks are retained regardless
+of their scores. The campaign's CPU pooled score waits for all block audits and checks each
+feature-batch hash against its audit before aggregation. No new generation is
+needed. Descriptive block means/SDs, if reported, remain distinct from pooled FID
+and do not constitute a confidence interval or significance test.
 
 Caption-conditioned held-out clean-image MSE:
 
@@ -160,7 +172,7 @@ the run snapshot. Published FIDs are checked against retained audits that
 recomputed them from the original saved features and reference. The CPU command
 does not recompute Inception features or rerun GPU sampling.
 
-`artifacts/pyramid-calibration/REPORT.md`, `fid.csv`, and `denoising.csv` are
+`artifacts/pyramid-calibration/REPORT.md`, `fid.csv`, `fid-comparison.csv`, and `denoising.csv` are
 rebuilt from the measurements. The report explicitly retains pending entries.
 
 ## Repeat fitting and generation
@@ -222,6 +234,9 @@ fixed blocks, repeating for each variant:
 python -m pyramid_calibration score --workspace work/pyramid --variant baseline --start 0 --count 10000
 python -m pyramid_calibration score --workspace work/pyramid --variant baseline --start 10000 --count 10000
 python -m pyramid_calibration score --workspace work/pyramid --variant baseline --start 20000 --count 10000
+
+# Pooled 30K: repeat for calibrated and late_half as well.
+python -m pyramid_calibration score --workspace work/pyramid --variant baseline --start 0 --count 30000
 ```
 
 The scoring command checks exact, finite, ordered feature coverage and uses the
