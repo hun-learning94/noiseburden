@@ -7,7 +7,7 @@
     "configs/pyramid_calibration/generation_decision.json": "1e597770965340c68acf194bd041d92cbc3c46c5f55022ed626ac3a20919ed9b",
     "configs/pyramid_calibration/protocol.json": "9f428855064b69c448d9bd2e304e58aff7fcc2c97a80b611e1140903b2529575",
     "configs/pyramid_calibration/source_parity.json": "a3e80271afb20bcd92235ab414d04a02f0b985503e944780f42c52c262506071",
-    "docs/pyramid_calibration.md": "210c9352ffd0632128aac9d042df63c9342c4e931e377e2817e60526e65de763",
+    "docs/pyramid_calibration.md": "ab9d0de850a9276e233a0d41b13af27adbca8d8ecaad28e1bf761588315c8151",
     "metrics/pyramid_calibration/audits/DENOISING_AUDIT.json": "0a84c8bc01e2ec708e7b6173d97b37fe94fed65fb7a04dbaf13e849db5a57b91",
     "metrics/pyramid_calibration/audits/FID10000_RECOMPUTE_AUDIT.json": "9e219b0e404b9e41b8674ce5be5c88ee57d7d3f21f4d22a55eb43cf91e4a47a6",
     "metrics/pyramid_calibration/audits/FID10K_BLOCK3_AUDIT.json": "6b752ab5925f05a805b7c1947da7448ebcc809c6f1a9fefc9d996aa89c774024",
@@ -201,7 +201,7 @@
     "pyramid_calibration/frozen/torch_fidelity/version.py": "ea8d750518e2707f90385f3f198782fd22da8090025c4ac790bb2520271fb885",
     "pyramid_calibration/prepare.py": "dd6bc1957d57e7c5fe258d6d8b5fe322613bf4ec0bc0faad3fa2703be5fca326",
     "pyramid_calibration/projector.py": "35bc2e1385cb542f01ec6ac13f61b341df100073a9a177034e289952c621bf72",
-    "pyramid_calibration/report.py": "585749c972eb02a96fb9eb30645972b6d6bf6d285ddbfe02248452efd80692f9",
+    "pyramid_calibration/report.py": "28e3e94219b7a371ce1d6765463bb7bfadb61d5ceac95729f36f3b891a5e7366",
     "pyramid_calibration/worker.py": "565a268835768e81d56ff61b792e6e8351230738596b1e9b369db2ea6cb4d875",
     "pyramid_calibration/workspace.py": "c7b7fd3d1a16225b9f3647c1a310d4c077c73cd7425b392350bebbb44c90ab15",
     "requirements-pyramid.txt": "d2e5d13b225a251a9b1a3773c166d3f4cd3008ad247555d94f152cc3f9a3fc9a"

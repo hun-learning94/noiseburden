@@ -22,12 +22,12 @@ uncalibrated; lower is better. The table is generated from the accompanying
 completed audit records.
 
 <!-- BEGIN FID COMPARISON -->
-| Evaluation | Uncalibrated | Full calibration | Half-late calibration | ΔFID, full |
+| Evaluation | Uncalibrated | Half-late calibration | Full calibration | ΔFID, full |
 |---|---:|---:|---:|---:|
-| FID-10K, block 1 | 19.74 | **18.89** | 19.48 | −0.85 |
-| FID-10K, block 2 | 19.75 | **18.89** | 19.46 | −0.86 |
-| FID-10K, block 3 | 20.13 | **19.22** | 19.81 | −0.91 |
-| Pooled FID-30K | 17.75 | **16.87** | 17.45 | −0.88 |
+| FID-10K, block 1 | 19.74 | 19.48 | **18.89** | −0.85 |
+| FID-10K, block 2 | 19.75 | 19.46 | **18.89** | −0.86 |
+| FID-10K, block 3 | 20.13 | 19.81 | **19.22** | −0.91 |
+| Pooled FID-30K | 17.75 | 17.45 | **16.87** | −0.88 |
 <!-- END FID COMPARISON -->
 
 The original nested 2K pilot remains in the numerical records: 33.34746063
@@ -56,12 +56,12 @@ and do not constitute a confidence interval or significance test.
 
 Caption-conditioned held-out clean-image MSE:
 
-| Clean time | Baseline | Full | Half-late | Full reduction |
+| Clean time | Baseline | Half-late | Full | Full reduction |
 |---:|---:|---:|---:|---:|
 | 0.5 | 0.01925921 | 0.01925888 | 0.01925888 | 0.0017% |
-| 0.9 | 0.00343066 | 0.00340416 | 0.00341021 | 0.77% |
-| 0.95 | 0.00209190 | 0.00198706 | 0.00201072 | 5.01% |
-| 0.98 | 0.00145503 | 0.00102814 | 0.00112847 | 29.34% |
+| 0.9 | 0.00343066 | 0.00341021 | 0.00340416 | 0.77% |
+| 0.95 | 0.00209190 | 0.00201072 | 0.00198706 | 5.01% |
+| 0.98 | 0.00145503 | 0.00112847 | 0.00102814 | 29.34% |
 
 The CPU report includes all twelve diagnostic times and both conditional and
 negative-prompt branches. Raw per-image losses support recomputation of every

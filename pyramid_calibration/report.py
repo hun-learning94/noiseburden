@@ -120,7 +120,7 @@ def render(output, measurements=MEASUREMENTS):
     output.mkdir(parents=True, exist_ok=True)
     lines = ['# Pyramid-JiT512 calibration', '',
              'Frozen released model; native Euler50/APG sampling; COCO2014 Inception FID.', '',
-             '| Images (prefix) | Baseline | Full calibration | Half-late |',
+             '| Images (prefix) | Baseline | Half-late | Full calibration |',
              '|---:|---:|---:|---:|']
     fid_rows = []
     for count in [2000, 10000, 50000]:
@@ -128,16 +128,16 @@ def render(output, measurements=MEASUREMENTS):
                    for variant in ['baseline', 'calibrated', 'late_half']):
             continue
         row = {'images': count}
-        for variant in ['baseline', 'calibrated', 'late_half']:
+        for variant in ['baseline', 'late_half', 'calibrated']:
             path = measurements/'fid'/f'{variant}-{count}.json'
             row[variant] = read(path)['fid'] if path.exists() else None
         lines.append('| '+str(count)+' | '+' | '.join(f'**{row[v]:.8f}**' if v == 'calibrated' else f'{row[v]:.8f}'
-                     for v in ['baseline', 'calibrated', 'late_half'])+' |')
+                     for v in ['baseline', 'late_half', 'calibrated'])+' |')
         fid_rows.append(row)
     lines += ['', 'The 2K and first 10K results are nested. Three disjoint 10K caption/noise blocks',
               'are defined at indices [0,10000), [10000,20000), and [20000,30000).',
               'They are not seed-only repeats; image IDs can overlap and all blocks belong to the 50K bank.', '',
-              '| Clean time | Baseline conditional MSE | Full | Half-late | Full reduction (%) |',
+              '| Clean time | Baseline conditional MSE | Half-late | Full | Full reduction (%) |',
               '|---:|---:|---:|---:|---:|']
     denoising_rows = []
     for t in TEST_TIMES:
@@ -145,26 +145,30 @@ def render(output, measurements=MEASUREMENTS):
         if not path.exists():
             continue
         data = read(path)
-        row = {'t': t, **data['mse'], 'full_reduction_percent': data['paired_improvement']['conditional_calibrated']['relative_percent']}
+        row = {'t': t,
+               **{f'{branch}_{variant}': data['mse'][f'{branch}_{variant}']
+                  for branch in ['conditional', 'negative']
+                  for variant in ['baseline', 'late_half', 'calibrated']},
+               'full_reduction_percent': data['paired_improvement']['conditional_calibrated']['relative_percent']}
         denoising_rows.append(row)
-        lines.append(f'| {t:g} | {row["conditional_baseline"]:.8g} | {row["conditional_calibrated"]:.8g} | '
-                     f'{row["conditional_late_half"]:.8g} | {row["full_reduction_percent"]:.6g} |')
+        lines.append(f'| {t:g} | {row["conditional_baseline"]:.8g} | {row["conditional_late_half"]:.8g} | '
+                     f'{row["conditional_calibrated"]:.8g} | {row["full_reduction_percent"]:.6g} |')
     status_file = measurements/'status.json'
     comparison_rows = []
     if status_file.exists():
         status = read(status_file)
         lines += ['', '## Three FID-10K blocks and pooled FID-30K', '',
-                  '| Evaluation | Uncalibrated | Full calibration | Half-late calibration | ΔFID, full |',
+                  '| Evaluation | Uncalibrated | Half-late calibration | Full calibration | ΔFID, full |',
                   '|---|---:|---:|---:|---:|']
         evaluations = [(f'FID-10K, block {i+1}', b) for i,b in enumerate(status['fid10k_blocks'])]
         evaluations.append(('Pooled FID-30K', status['pooled_fid30k']))
         for label, evaluation in evaluations:
             fids = evaluation.get('fids', {})
-            values = [fids.get(v) for v in ['baseline','calibrated','late_half']]
+            values = [fids.get(v) for v in ['baseline','late_half','calibrated']]
             values += [fids['calibrated']-fids['baseline'] if fids else None]
-            cells = ['Pending' if v is None else (f'**{v:.2f}**' if i == 1 else (f'{v:.2f}' if i<3 else f'{v:+.2f}')) for i,v in enumerate(values)]
+            cells = ['Pending' if v is None else (f'**{v:.2f}**' if i == 2 else (f'{v:.2f}' if i<3 else f'{v:+.2f}')) for i,v in enumerate(values)]
             lines.append('| '+label+' | '+' | '.join(cells)+' |')
-            comparison_rows.append(dict(zip(['evaluation','status','baseline','calibrated','late_half',
+            comparison_rows.append(dict(zip(['evaluation','status','baseline','late_half','calibrated',
                                              'full_minus_baseline'],
                                             [label,evaluation['status'],*values])))
         lines += ['', 'Lower FID is better; ΔFID is full calibration minus uncalibrated.',
