@@ -17,17 +17,17 @@ inputs. The commands below rebuild them.
 
 Snapshot: November 19, 2026 UTC. Only completed, audited comparisons are numerical
 results here. The rebuttal comparison reports the three blocks and their pooled
-30K result, with both full and half-late calibration. ΔFID is calibrated minus
+30K result, with both full and half-late calibration. ΔFID is full calibration minus
 uncalibrated; lower is better. The table is generated from the accompanying
 audited records; pending entries are not numerical results.
 
 <!-- BEGIN FID COMPARISON -->
-| Evaluation | Uncalibrated | Full calibration | Half-late calibration | ΔFID, full | ΔFID, half-late |
-|---|---:|---:|---:|---:|---:|
-| FID-10K, block 1 | 19.74 | 18.89 | 19.48 | −0.85 | −0.26 |
-| FID-10K, block 2 | 19.75 | 18.89 | 19.46 | −0.86 | −0.30 |
-| FID-10K, block 3 | Pending | Pending | Pending | Pending | Pending |
-| Pooled FID-30K | Pending | Pending | Pending | Pending | Pending |
+| Evaluation | Uncalibrated | Full calibration | Half-late calibration | ΔFID, full |
+|---|---:|---:|---:|---:|
+| FID-10K, block 1 | 19.74 | 18.89 | 19.48 | −0.85 |
+| FID-10K, block 2 | 19.75 | 18.89 | 19.46 | −0.86 |
+| FID-10K, block 3 | Pending | Pending | Pending | Pending |
+| Pooled FID-30K | Pending | Pending | Pending | Pending |
 <!-- END FID COMPARISON -->
 
 The original nested 2K pilot remains in the numerical records: 33.34746063

@@ -135,20 +135,20 @@ def render(output, measurements=MEASUREMENTS):
     if status_file.exists():
         status = read(status_file)
         lines += ['', '## Three FID-10K blocks and pooled FID-30K', '',
-                  '| Evaluation | Uncalibrated | Full calibration | Half-late calibration | ΔFID, full | ΔFID, half-late |',
-                  '|---|---:|---:|---:|---:|---:|']
+                  '| Evaluation | Uncalibrated | Full calibration | Half-late calibration | ΔFID, full |',
+                  '|---|---:|---:|---:|---:|']
         evaluations = [(f'FID-10K, block {i+1}', b) for i,b in enumerate(status['fid10k_blocks'])]
         evaluations.append(('Pooled FID-30K', status['pooled_fid30k']))
         for label, evaluation in evaluations:
             fids = evaluation.get('fids', {})
             values = [fids.get(v) for v in ['baseline','calibrated','late_half']]
-            values += [fids[v]-fids['baseline'] if fids else None for v in ['calibrated','late_half']]
+            values += [fids['calibrated']-fids['baseline'] if fids else None]
             cells = ['Pending' if v is None else (f'{v:.2f}' if i<3 else f'{v:+.2f}') for i,v in enumerate(values)]
             lines.append('| '+label+' | '+' | '.join(cells)+' |')
             comparison_rows.append(dict(zip(['evaluation','status','baseline','calibrated','late_half',
-                                             'full_minus_baseline','half_minus_baseline'],
+                                             'full_minus_baseline'],
                                             [label,evaluation['status'],*values])))
-        lines += ['', 'Lower FID is better; ΔFID is calibrated minus uncalibrated.',
+        lines += ['', 'Lower FID is better; ΔFID is full calibration minus uncalibrated.',
                   'Half-late uses full correction before clean time 0.9 and half strength thereafter.',
                   'Pooled FID-30K recomputes statistics over the union of the three blocks, using the same 40,504-image reference.',
                   'It is not an average of block FIDs or an additional independent evaluation.']

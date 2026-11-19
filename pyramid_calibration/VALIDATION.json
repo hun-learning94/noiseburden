@@ -20,7 +20,7 @@
     "cli_help_and_python_compilation": true,
     "audited_fid10k_blocks_in_current_release": 2,
     "comparison_table_rows": 4,
-    "comparison_includes_both_calibration_schedules_and_deltas": true
+    "comparison_includes_both_calibration_schedules_and_full_delta": true
   },
   "limitations": [
     "The original measured run passed GPU native-sampler parity; the portable wrapper was not rerun end to end on a GPU.",
