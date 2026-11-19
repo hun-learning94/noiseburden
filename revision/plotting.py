@@ -170,10 +170,10 @@ def render(output):
     global OUT
     OUT=Path(output)/'figures';OUT.mkdir(parents=True,exist_ok=True)
     from noiseburden import plotting as legacy
-    # These four figures have unchanged measurements and layouts.
+    # Reuse the archived measurements, adding the velocity loss/floor to Figure 2.
     with tempfile.TemporaryDirectory() as temp:
         with plt.rc_context():
-            legacy.render(Path(temp))
+            legacy.render(Path(temp),include_velocity=True)
         for name in ['paper_bottleneck_performance','paper_noise_ceiling','paper_learned_coefficients','paper_bottleneck_loss_grid']:
             for ext in ['pdf','png']:shutil.copy2(Path(temp)/f'figures/{name}.{ext}',OUT/f'{name}.{ext}')
     plt.rcdefaults()
@@ -195,6 +195,13 @@ def render(output):
     scatter(axes[1],public['e'],'rgb_mse','(b) Denoising',128,compact=True)
     times(axes[2],public['f'],'(c) Input recovery',compact=True);save(fig,'paper_public_recovery_extra128')
     target=Path(output)/'metrics';target.mkdir(exist_ok=True)
+    rows=[dict(case=case,t=r['t'],sigma=r['sigma'],clean_mse=r['clean_mse']['mean'],
+               lower_bound=r['clean_mse_floor'])
+          for case in ['bottleneck_image','bottleneck_exact','bottleneck_noise',
+                       'bottleneck_velocity','edm_jit_input','edm_reflow_input']
+          for r in legacy.native(case)]
+    with (target/'figure2_measurements.csv').open('w',newline='') as stream:
+        writer=csv.DictWriter(stream,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     for res,records in [(128,data),(256,grid)]:
         for kind in ['rows','gains','spectrum']:
             rows=records[kind]

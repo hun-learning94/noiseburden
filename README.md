@@ -64,7 +64,7 @@ python -m noiseburden --check-only
 
 | Figure | Measurement |
 | --- | --- |
-| 2 | Bottleneck generation and fixed-time denoising floors |
+| 2 | Bottleneck generation and denoising, including noise, velocity, and EDM floors |
 | 3 | Final-block noise recovery and the rank ceiling |
 | 4 | ImageNet128: width, parameter count, denoising gains, residual structure |
 | 5 | ImageNet256: generation versus affine noisy-input recovery |
@@ -73,6 +73,11 @@ python -m noiseburden --check-only
 | 8 | ImageNet256 counterpart of Figure 4, at epoch 120 |
 | 9 | Additional ImageNet256 denoising and recovery curves |
 | 10 | Additional ImageNet128 generation, denoising, and recovery curves |
+
+Figure 2 includes the measured velocity-prediction loss and its clean-image MSE
+bound `(5/6) (1-t)^2`. The [protocol notes](docs/revision.md#figure-2-bottleneck-losses-and-lower-bounds)
+identify the saved measurements and explain the loss convention. Reproduction
+also exports the plotted losses and bounds to `artifacts/metrics/figure2_measurements.csv`.
 
 Tables 1–2 define prediction notation and coefficients; Table 3 gives the
 layerwise noise probes; Table 4 contains matched ImageNet256 epoch-120 controls;

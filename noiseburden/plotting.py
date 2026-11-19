@@ -27,8 +27,8 @@ def canvas(rows=1,cols=1,height=2.4,**kwargs):
     fig.get_layout_engine().set(w_pad=.025,h_pad=.025,wspace=.035,hspace=.07)
     return fig,ax
 
-def save(fig,name):
-    fig.savefig(OUT/f'{name}.pdf',bbox_inches='tight');fig.savefig(OUT/f'{name}.png',dpi=180,bbox_inches='tight')
+def save(fig,name,*,dpi=180):
+    fig.savefig(OUT/f'{name}.pdf',bbox_inches='tight');fig.savefig(OUT/f'{name}.png',dpi=dpi,bbox_inches='tight')
     SIZES[name]=dict(canvas_inches=list(fig.get_size_inches()),body_font_pt=8.5,tick_font_pt=8)
     plt.close(fig)
 
@@ -51,8 +51,8 @@ def curve(ax,key,color,label,marker='o',ls='-',band=True,x_key='sigma'):
     if band:ax.fill_between(x,ci[:,0],ci[:,1],color=color,alpha=.10,lw=0)
     return x,y
 
-def bottleneck_performance():
-    """Compact generation and denoising panels for the main text."""
+def bottleneck_performance(*,include_velocity=False):
+    """Compact main-text panels; the revision also shows the velocity loss/floor."""
     rows=list(csv.DictReader((DATA/'bottleneck_fid_200.csv').open()))
     fid={r['case_id']:float(r['fid']) for r in rows}
     assert len(rows)==len(fid)==10
@@ -81,10 +81,15 @@ def bottleneck_performance():
     curve(b,'bottleneck_image',BLUE,'Image',marker='o',band=False,x_key='t')
     curve(b,'bottleneck_exact',GREEN,'Exact',marker='s',ls='--',band=False,x_key='t')
     x,_=curve(b,'bottleneck_noise',ORANGE,'Noise',marker='o',band=False,x_key='t')
+    if include_velocity:
+        curve(b,'bottleneck_velocity',GRAY,'Velocity',marker='D',band=False,x_key='t')
     curve(b,'edm_jit_input',PURPLE,'EDM',marker='^',band=False,x_key='t')
     curve(b,'edm_reflow_input',PURPLE,'_nolegend_',marker='v',ls='--',band=False,x_key='t')
     bare=sorted(native('bottleneck_noise'),key=lambda r:r['t']);edm=sorted(native('edm_jit_input'),key=lambda r:r['t'])
     b.plot(x,[r['clean_mse_floor'] for r in bare],color='.2',ls='--',lw=1.15,label='Noise bound',zorder=5)
+    if include_velocity:
+        velocity=sorted(native('bottleneck_velocity'),key=lambda r:r['t'])
+        b.plot(x,[r['clean_mse_floor'] for r in velocity],color=GRAY,ls=':',lw=1.6,label='Velocity bound',zorder=5)
     b.plot(x,[r['clean_mse_floor'] for r in edm],color=PURPLE,ls=':',lw=1.6,label='EDM bound',zorder=5)
     b.set_yscale('log');b.set_ylim(8e-5,900)
     b.set_yticks([1e-4,1e-3,1e-2,.1,1,10,100],['0.0001','0.001','0.01','0.1','1','10','100'])
@@ -94,8 +99,15 @@ def bottleneck_performance():
     b.text(0,-.105,'High noise',transform=b.transAxes,ha='left',va='top',fontsize=7.8)
     b.text(1,-.105,'Low noise',transform=b.transAxes,ha='right',va='top',fontsize=7.8)
     b.set_title('(b) Denoising loss',loc='left')
-    b.legend(frameon=False,loc='upper right',bbox_to_anchor=(1,1.04),handlelength=1.6,labelspacing=.15,fontsize=7.8)
-    save(fig,'paper_bottleneck_performance')
+    if include_velocity:
+        handles,labels=b.get_legend_handles_labels();lookup=dict(zip(labels,handles))
+        order=['Noise','Velocity','EDM','Image','Noise bound','Velocity bound','EDM bound','Exact']
+        b.legend([lookup[name] for name in order],order,frameon=False,loc='upper right',
+                 bbox_to_anchor=(1.02,1.04),ncol=2,handlelength=1.45,handletextpad=.45,
+                 columnspacing=.8,labelspacing=.2,fontsize=7.2)
+    else:
+        b.legend(frameon=False,loc='upper right',bbox_to_anchor=(1,1.04),handlelength=1.6,labelspacing=.15,fontsize=7.8)
+    save(fig,'paper_bottleneck_performance',dpi=300 if include_velocity else 180)
 
 def bottleneck_loss_grid():
     """All ten validation loss curves as an annotated, time-normalized heatmap."""
@@ -391,7 +403,7 @@ def fid_width():
     assert len(rows)==16
     return [(int(r['resolution']),r['prediction'],int(r['width']),float(r['fid'])) for r in rows]
 
-def render(output,metrics=None):
+def render(output,metrics=None,*,include_velocity=False):
     global OUT,CSV_OUT,DATA,NATIVE,M,VALIDATION
     if metrics is not None:
         DATA=Path(metrics).resolve();NATIVE=DATA/'native'
@@ -399,7 +411,7 @@ def render(output,metrics=None):
         VALIDATION=json.loads((DATA/'protocol.json').read_text())
     output=Path(output).resolve();OUT=output/'figures';CSV_OUT=output/'metrics'
     OUT.mkdir(parents=True,exist_ok=True);CSV_OUT.mkdir(parents=True,exist_ok=True)
-    bottleneck_performance();learned_coefficients();bottleneck_loss_grid();probes()
+    bottleneck_performance(include_velocity=include_velocity);learned_coefficients();bottleneck_loss_grid();probes()
     width_performance(256);readouts((256,));width_performance(128);width_probe_panels()
     export_width_measurements()
     (OUT/'figure_sizes.json').write_text(json.dumps(SIZES,indent=2)+'\n')

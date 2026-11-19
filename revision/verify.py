@@ -10,6 +10,19 @@ def inputs():
     for p,digest in expected.items():assert sha(ROOT/p)==digest,p
     data=json.loads((DATA/'section42_figures_provenance.json').read_text())
     counts={'i128_epoch200_cases':len(data['rows']),'i128_loss_cells':0,'i256_loss_cells':0,'recovery_cells':0}
+    # Figure 2 reports induced clean-image MSE, not raw velocity-target MSE.
+    cases=json.loads((ROOT/'configs/plot_cases.json').read_text())
+    case=next(c for c in cases['cases'] if c['id']=='bottleneck_velocity')
+    patch_dimension=3*case['patch']**2
+    velocity=json.loads((ROOT/'metrics/native/native-bottleneck_velocity.json').read_text())['records']
+    assert sorted(r['t'] for r in velocity)==sorted(cases['times'])
+    for r in velocity:
+        np.testing.assert_allclose(r['clean_skip'],r['t'],rtol=1e-13)
+        np.testing.assert_allclose(r['sigma'],(1-r['t'])/r['t'],rtol=1e-13)
+        np.testing.assert_allclose(r['clean_mse_floor'],
+                                   (1-r['rank_upper_bound']/patch_dimension)*(1-r['t'])**2,
+                                   rtol=1e-13)
+    counts['velocity_floor_cells']=len(velocity)
     base=ROOT/'metrics/native/native-i128_eps192-per-image.npz'
     for r in data['gains']:
         family,w=r['family'],r['width'];t=r['t']

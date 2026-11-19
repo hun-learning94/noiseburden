@@ -5,6 +5,31 @@ from backbone training. Pixels are center-cropped with the included JiT crop cod
 scaled to [-1,1], and never redistributed. The clean-data convention is
 `X_t=t X_1+(1-t) epsilon`, `Y_t=X_t/t`, `sigma_t=(1-t)/t`.
 
+## Figure 2: bottleneck losses and lower bounds
+
+The revision plots the existing epoch-200 velocity measurements alongside noise,
+image, exact-preconditioning, and both EDM curves. The seven times are 0.05,
+0.1, 0.2, 0.5, 0.8, 0.9, and 0.95, with 2000 held-out validation images per time.
+The source summaries and per-image losses are
+`metrics/native/native-bottleneck_velocity.json` and
+`metrics/native/native-bottleneck_velocity-per-image.npz`; the other curves use
+the corresponding native files. Panel (a) retains the ten generation scores in
+`metrics/bottleneck_fid_200.csv`.
+
+Velocity prediction targets `X_1 - epsilon`, inducing the clean-image estimate
+`X_t + (1-t) v_hat`. Thus its per-coordinate clean-image MSE floor is
+`(1-r/d_p) (1-t)^2 = (5/6) (1-t)^2` for `r=128` and `d_p=768`.
+This is the dotted velocity bound in panel (b), in the same clean-image MSE units
+as every loss curve. It is not the raw velocity-target MSE floor.
+The velocity bound accounts for 87.5%–96.3% of measured clean-image MSE across
+the seven times. The EDM bound represents a residual discarded-noise contribution;
+it does not closely track total denoising MSE at high noise.
+
+`python -m noiseburden --output artifacts --strict` reproduces the updated figure
+and exports all six plotted methods to `artifacts/metrics/figure2_measurements.csv`.
+Verification recomputes the per-image means and checks all seven velocity bounds.
+The `--arxiv` workflow retains its archived Figure 2 layout and reference images.
+
 ## Width controls
 
 Figure 4 uses ImageNet128, RGB patch dimension 192, and completed epoch 200 EMA1

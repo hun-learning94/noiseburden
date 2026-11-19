@@ -9,6 +9,7 @@
     "configs/revision_figures.json": "c20910e3c2c3913f1ffc4ac59fcec335a29325ab8657c07666d0052bc6bfa242",
     "configs/revision_jit_cases.json": "240342b62654a99ea5758adfd7b92441ab27f91b380556920a75c2c4ae9401d0",
     "configs/revision_tables.json": "6882a346e860b3dc8c0296ce6c470a6d985778254ee3959a6edf4611b08c29e5",
+    "docs/revision.md": "02f9d8484919f23b5a90babab1925fe82a56bdf7df77a0e8c9cc2cd8719d6492",
     "metrics/revision/controls128/deep/i128_eps256_d16/fid.json": "72a648442e016f290440e18d48438ed92200d0dc7a25e0607c1249da99ca8e0b",
     "metrics/revision/controls128/deep/i128_eps256_d16/native-per-image.npz": "f8a5825dd6dfdf762745ca3c4fd0dd22b37f49e3f0f868325b2e25b64224cc57",
     "metrics/revision/controls128/deep/i128_eps256_d16/native.json": "50baedccd511450f37a8a89db458d4c7505dba16490c3f0dd0c775e0b3f37628",
@@ -314,10 +315,11 @@
     "metrics/revision/recovery/sweeps/jit256w896-t0.9.json": "d393503a42eda25feebf53777f939b17a62d1d87ea32f56937f2f9042be2c3be",
     "metrics/revision/section42_figures_provenance.json": "3cec6db09589c4ce08fbc3f349d213e5858f7bbd4b2cb6d1c7ea9ec1f72e9ad9",
     "metrics/revision/width_controls_i256_ep120_provenance.json": "e68cb012df3fa28019c6d3df281c74e3c6a5f766ae93954543d73fc8b4e8c7e3",
+    "noiseburden/plotting.py": "cd92c93f16868a5352e41604964789f5286b169a4273d3f7e726d08aa40cca62",
     "reference/revision/figures/paper_bottleneck_loss_grid.pdf": "b8552794b07b6b36090567188a23fcaea94ec54566d7b0520040be8f78ac5a5b",
     "reference/revision/figures/paper_bottleneck_loss_grid.png": "c7e2039b488334b9a7f29313327e9d75816eb4d018c79e6a90a889c9382c1e39",
-    "reference/revision/figures/paper_bottleneck_performance.pdf": "a26c0603a000f9c5f657e1dfb70ea3cc5849a68669153121bcc040901f988139",
-    "reference/revision/figures/paper_bottleneck_performance.png": "fee74b7df63e12b360578b7be1ec983db0afc2b61e80722db7ff17e4bdd776ae",
+    "reference/revision/figures/paper_bottleneck_performance.pdf": "0aebcf20047197075e50e01b0c473d414d217b73e418843fbedc2567458cd220",
+    "reference/revision/figures/paper_bottleneck_performance.png": "c3da8f2e266954b6f49f91bb632ebfbe0b9a902d1af4c7939293dbd6b5efdcd5",
     "reference/revision/figures/paper_input_recovery_public256.pdf": "b3e0698c185b647de34c8dedd32eae9e677949e9a1306f3cea93fbf229578433",
     "reference/revision/figures/paper_input_recovery_public256.png": "f43aa61139f3e76216053d53b8d0c78de578ce1a302d960c424ec15d1f4eec04",
     "reference/revision/figures/paper_learned_coefficients.pdf": "7d960dabbd1eaa6f523ce6101be9f0d9612e7e7d4be982eb782e3458e6d02af1",
@@ -561,8 +563,8 @@
     "revision/jit_probe.py": "aff3648881e237cadbf30ce5c5efe056ea7449010d331501fada5f46b4d88453",
     "revision/loaders.py": "c8030f513f65f99f41e898199eac2d1cbb6d99560029a4c71800cd85051cd33b",
     "revision/native.py": "b030770187846da93db80afa6aeef0a41cffcfb59f825a05e92887abeeb4d16b",
-    "revision/plotting.py": "b11b3da1ceab5de3e68367a8d702f8c8be237e9dfa3fe382bc1dc08a0dfd72d3",
+    "revision/plotting.py": "37a49cc52a8059b0e48cfe674a7cd922345f467bc038b27b8d8bd1b6aebf89f8",
     "revision/tables.py": "ddae8e7aa206e7d0ed2f2c0afd1ff04a13ca5337dc708004f37f1d3c5df26259",
-    "revision/verify.py": "6cb913b09a8a8d7b5a5f45591e2cb2d1a97aac105ced9462afb16c029e1dcf10"
+    "revision/verify.py": "9477e8c4bd6da872571f86fd2e7b2d29f5ece3b4acd1e018a096c6ec6782a4c0"
   }
 }
